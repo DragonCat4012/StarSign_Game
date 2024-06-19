@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=8 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://1nk1bb57dn6q" path="res://Scenes/Sprites/Player.tscn" id="1_53drk"]
+[ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fkjhi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -26,16 +27,19 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 environment = SubResource("Environment_gbmld")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0.227087, 0)
 shadow_enabled = true
+
+[node name="DefaultCube" parent="DirectionalLight3D" instance=ExtResource("1_hxdoa")]
+transform = Transform3D(1, 0, -1.49012e-08, 2.98023e-08, 1, 1.49012e-07, 5.96046e-08, 0, 1, 1.37683, -2.00225, 1.30147)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(35.395, 0, 0, 0, 35.395, 0, 0, 0, 35.395, 0, -6, 0)
 mesh = SubResource("PlaneMesh_in0bf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="Floor" type="StaticBody3D" parent="MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Floor"]
 shape = SubResource("ConcavePolygonShape3D_n6r7d")
 
 [node name="Player" parent="." instance=ExtResource("1_53drk")]
