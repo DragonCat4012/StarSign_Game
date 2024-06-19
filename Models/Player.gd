@@ -1,15 +1,23 @@
 extends CharacterBody3D
 
+@onready var armature = $Armature
 @onready var spring_arm_pivot = $TwistPivot
 @onready var spring_arm = $TwistPivot/SpringArm3D
+@onready var animation_tree = $AnimationTree
 
+# Turning Camera
 var mouse_sensitivity := 0.001
 var twist_input := 0.0
 var pitch_input := 0.0
 
-const Speed = 5.0
+# Jumping
+const SPEED = 5.0
+
 const Jump_Velocity = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+# Turning
+const LERP_VAL = 0.15
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -40,11 +48,14 @@ func _physics_process(delta):
 	
 	var input_dir = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backward")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction = direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
 	if direction:
-		velocity.x = direction.x * Speed
-		velocity.z = direction.z * Speed
+		velocity.x = lerp(velocity.x, direction.x * SPEED, LERP_VAL)
+		velocity.z = lerp(velocity.z, direction.z * SPEED, LERP_VAL)
+		armature.rotation.y = lerp_angle(armature.rotation.y, atan2(-velocity.x, -velocity.z), LERP_VAL)
 	else:
-		velocity.x = move_toward(velocity.x, 0, Speed)
-		velocity.z = move_toward(velocity.z, 0, Speed)
+		velocity.x = lerp(velocity.x, 0.0, LERP_VAL)#move_toward(velocity.x, 0, SPEED)
+		velocity.z = lerp(velocity.z, 0.0, LERP_VAL)#move_toward(velocity.z, 0, SPEED)
 		
+	animation_tree.set("parameters/BlendSpace1D/blend_position", velocity.length()/SPEED)
 	move_and_slide()
