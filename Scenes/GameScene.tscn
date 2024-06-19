@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
-[ext_resource type="PackedScene" uid="uid://3p5cfy4of3l" path="res://Scenes/Sprites/Player2.tscn" id="2_y0cxw"]
+[ext_resource type="PackedScene" uid="uid://cb1xwmbnkdeun" path="res://Models/Player.tscn" id="2_rw8m4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fkjhi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,5 +44,4 @@ transform = Transform3D(0.66195, 0, 0, 0, 0.66195, 0, 0, 0, 0.66195, 0, 0, 0)
 transform = Transform3D(1.51447, 0, 0, 0, 1.51447, 0, 0, 0, 1.51447, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_n6r7d")
 
-[node name="Player2" parent="." instance=ExtResource("2_y0cxw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.22626, 0)
+[node name="Player" parent="." instance=ExtResource("2_rw8m4")]

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@onready var twistPivot = $TwistPivot
-@onready var pitchPivot = $TwistPivot/PitchPivot
+@onready var spring_arm_pivot = $TwistPivot
+@onready var spring_arm = $TwistPivot/SpringArm3D
 
 var mouse_sensitivity := 0.001
 var twist_input := 0.0
@@ -18,11 +18,10 @@ func _process(delta: float):
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-	twistPivot.rotate_y(twist_input)
-	pitchPivot.rotate_x(pitch_input)
+	spring_arm_pivot.rotate_y(twist_input)
+	spring_arm.rotate_x(pitch_input)
 	
-#	$TwistPivot.rotation.y = clamp($TwistPivot.rotation.y,	-0.5, 0.5)
-	pitchPivot.rotation.x = clamp(pitchPivot.rotation.x, deg_to_rad(-30), deg_to_rad(30))
+	spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-30), deg_to_rad(30))
 	twist_input = 0.0
 	pitch_input = 0.0
 	
@@ -40,7 +39,7 @@ func _physics_process(delta):
 		velocity.y = Jump_Velocity
 	
 	var input_dir = Input.get_vector("Move_Left", "Move_Right", "Move_Forward", "Move_Backward")
-	var direction = (twistPivot.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * Speed
 		velocity.z = direction.z * Speed
