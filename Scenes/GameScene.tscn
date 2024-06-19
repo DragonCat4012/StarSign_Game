@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=9 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="PackedScene" uid="uid://cb1xwmbnkdeun" path="res://Models/Player.tscn" id="2_rw8m4"]
+[ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fkjhi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,7 +22,7 @@ glow_enabled = true
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_n6r7d"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
-[node name="GameScene" type="Node2D"]
+[node name="GameScene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gbmld")
@@ -34,14 +35,19 @@ shadow_enabled = true
 transform = Transform3D(1, 0, -1.49012e-08, 1.49012e-07, 1, 1.49012e-07, 2.08616e-07, 0, 1, 1.3678, -2.02515, 1.31468)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(20.9791, 0, 0, 0, 20.9791, 0, 0, 0, 20.9791, 0, -6, 0)
+transform = Transform3D(20.9791, 0, 0, 0, 20.9791, 0, 0, 0, 20.9791, 0, -0.800235, 0)
 mesh = SubResource("PlaneMesh_in0bf")
 
 [node name="Floor" type="StaticBody3D" parent="MeshInstance3D"]
-transform = Transform3D(0.66195, 0, 0, 0, 0.66195, 0, 0, 0, 0.66195, 0, 0, 0)
+transform = Transform3D(0.66195, 0, 0, 0, 0.66195, 0, 0, 0, 0.66195, 0, 0.000853974, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Floor"]
-transform = Transform3D(1.51447, 0, 0, 0, 1.51447, 0, 0, 0, 1.51447, 0, 0, 0)
+transform = Transform3D(1.51447, 0, 0, 0, 1.51447, 0, 0, 0, 1.51447, 0, -0.00766056, 0)
 shape = SubResource("ConcavePolygonShape3D_n6r7d")
 
 [node name="Player" parent="." instance=ExtResource("2_rw8m4")]
+
+[node name="Stars" type="Node3D" parent="."]
+
+[node name="Star" parent="Stars" instance=ExtResource("3_p4imb")]
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, 1.75387, 0.156052, 0)

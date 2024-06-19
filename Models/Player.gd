@@ -11,7 +11,7 @@ var twist_input := 0.0
 var pitch_input := 0.0
 
 # Jumping
-const SPEED = 15.0
+const SPEED = 8.0
 
 const Jump_Velocity = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
