@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=10 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="PackedScene" uid="uid://cb1xwmbnkdeun" path="res://Models/Player.tscn" id="2_rw8m4"]
 [ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
+[ext_resource type="Script" path="res://Scenes/StarCounter.gd" id="4_fhyvq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fkjhi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -51,3 +52,23 @@ shape = SubResource("ConcavePolygonShape3D_n6r7d")
 
 [node name="Star" parent="Stars" instance=ExtResource("3_p4imb")]
 transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, 1.75387, 0.156052, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 31.0
+offset_top = 22.0
+offset_right = 195.0
+offset_bottom = 103.0
+
+[node name="StarCounter" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.351205, 0.260803, 0.589425, 1)
+theme_override_font_sizes/font_size = 31
+text = "adadad"
+script = ExtResource("4_fhyvq")
+
+[connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
+[connection signal="starCollected" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected"]

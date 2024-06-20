@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://o5es8qrx4r3d"]
+[gd_scene load_steps=6 format=3 uid="uid://o5es8qrx4r3d"]
+
+[ext_resource type="Script" path="res://Models/star.gd" id="1_jc1il"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a46c"]
 resource_name = "Material"
@@ -43,6 +45,7 @@ shadow_mesh = SubResource("ArrayMesh_bvuc1")
 
 [node name="Star" type="Area3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_jc1il")
 
 [node name="starMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.189193, 0, 0, 0, 1, 0, 0, 0)
@@ -52,3 +55,8 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2.19246, 0, 0, 0, 2.19246, 0, 0, 0, 2.19246, 0, 0, 0)
 shape = SubResource("SphereShape3D_bglyp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
