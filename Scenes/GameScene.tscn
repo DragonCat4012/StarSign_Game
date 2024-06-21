@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=14 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
 [ext_resource type="PackedScene" uid="uid://cb1xwmbnkdeun" path="res://Models/Player.tscn" id="2_rw8m4"]
 [ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
 [ext_resource type="Script" path="res://Scenes/StarCounter.gd" id="4_fhyvq"]
+[ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="6_gvhef"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fkjhi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -123,15 +124,29 @@ shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="InventoryPanel" type="Panel" parent="."]
 visible = false
+self_modulate = Color(0, 0, 0, 0)
 offset_left = 1197.0
 offset_right = 1921.0
 offset_bottom = 1080.0
 
+[node name="TextureRect" type="TextureRect" parent="InventoryPanel"]
+layout_mode = 0
+offset_left = -22.0
+offset_right = 1668.0
+offset_bottom = 1079.0
+texture = ExtResource("6_gvhef")
+expand_mode = 3
+stretch_mode = 4
+
 [node name="Label" type="Label" parent="InventoryPanel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Aloha!"
+offset_left = 20.0
+offset_top = 44.0
+offset_right = 685.0
+offset_bottom = 102.0
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected"]
