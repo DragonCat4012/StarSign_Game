@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=13 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -23,6 +23,10 @@ glow_enabled = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_n6r7d"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sfwq1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fk3pu"]
 
 [node name="GameScene" type="Node3D"]
 script = ExtResource("1_mm86k")
@@ -107,6 +111,15 @@ offset_top = 19.0
 offset_right = 680.0
 offset_bottom = 75.0
 text = "Exit"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.99633, 0, 0, 0, 23.0289, 20.334, 0.439683, 0)
+mesh = SubResource("BoxMesh_sfwq1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_fk3pu")
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected"]

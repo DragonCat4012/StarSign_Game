@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://byyoklspddq7f"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/MainMenu.gd" id="1_8ymx2"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_8ymx2")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1920.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 60
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 440.0
+offset_top = 493.0
+offset_right = 1523.0
+offset_bottom = 997.0
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Exit"
