@@ -24,14 +24,16 @@ func updateLabel():
 func _input(event):
 	if event.is_action_pressed("UI_Pause"):
 		togglePause()
-
+		
+	if event.is_action_pressed("UI_Inv"):
+		toggleInventory()
+		
 func _on_unpause_button_pressed():
 	print("Toggle Pause")
 	togglePause()
 
 func togglePause():
 	get_tree().paused = not get_tree().paused
-	isInvShown = !get_tree().paused
 	if get_tree().paused:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		$"../../PausePopUp".show()
@@ -40,6 +42,18 @@ func togglePause():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		$"../../PausePopUp".hide()
 		#emit_signal("unpauseGame")
+		
+func toggleInventory():
+	get_tree().paused = not get_tree().paused
+	isInvShown = !get_tree().paused
+	if get_tree().paused:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		$"../../InventoryPanel".show()
+		#emit_signal("pauseGame")
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		$"../../InventoryPanel".hide()
+		#emit_signal("unpauseGame")	
 		
 func _button_pressed():
 	print("Button Exit pressed")

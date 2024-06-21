@@ -121,6 +121,18 @@ mesh = SubResource("BoxMesh_sfwq1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
 shape = SubResource("BoxShape3D_fk3pu")
 
+[node name="InventoryPanel" type="Panel" parent="."]
+visible = false
+offset_left = 1197.0
+offset_right = 1921.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="InventoryPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Aloha!"
+
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected"]
 [connection signal="pressed" from="PausePopUp/Unpause" to="Control/StarCounter" method="_on_unpause_button_pressed"]
