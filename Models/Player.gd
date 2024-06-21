@@ -21,11 +21,8 @@ const LERP_VAL = 0.15
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	
 func _process(delta: float):
-	if Input.is_action_just_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
 	spring_arm_pivot.rotate_y(twist_input)
 	spring_arm.rotate_x(pitch_input)
 	

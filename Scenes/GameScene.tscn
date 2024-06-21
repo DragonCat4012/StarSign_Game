@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=11 format=3 uid="uid://dtgdy77r2dce7"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
+[ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
+[ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
 [ext_resource type="PackedScene" uid="uid://cb1xwmbnkdeun" path="res://Models/Player.tscn" id="2_rw8m4"]
 [ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
 [ext_resource type="Script" path="res://Scenes/StarCounter.gd" id="4_fhyvq"]
@@ -24,6 +25,7 @@ glow_enabled = true
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [node name="GameScene" type="Node3D"]
+script = ExtResource("1_mm86k")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gbmld")
@@ -54,6 +56,7 @@ shape = SubResource("ConcavePolygonShape3D_n6r7d")
 transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, 1.75387, 0.156052, 0)
 
 [node name="Control" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_left = 31.0
@@ -70,5 +73,41 @@ theme_override_font_sizes/font_size = 31
 text = "adadad"
 script = ExtResource("4_fhyvq")
 
+[node name="PausePopUp" type="Panel" parent="."]
+visible = false
+offset_left = 610.0
+offset_top = 444.0
+offset_right = 1311.0
+offset_bottom = 738.0
+
+[node name="Label" type="Label" parent="PausePopUp"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 20.0
+offset_right = 586.0
+offset_bottom = 71.0
+text = "Game paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unpause" type="Button" parent="PausePopUp"]
+process_mode = 2
+layout_mode = 0
+offset_left = 234.0
+offset_top = 212.0
+offset_right = 466.0
+offset_bottom = 261.0
+text = "Resume"
+
+[node name="ExitButton" type="Button" parent="PausePopUp"]
+process_mode = 2
+layout_mode = 0
+offset_left = 606.0
+offset_top = 19.0
+offset_right = 680.0
+offset_bottom = 75.0
+text = "Exit"
+
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected"]
+[connection signal="pressed" from="PausePopUp/Unpause" to="Control/StarCounter" method="_on_unpause_button_pressed"]
