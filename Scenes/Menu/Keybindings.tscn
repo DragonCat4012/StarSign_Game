@@ -12,64 +12,69 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-offset_left = 2.0
+offset_left = 145.0
 offset_top = 155.0
-offset_right = 1918.0
+offset_right = 1869.0
 offset_bottom = 1076.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-custom_minimum_size = Vector2(1920, 1080)
+custom_minimum_size = Vector2(1600, 1080)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "a"
+text = "w,a,s,d"
 
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "3333333"
+text = "Moving"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "a"
+text = "Space"
 
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "3333333"
+text = "Jumping"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-text = "a"
+text = "ESC"
 
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-text = "3333333"
+text = "Pause/Menu"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
-text = "a"
+text = "TAB"
 
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
 layout_mode = 2
-text = "3333333"
+text = "Inventory"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -82,6 +87,7 @@ layout_mode = 2
 text = "3333333"
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -94,6 +100,7 @@ layout_mode = 2
 text = "3333333"
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/separation = 20
 
@@ -102,17 +109,5 @@ layout_mode = 2
 text = "a"
 
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
-layout_mode = 2
-text = "3333333"
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
-layout_mode = 2
-text = "a"
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer8"]
 layout_mode = 2
 text = "3333333"
