@@ -60,11 +60,13 @@ func _physics_process(delta):
 		
 		#if velocity.y < 0:
 		#	$AnimationPlayer.play("idle2_loop")
-
+	
 	if not isJumping:
+		$AnimationPlayer.speed_scale = 1
 		animation_tree.set("parameters/BlendSpace1D/blend_position", velocity.length()/SPEED)
 	else:
-		$AnimationPlayer.play("idle2_loop")
+		$AnimationPlayer.speed_scale = 1.5
+		$AnimationPlayer.play("jump")
 		animation_tree.set("parameters/BlendSpace1D/blend_position", -1)
 		
 		#animation_tree.set("parameters/BlendSpace1D/blend_position", velocity.length()/SPEED)

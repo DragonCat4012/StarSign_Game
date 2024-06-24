@@ -1,5 +1,21 @@
 [gd_scene load_steps=2 format=3 uid="uid://caya86npg61i7"]
 
-[ext_resource type="PackedScene" uid="uid://not4hfp7n0ys" path="res://Models/Porcelain/Porcelain.glb" id="1_dtq2y"]
+[ext_resource type="PackedScene" uid="uid://not4hfp7n0ys" path="res://Models/Porcelain/Porcelain.glb" id="1_3a8av"]
 
-[node name="Porcelain" instance=ExtResource("1_dtq2y")]
+[node name="Porcelain" instance=ExtResource("1_3a8av")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(-6.72224e-15, 0.958512, -0.0798942)
+bones/0/rotation = Quaternion(0.16192, 1.21257e-07, 1.98964e-08, 0.986804)
+bones/1/rotation = Quaternion(-0.21018, -1.49141e-07, -3.5838e-08, 0.977663)
+bones/3/rotation = Quaternion(-0.0461891, 3.14454e-08, 0.00190317, 0.998931)
+bones/4/rotation = Quaternion(-0.00595414, -0.142471, 0.98935, -0.0292074)
+bones/5/rotation = Quaternion(0.010123, 0.0053203, 0.0923472, 0.995661)
+bones/8/rotation = Quaternion(0.00595423, -0.142471, 0.98935, 0.0292074)
+bones/9/rotation = Quaternion(0.0101229, -0.0053204, -0.0923472, 0.995661)
+bones/12/rotation = Quaternion(0.000322267, 0.222951, 0.974827, -0.00228186)
+bones/13/rotation = Quaternion(-0.0860769, 8.40146e-06, -8.27601e-05, 0.996289)
+bones/14/rotation = Quaternion(0.560364, -0.0163034, -0.0294354, 0.827563)
+bones/15/rotation = Quaternion(-0.000322624, 0.22295, 0.974827, 0.0022819)
+bones/16/rotation = Quaternion(-0.0860753, -8.52267e-06, 8.27452e-05, 0.996289)
+bones/17/rotation = Quaternion(0.560363, 0.0163035, 0.0294355, 0.827563)
