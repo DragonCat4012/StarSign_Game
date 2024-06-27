@@ -28,7 +28,7 @@ func _ready():
 
 func _on_button_pressed(num):
 	selectedSign = num
-	pageNameLabel.text = str(num)
+	pageNameLabel.text = signRessource.get_starsign_name(num)
 	starSignStarCountLabel.text = "0 / " + str(signRessource.get_stars(num).size())
 	queue_redraw()
 

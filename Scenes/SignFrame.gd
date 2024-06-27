@@ -33,7 +33,9 @@ func _draw(): # frameSize = (574, 422)
 		draw_connection(starData[con], starData[connectionsData[con]], isActive)
 		
 func _translateCoordinates(coordinates: Vector2):
-	return Vector2((coordinates.x * 100)/size.x, (coordinates.y*100)/size.y)
+	var new_x = coordinates.x if coordinates.x < size.x else (coordinates.x * 100)/size.x
+	var new_y = coordinates.y if coordinates.y < size.y else (coordinates.y * 100)/size.y
+	return Vector2(new_x, new_y)
 
 func _create_small_star(base: Vector2, color: Color):
 	_draw_polygon_star(base, color, 10, 3)
