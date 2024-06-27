@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=17 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/StarCounter.gd" id="4_fhyvq"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="6_gvhef"]
 [ext_resource type="Script" path="res://Scenes/InventoryPanel.gd" id="6_x4qck"]
+[ext_resource type="Script" path="res://Scenes/SignFrame.gd" id="9_jjh24"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fkjhi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -29,6 +30,23 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="BoxMesh" id="BoxMesh_sfwq1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fk3pu"]
+
+[sub_resource type="GDScript" id="GDScript_d4vn4"]
+script/source = "extends TextureRect
+var data = {}# { 0: Vector2(500, 500), 1: Vector2(600,600), 5: Vector2(700,700), 9: Vector2(800,800) }
+
+func drawStars():
+	queue_redraw()
+	
+func _draw():
+	
+	draw_line(Vector2(0,0), Vector2(1000, 1000),Color.RED)
+	draw_line(Vector2(0,0), Vector2(2000, 2000),Color.RED)
+	
+
+	for star in data:
+		draw_circle(data[star], 20, Color.REBECCA_PURPLE)
+"
 
 [node name="GameScene" type="Node3D"]
 script = ExtResource("1_mm86k")
@@ -134,7 +152,6 @@ mesh = SubResource("BoxMesh_sfwq1")
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="InventoryPanel" type="Panel" parent="."]
-visible = false
 self_modulate = Color(0, 0, 0, 0)
 offset_left = 1197.0
 offset_right = 1921.0
@@ -149,6 +166,7 @@ offset_bottom = 1079.0
 texture = ExtResource("6_gvhef")
 expand_mode = 3
 stretch_mode = 4
+script = SubResource("GDScript_d4vn4")
 
 [node name="Label" type="Label" parent="InventoryPanel"]
 layout_mode = 0
@@ -250,6 +268,15 @@ offset_top = 99.0
 offset_right = 445.0
 offset_bottom = 157.0
 text = "StarSgin:"
+
+[node name="SignFrame" type="ColorRect" parent="InventoryPanel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 138.0
+offset_right = 684.0
+offset_bottom = 560.0
+color = Color(1, 1, 1, 0)
+script = ExtResource("9_jjh24")
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected"]

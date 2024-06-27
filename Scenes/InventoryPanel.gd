@@ -16,12 +16,23 @@ extends Panel
 @onready var pageNameLabel := $PageName
 @onready var signRessource = preload("res://Ressources/Inventory/starSignMapping.tres")
 @onready var starSignStarCountLabel := $StarCountForSign
+@onready var backgroundTexture := $SignFrame
+
 var star_dict = {}
+var selectedSign = 0
 
 func _ready():
+	_on_button_pressed(0)
 	for i in range(buttons.size()):
 		buttons[i].pressed.connect(self._on_button_pressed.bind(i))
 
 func _on_button_pressed(num):
+	selectedSign = num
 	pageNameLabel.text = str(num)
-	starSignStarCountLabel.text = "0 / " + str(signRessource.getStars(num).size())
+	starSignStarCountLabel.text = "0 / " + str(signRessource.get_stars(num).size())
+	queue_redraw()
+
+func _draw():
+	backgroundTexture.data = signRessource.get_drawing_data(selectedSign)
+	backgroundTexture.inv = signRessource.get_star_types_in_inventory()
+	backgroundTexture.queue_redraw()

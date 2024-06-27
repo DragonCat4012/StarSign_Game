@@ -1,19 +1,42 @@
 extends Resource
 class_name InventoryData
 
-@export var mapping = {
+var mapping = {
 	0: [0,1,5,9]
 }
 
+var allStars: Array[Star] = [
+	load("res://Ressources/Stars/star0.tres"),
+	load("res://Ressources/Stars/star1.tres"),
+	load("res://Ressources/Stars/star5.tres"),
+	load("res://Ressources/Stars/star9.tres")
+]
+
 var starPositions = {
 	0: { "stars": { 0: Vector2(500, 500), 1: Vector2(600,600), 5: Vector2(700,700), 9: Vector2(800,800) },
-	"connections": {} }
+	"connections": {0:5} }
 }
 
-# starsign: [ star:position ]
-
-func getStars(num: int) -> Array[int]:
+func get_stars(num: int) -> Array[int]:
 	var arr: Array[int] = []
 	if num in mapping.keys():
 		arr.assign(mapping[num])
 	return arr
+
+func get_drawing_data(num: int):
+	if num not in starPositions.keys():
+		print("[Error] Starsign not found: ", num)
+		return {}
+	return starPositions[num]
+	
+func get_inventory() -> Array[Star]: # TODO not used currently
+	return allStars.filter(func(element): return element.collected)
+
+func get_star_types_in_inventory(): # id: type
+	# Maps ids to types for drawing them, negtaive numbers if not collected
+	var dict = {}
+	for star in allStars:
+		dict[star.starId] = star.starType
+		if not star.collected:
+			dict[star.starId] = -star.starType
+	return dict
