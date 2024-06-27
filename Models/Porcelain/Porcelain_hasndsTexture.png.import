@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7w3nikapkumr"
-path.s3tc="res://.godot/imported/Porcelain_UpperBody.jpg-8aa3d1e8cc8214c5dd8a998047dd2afe.s3tc.ctex"
+uid="uid://6dun3o1rkua"
+path.s3tc="res://.godot/imported/Porcelain_hasndsTexture.png-942e42ce92f033680a5da43474551ac0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6d12ca4b5e0fc56313a16d431030c99e"
+"md5": "8dfd043c4ccf540e119fe509ddcd851e"
 }
 
 [deps]
 
-source_file="res://Models/Porcelain/Porcelain_UpperBody.jpg"
-dest_files=["res://.godot/imported/Porcelain_UpperBody.jpg-8aa3d1e8cc8214c5dd8a998047dd2afe.s3tc.ctex"]
+source_file="res://Models/Porcelain/Porcelain_hasndsTexture.png"
+dest_files=["res://.godot/imported/Porcelain_hasndsTexture.png-942e42ce92f033680a5da43474551ac0.s3tc.ctex"]
 
 [params]
 
