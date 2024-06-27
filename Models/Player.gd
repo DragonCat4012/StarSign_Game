@@ -37,7 +37,7 @@ func _unhandled_input(event: InputEvent):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			twist_input = - event.relative.x * mouse_sensitivity
 			pitch_input = - event.relative.y * mouse_sensitivity
-	
+
 func _physics_process(delta):
 	isJumping = !is_on_floor()
 	if not is_on_floor():
@@ -45,6 +45,10 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		jump_count = 0
+		if Input.is_action_just_pressed("Attack1"):
+			$AnimationPlayer.play("attack_base")
+		elif Input.is_action_just_pressed("Attack2"):
+			$AnimationPlayer.play("attack_forward")
 	
 	if Input.is_action_just_pressed("Move_Jump") and jump_count < 2:
 		jump_count += 1
