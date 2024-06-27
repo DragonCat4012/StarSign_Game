@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://cwdqpfbgfskd8"]
+[gd_scene load_steps=2 format=3 uid="uid://cwdqpfbgfskd8"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/Keybindings.gd" id="1_yek8m"]
 
 [node name="Keybindings" type="Node2D"]
+script = ExtResource("1_yek8m")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 537.0
@@ -111,3 +114,12 @@ text = "a"
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
 layout_mode = 2
 text = "3333333"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 33.0
+offset_top = 31.0
+offset_right = 400.0
+offset_bottom = 102.0
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
