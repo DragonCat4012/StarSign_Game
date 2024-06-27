@@ -114,6 +114,16 @@ offset_right = 680.0
 offset_bottom = 75.0
 text = "Exit"
 
+[node name="MenuButton" type="Button" parent="PausePopUp"]
+process_mode = 2
+layout_mode = 0
+offset_left = 32.0
+offset_top = 20.0
+offset_right = 106.0
+offset_bottom = 76.0
+text = "Menü
+"
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.99633, 0, 0, 0, 23.0289, 20.334, 0.439683, 0)
 mesh = SubResource("BoxMesh_sfwq1")
@@ -124,6 +134,7 @@ mesh = SubResource("BoxMesh_sfwq1")
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="InventoryPanel" type="Panel" parent="."]
+visible = false
 self_modulate = Color(0, 0, 0, 0)
 offset_left = 1197.0
 offset_right = 1921.0
@@ -223,6 +234,7 @@ layout_mode = 2
 text = "♓"
 
 [node name="StarCountForSign" type="Label" parent="InventoryPanel"]
+layout_mode = 0
 offset_left = 625.0
 offset_top = 968.0
 offset_right = 688.0
@@ -242,3 +254,4 @@ text = "StarSgin:"
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected"]
 [connection signal="pressed" from="PausePopUp/Unpause" to="Control/StarCounter" method="_on_unpause_button_pressed"]
+[connection signal="pressed" from="PausePopUp/MenuButton" to="Control/StarCounter" method="_on_menu_button_pressed"]
