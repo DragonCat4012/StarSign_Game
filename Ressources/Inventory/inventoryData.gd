@@ -32,27 +32,40 @@ func get_star_types_in_inventory(): # id: type
 	return dict
 
 func _update_collected_stars():
+	var starIDS: Array[int] = []
+	starIDS.assign(SaveFileJSON["collectedStarIds"])
+	
 	for star in allStars:
-		if star.starId not in SaveFileJSON["collectedStarIds"]:
+		if star.starId not in starIDS:
 			star.collected = false
 		else:
 			star.collected = true
 
 func add_collected_star(id: int):
-	var arr = SaveFileJSON["collectedStarIds"]
-	if id not in arr:
+	var arr: Array[int] = []
+	arr.assign(SaveFileJSON["collectedStarIds"])
+	
+	if not id in arr:
 		arr.append(id)
+		
 	SaveFileJSON["collectedStarIds"] = arr
 	_save_data()
+	
+	# Update collected Stars
+	for star in allStars:
+		if star.starId == id:
+			star.collected = true
 	
 # Load and Store Data
 func _load_data():
 	if FileAccess.file_exists((File_name)):
 		var file = FileAccess.open(File_name, FileAccess.READ)
 		var dict = JSON.parse_string(file.get_as_text())
-		print("Load File Save: ", dict)
+		
 		if not dict:
 			return
+		
+		print("Load File Save: ", dict)
 		
 		for key in SaveFileJSON.keys():
 			if key in dict.keys():
