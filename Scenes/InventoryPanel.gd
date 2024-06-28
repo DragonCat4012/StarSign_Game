@@ -36,11 +36,11 @@ func _draw():
 	
 	if not data:
 		pageNameLabel.text = "???"
-		starSignStarCountLabel.text = "0 / 0"
+		starSignStarCountLabel.text = "0 Stars"
 		backgroundTexture.queue_redraw()
 		return
 		
 	pageNameLabel.text = data.starSignName
-	starSignStarCountLabel.text = "0 / " + str(data.get_star_count())
+	starSignStarCountLabel.text = str(data.get_star_count()) + " Stars"
 	backgroundTexture.inv = signRessource.get_star_types_in_inventory()
 	backgroundTexture.queue_redraw()

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 132.29166 132.29167"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="invStar_2_on.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.89263468"
+     inkscape:cx="175.88382"
+     inkscape:cy="349.52709"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path401"
+       style="fill:#ffffff;stroke:none;stroke-width:0.408127;fill-opacity:1"
+       d="m 32.901019,-29.641326 c 0,0 -3.048122,39.826645 -13.858326,50.636849 -10.8102041,10.810204 -48.387898,11.609375 -48.387898,11.609375 0,0 37.5776946,6.700887 48.387898,17.511091 10.810204,10.810204 13.858326,44.735132 13.858326,44.735132 0,0 2.485481,-33.64391 13.295685,-44.454114 10.810204,-10.810204 48.950538,-17.792109 48.950538,-17.792109 0,0 -38.140334,-0.799171 -48.950538,-11.609375 C 35.3865,10.185319 32.901019,-29.641326 32.901019,-29.641326 Z"
+       transform="matrix(1.0547613,0,0,1.0547613,31.840504,31.856735)"
+       sodipodi:nodetypes="cscscscsc" />
+  </g>
+</svg>

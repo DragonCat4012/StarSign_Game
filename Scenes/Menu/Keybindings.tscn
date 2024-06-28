@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwdqpfbgfskd8"]
+[gd_scene load_steps=3 format=3 uid="uid://cwdqpfbgfskd8"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/Keybindings.gd" id="1_yek8m"]
+[ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="2_l3pft"]
 
 [node name="Keybindings" type="Node2D"]
 script = ExtResource("1_yek8m")
@@ -10,6 +11,7 @@ offset_left = 537.0
 offset_top = 4.0
 offset_right = 1370.0
 offset_bottom = 130.0
+theme_override_font_sizes/font_size = 40
 text = "Keybindings"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -19,6 +21,7 @@ offset_left = 145.0
 offset_top = 155.0
 offset_right = 1869.0
 offset_bottom = 1076.0
+theme = ExtResource("2_l3pft")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 custom_minimum_size = Vector2(1600, 1080)
@@ -103,24 +106,12 @@ text = "X"
 layout_mode = 2
 text = "Attack 2"
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
-layout_mode = 2
-text = "a"
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
-layout_mode = 2
-text = "3333333"
-
 [node name="BackButton" type="Button" parent="."]
 offset_left = 33.0
 offset_top = 31.0
 offset_right = 400.0
 offset_bottom = 102.0
+theme = ExtResource("2_l3pft")
 text = "Back"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
