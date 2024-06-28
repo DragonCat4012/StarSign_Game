@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://byyoklspddq7f"]
+[gd_scene load_steps=4 format=3 uid="uid://byyoklspddq7f"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/MainMenu.gd" id="1_8ymx2"]
+[ext_resource type="Theme" uid="uid://bwa0rxrtswmu7" path="res://Ressources/Themes/menu_title_theme.tres" id="2_7e3h4"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="2_pu347"]
 
 [node name="MainMenu" type="Node2D"]
@@ -10,6 +11,7 @@ script = ExtResource("1_8ymx2")
 offset_top = 56.0
 offset_right = 1920.0
 offset_bottom = 256.0
+theme = ExtResource("2_7e3h4")
 theme_override_font_sizes/font_size = 60
 text = "Main Menu"
 horizontal_alignment = 1

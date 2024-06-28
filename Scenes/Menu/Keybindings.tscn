@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwdqpfbgfskd8"]
+[gd_scene load_steps=6 format=3 uid="uid://cwdqpfbgfskd8"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/Keybindings.gd" id="1_yek8m"]
+[ext_resource type="Theme" uid="uid://bwa0rxrtswmu7" path="res://Ressources/Themes/menu_title_theme.tres" id="2_komtm"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="2_l3pft"]
 [ext_resource type="Theme" uid="uid://ciyws7sva1umf" path="res://Ressources/Themes/keybindings_key_theme.tres" id="3_40kuo"]
 [ext_resource type="Theme" uid="uid://bw75eego24yr1" path="res://Ressources/Themes/keybindings_binding_theme.tres" id="4_xfmug"]
@@ -13,7 +14,7 @@ offset_left = 537.0
 offset_top = 4.0
 offset_right = 1370.0
 offset_bottom = 130.0
-theme_override_font_sizes/font_size = 40
+theme = ExtResource("2_komtm")
 text = "Keybindings"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -30,114 +31,90 @@ custom_minimum_size = Vector2(1600, 1080)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_constants/separation = 20
+size_flags_vertical = 2
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_40kuo")
-text = "w,a,s,d"
+size_flags_horizontal = 3
+theme = ExtResource("4_xfmug")
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("4_xfmug")
 text = "Moving"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-text = "Space"
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("4_xfmug")
 text = "Jumping"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-text = "ESC"
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("4_xfmug")
 text = "Pause/Menu"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-text = "TAB"
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer4"]
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("4_xfmug")
 text = "Inventory"
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme = ExtResource("4_xfmug")
+text = "Attack 1"
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
+[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_xfmug")
+text = "Attack 2"
+
+[node name="Label8" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_xfmug")
+text = "Hide/Show Weapon"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_xfmug")
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_40kuo")
+text = "w,a,s,d"
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_40kuo")
+text = "Space"
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_40kuo")
+text = "ESC"
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_40kuo")
+text = "TAB"
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_40kuo")
 text = "Y, Z
 "
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer5"]
-layout_mode = 2
-theme = ExtResource("4_xfmug")
-text = "Attack 1"
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_40kuo")
 text = "X"
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer6"]
-layout_mode = 2
-theme = ExtResource("4_xfmug")
-text = "Attack 2"
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
+[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_40kuo")
 text = "H
 "
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer7"]
-layout_mode = 2
-theme = ExtResource("4_xfmug")
-text = "Hide/Show Weapon"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 33.0

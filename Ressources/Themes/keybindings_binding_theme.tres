@@ -6,3 +6,4 @@ Label/colors/font_outline_color = Color(0.366425, 0.110509, 0.6169, 1)
 Label/colors/font_shadow_color = Color(0.858824, 0.733333, 0.960784, 0.909804)
 Label/constants/outline_size = 3
 Label/font_sizes/font_size = 30
+VBoxContainer/constants/separation = 70
