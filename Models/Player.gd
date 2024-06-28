@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
-@onready var armature = $Armature
-@onready var spring_arm_pivot = $TwistPivot
-@onready var spring_arm = $TwistPivot/SpringArm3D
-@onready var animation_tree = $AnimationTree
-@onready var jumpParticleEmitter = $GPUParticles3D
+@onready var armature := $Armature
+@onready var spring_arm_pivot := $TwistPivot
+@onready var spring_arm := $TwistPivot/SpringArm3D
+@onready var animation_tree := $AnimationTree
+@onready var jumpParticleEmitter := $GPUParticles3D
 
 # Turning Camera
 var mouse_sensitivity := 0.001
@@ -22,6 +22,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Turning
 const LERP_VAL = 0.15
+
+# Weapons
+@onready var weaponNode := $Armature/Skeleton3D/HandAttachment/HandContainer
 
 func _ready():
 	add_child(timer)
@@ -91,3 +94,10 @@ func _jump_particles():
 func _on_timer_timeout() -> void:
 	if jumpParticleEmitter.emitting:
 		jumpParticleEmitter.emitting = false
+
+# weapon Switching
+func _on_game_scene_activate_sword():
+	weaponNode.visible = true
+
+func _on_game_scene_hide_weapon():
+	weaponNode.visible = false

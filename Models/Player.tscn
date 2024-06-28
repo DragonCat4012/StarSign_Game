@@ -1034,14 +1034,14 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.999993, -0.00380228, -0.000175749, 0.00380227, 0.995726, 0.0922794, -0.000175874, -0.0922794, 0.995733, -5.32907e-15, 0.0890516, -7.45056e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(-5.32907e-15, 0.0890516, -7.45056e-09)
-bones/3/rotation = Quaternion(-0.0460447, 0.0034789, 0.0771341, 0.995951)
+bones/3/rotation = Quaternion(-0.0459789, -0.0045799, -0.0971561, 0.994196)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "UpperArm.L"
 bones/4/parent = 1
 bones/4/rest = Transform3D(-0.998223, 0.0594893, -0.003459, -0.0560962, -0.957698, -0.282256, -0.0201039, -0.28156, 0.959334, 0.16148, 0.251413, -0.0171359)
 bones/4/enabled = true
 bones/4/position = Vector3(0.16148, 0.251413, -0.0171359)
-bones/4/rotation = Quaternion(-0.0112713, -0.142307, 0.98819, -0.0556973)
+bones/4/rotation = Quaternion(-0.015484, -0.142102, 0.986756, -0.0766852)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "LowerArm.L"
 bones/5/parent = 4
@@ -1069,7 +1069,7 @@ bones/8/parent = 1
 bones/8/rest = Transform3D(-0.998223, -0.0594893, 0.003459, 0.0560962, -0.957698, -0.282256, 0.0201039, -0.28156, 0.959334, -0.16148, 0.251413, -0.0171359)
 bones/8/enabled = true
 bones/8/position = Vector3(-0.16148, 0.251413, -0.0171359)
-bones/8/rotation = Quaternion(0.0108613, -0.142323, 0.988305, 0.0536548)
+bones/8/rotation = Quaternion(0.0146245, -0.142149, 0.987085, 0.0724029)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "LowerArm.R"
 bones/9/parent = 8
@@ -1097,21 +1097,21 @@ bones/12/parent = 0
 bones/12/rest = Transform3D(-0.99999, 0.00459254, -0.000388995, -0.00430506, -0.900575, 0.434681, 0.00164597, 0.434678, 0.900585, 0.120751, 0.0169393, -0.00985621)
 bones/12/enabled = true
 bones/12/position = Vector3(0.120751, 0.0169393, -0.00985621)
-bones/12/rotation = Quaternion(-0.000168024, 0.323306, 0.946291, -0.00257193)
+bones/12/rotation = Quaternion(-0.000435657, 0.350266, 0.936646, -0.00271561)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "LowerLeg.L"
 bones/13/parent = 12
 bones/13/rest = Transform3D(1, 0.000163417, 3.11526e-05, -0.000166339, 0.98518, 0.171521, -2.66139e-06, -0.171521, 0.98518, 1.67483e-08, 0.463759, 6.74481e-09)
 bones/13/enabled = true
 bones/13/position = Vector3(1.67483e-08, 0.463759, 6.74481e-09)
-bones/13/rotation = Quaternion(-0.352507, 7.96979e-06, -0.000338854, 0.935809)
+bones/13/rotation = Quaternion(-0.455443, 7.58215e-06, -0.000437803, 0.890265)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "Foot.L"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.997736, 0.0304477, -0.0599733, -0.066991, 0.370249, -0.926514, -0.00600512, 0.928433, 0.37145, -1.10522e-08, 0.444356, -1.99361e-09)
 bones/14/enabled = true
 bones/14/position = Vector3(-1.10522e-08, 0.444356, -1.99361e-09)
-bones/14/rotation = Quaternion(0.543292, -0.00454021, -0.0338642, 0.838849)
+bones/14/rotation = Quaternion(0.486181, 0.00371051, -0.0345963, 0.873165)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "UpperLeg.R"
 bones/15/parent = 0
@@ -1176,14 +1176,16 @@ mesh = SubResource("ArrayMesh_vlyco")
 skin = SubResource("Skin_7t78j")
 
 [node name="HandAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.938041, 0.346526, 5.13718e-06, -0.346526, -0.93804, 6.70552e-07, 5.0501e-06, -1.14739e-06, 1, 0.258728, 0.919014, -0.0673402)
+transform = Transform3D(-0.922311, 0.386447, 5.12972e-06, -0.386447, -0.922311, 2.23517e-06, 5.5735e-06, 2.98023e-08, 1, 0.280413, 0.923653, -0.0673395)
 bone_name = "Hand.L"
 bone_idx = 6
 
-[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/HandAttachment"]
+[node name="HandContainer" type="Node3D" parent="Armature/Skeleton3D/HandAttachment"]
+transform = Transform3D(1, -2.2683e-12, 4.54747e-13, 2.98001e-08, 1, 5.68434e-14, 0, -2.84217e-14, 1, -0.00252992, 0.000788748, -0.000438608)
+visible = false
 
-[node name="sword" parent="Armature/Skeleton3D/HandAttachment/Node3D" instance=ExtResource("13_abq5a")]
-transform = Transform3D(-0.34405, -0.0682698, -0.085169, -0.0471017, -0.16121, 0.319496, -0.0984679, 0.31565, 0.144753, -0.0338954, -0.0433756, 0.283037)
+[node name="sword" parent="Armature/Skeleton3D/HandAttachment/HandContainer" instance=ExtResource("13_abq5a")]
+transform = Transform3D(-0.34405, -0.0682698, -0.0851691, -0.0471017, -0.16121, 0.319496, -0.0984679, 0.31565, 0.144753, -0.0338954, -0.0433756, 0.283037)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
