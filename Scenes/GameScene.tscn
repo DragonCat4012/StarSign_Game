@@ -81,6 +81,7 @@ text = "adadad"
 script = ExtResource("4_fhyvq")
 
 [node name="FPSLabel" type="Label" parent="Control"]
+layout_mode = 0
 offset_top = 54.0
 offset_right = 151.0
 offset_bottom = 108.0
@@ -144,6 +145,7 @@ mesh = SubResource("BoxMesh_sfwq1")
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="InventoryPanel" type="Panel" parent="."]
+visible = false
 self_modulate = Color(0, 0, 0, 0)
 offset_left = 1197.0
 offset_right = 1921.0
@@ -259,7 +261,7 @@ layout_mode = 0
 offset_left = 106.0
 offset_top = 98.0
 offset_right = 684.0
-offset_bottom = 156.0
+offset_bottom = 136.0
 theme_override_colors/font_color = Color(0.817169, 0.673305, 0.997324, 1)
 text = "???
 "
@@ -269,7 +271,7 @@ vertical_alignment = 1
 [node name="SignFrame" type="ColorRect" parent="InventoryPanel"]
 layout_mode = 0
 offset_left = 110.0
-offset_top = 138.0
+offset_top = 149.0
 offset_right = 690.0
 offset_bottom = 560.0
 pivot_offset = Vector2(0, 422)
