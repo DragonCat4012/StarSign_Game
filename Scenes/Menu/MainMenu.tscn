@@ -7,8 +7,9 @@
 script = ExtResource("1_8ymx2")
 
 [node name="Label" type="Label" parent="."]
+offset_top = 56.0
 offset_right = 1920.0
-offset_bottom = 200.0
+offset_bottom = 256.0
 theme_override_font_sizes/font_size = 60
 text = "Main Menu"
 horizontal_alignment = 1
@@ -16,9 +17,9 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 440.0
-offset_top = 493.0
+offset_top = 465.0
 offset_right = 1523.0
-offset_bottom = 997.0
+offset_bottom = 969.0
 theme_override_constants/separation = 20
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]

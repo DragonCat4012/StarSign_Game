@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=20 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
 [ext_resource type="PackedScene" uid="uid://cb1xwmbnkdeun" path="res://Models/Player.tscn" id="2_rw8m4"]
+[ext_resource type="Texture2D" uid="uid://drdqhewnmiq1o" path="res://Ressources/Textures/blueprint.jpg" id="3_3mjig"]
 [ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
 [ext_resource type="Script" path="res://Scenes/StarCounter.gd" id="4_fhyvq"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="6_gvhef"]
@@ -23,6 +24,9 @@ sky = SubResource("Sky_rvsrr")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfl0u"]
+albedo_texture = ExtResource("3_3mjig")
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_in0bf"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_n6r7d"]
@@ -31,6 +35,9 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="BoxMesh" id="BoxMesh_sfwq1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fk3pu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ffsm"]
+albedo_texture = ExtResource("3_3mjig")
 
 [node name="GameScene" type="Node3D"]
 script = ExtResource("1_mm86k")
@@ -44,9 +51,11 @@ shadow_enabled = true
 
 [node name="DefaultCube" parent="DirectionalLight3D" instance=ExtResource("1_hxdoa")]
 transform = Transform3D(1, 0, -1.49012e-08, 1.49012e-07, 1, 1.49012e-07, 2.08616e-07, 0, 1, 1.3678, -2.02515, 1.31468)
+mass = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(20.9791, 0, 0, 0, 20.9791, 0, 0, 0, 20.9791, 0, -0.800235, 0)
+material_override = SubResource("StandardMaterial3D_jfl0u")
 mesh = SubResource("PlaneMesh_in0bf")
 
 [node name="Floor" type="StaticBody3D" parent="MeshInstance3D"]
@@ -140,12 +149,22 @@ text = "Menü
 "
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2.99633, 0, 0, 0, 23.0289, 20.334, 0.439683, 0)
+transform = Transform3D(1, 0, 0, 0, 5.56495, 0, 0, 0, 23.0289, 20.334, 1.78904, 0)
 mesh = SubResource("BoxMesh_sfwq1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_fk3pu")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.67243, 0, 0, 0, 2.99633, 0, 0, 0, 8.33861, -10.7161, 0.439683, 0)
+mesh = SubResource("BoxMesh_sfwq1")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="InventoryPanel" type="Panel" parent="."]
@@ -290,7 +309,7 @@ offset_left = 110.0
 offset_top = 149.0
 offset_right = 690.0
 offset_bottom = 560.0
-pivot_offset = Vector2(0, 422)
+pivot_offset = Vector2(0, 411)
 color = Color(1, 1, 1, 0)
 script = ExtResource("9_jjh24")
 
