@@ -71,11 +71,8 @@ func _physics_process(delta):
 		velocity.z = lerp(velocity.z, direction.z * SPEED, LERP_VAL)
 		armature.rotation.y = lerp_angle(armature.rotation.y, atan2(-velocity.x, -velocity.z), LERP_VAL)
 	else:
-		velocity.x = lerp(velocity.x, 0.0, LERP_VAL)#move_toward(velocity.x, 0, SPEED)
-		velocity.z = lerp(velocity.z, 0.0, LERP_VAL)#move_toward(velocity.z, 0, SPEED)
-		
-		#if velocity.y < 0:
-		#	$AnimationPlayer.play("idle2_loop")
+		velocity.x = lerp(velocity.x, 0.0, LERP_VAL)
+		velocity.z = lerp(velocity.z, 0.0, LERP_VAL)
 	
 	if not isJumping:
 		$AnimationPlayer.speed_scale = 1
@@ -84,8 +81,6 @@ func _physics_process(delta):
 		$AnimationPlayer.speed_scale = 1.5
 		$AnimationPlayer.play("jump")
 		animation_tree.set("parameters/BlendSpace1D/blend_position", -1)
-		
-		#animation_tree.set("parameters/BlendSpace1D/blend_position", velocity.length()/SPEED)
 	move_and_slide()
 
 # Jump animations

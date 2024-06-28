@@ -32,6 +32,7 @@ text = "Play"
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme = ExtResource("2_pu347")
+disabled = true
 text = "Options"
 
 [node name="KeybindingsButton" type="Button" parent="VBoxContainer"]

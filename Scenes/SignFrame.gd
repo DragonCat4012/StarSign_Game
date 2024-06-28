@@ -61,7 +61,7 @@ func _create_big_star(base: Vector2, color: Color):
 	_draw_nodes(base, color==Color.WHITE, 2)
 	#_draw_polygon_star(base, color, 20, 4)
 	
-func _draw_polygon_star(base: Vector2, color: Color, val, foo):
+func _draw_polygon_star(base: Vector2, color: Color, val, foo): # TODO: currently not used
 	var star_coordinates: Array[Vector2]= [
 	base+Vector2(0, val), 
 	base+Vector2(val/foo, val/foo), 
@@ -93,6 +93,6 @@ func _draw_nodes(positionVec: Vector2, isActice: bool, type: int):
 	add_child(node)
 
 var _textureMapping= {
-	1: { true: "res://Ressources/Stars/invStar_1_on.svg", false: "res://Ressources/Stars/invStar_1_off.svg"},
-	2: {true: "res://Ressources/Stars/invStar_2_on.svg", false: "res://Ressources/Stars/invStar_2_off.svg"}
+	1: { true: "res://Ressources/Stars/invStar_1_on.svg", false: "res://Ressources/Stars/invStar_1_off.svg" },
+	2: { true: "res://Ressources/Stars/invStar_2_on.svg", false: "res://Ressources/Stars/invStar_2_off.svg" }
 }
