@@ -28,12 +28,19 @@ func _ready():
 
 func _on_button_pressed(num):
 	selectedSign = num
-	pageNameLabel.text = signRessource.get_starsign_name(num)
-	starSignStarCountLabel.text = "0 / " + str(signRessource.get_stars(num).size())
 	queue_redraw()
 
 func _draw():
-	backgroundTexture.data = signRessource.get_drawing_data(selectedSign)
+	var data = load("res://Ressources/Stars/StarSigns/" + str(selectedSign) + ".tres")
+	backgroundTexture.starSign = data
+	
+	if not data:
+		pageNameLabel.text = "???"
+		starSignStarCountLabel.text = "0 / 0"
+		backgroundTexture.queue_redraw()
+		return
+		
+	pageNameLabel.text = data.starSignName
+	starSignStarCountLabel.text = "0 / " + str(data.get_star_count())
 	backgroundTexture.inv = signRessource.get_star_types_in_inventory()
-	backgroundTexture.descrition = "E"
 	backgroundTexture.queue_redraw()

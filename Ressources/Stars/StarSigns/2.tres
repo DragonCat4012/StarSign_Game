@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="StarSignModel" load_steps=2 format=3 uid="uid://ccn6ripcb6aue"]
+
+[ext_resource type="Script" path="res://Ressources/Stars/StarSigns/StarSignModel.gd" id="1_0cmyj"]
+
+[resource]
+script = ExtResource("1_0cmyj")
+starSignId = 2
+starSignName = "Second"
+starSignDescription = "XD aloha #2"
+starMapping = {
+"connections": {
+0: 5,
+9: 0
+},
+"stars": {
+0: Vector2(0, 100),
+1: Vector2(574, 422),
+5: Vector2(300, 100),
+9: Vector2(200, 200)
+}
+}

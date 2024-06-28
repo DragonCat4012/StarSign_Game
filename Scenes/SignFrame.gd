@@ -1,10 +1,10 @@
 extends ColorRect
 
-var data = {} # { 0: Vector2(500, 500), 1: Vector2(600,600), 5: Vector2(700,700), 9: Vector2(800,800) }
 var inv = {} # id: type
-var descrition = ""
+var starSign: StarSignModel
 
-@onready var descritionLabel = $"../DescriptionFrame/DescriptionLabel"
+@onready var descritionLabel := $"../DescriptionFrame/DescriptionLabel"
+@onready var descritionFrame := $"../DescriptionFrame"
 
 const lineWidth = 2
 const ACTIVE_STAR_COLOR := Color.WHITE
@@ -14,12 +14,19 @@ func drawStars():
 	queue_redraw()
 	
 func _draw(): # frameSize = (574, 422)
-	if not data:
+	if not starSign:
+		descritionLabel.text = ""
+		descritionFrame.visible = false
 		return
-	var starData = data["stars"]
-	var connectionsData = data["connections"]
+	
+	descritionFrame.visible = true
+	var starData = starSign.starMapping["stars"]
+	var connectionsData = starSign.starMapping["connections"]
 	
 	for con in connectionsData:
+		if not inv[connectionsData[con]] or not inv[con]:
+			print("[Error] Star not laoded in Inventory Data!: ids: ", inv[connectionsData[con]], inv[con])
+			continue 
 		var isActive = inv[con] >= 0 and inv[connectionsData[con]] >= 0
 		draw_connection(starData[con], starData[connectionsData[con]], isActive)
 		
@@ -38,7 +45,7 @@ func _draw(): # frameSize = (574, 422)
 		else: # normal
 			_create_small_star(_translateCoordinates(starData[star]), color)
 	
-	descritionLabel.text = descrition
+	descritionLabel.text = starSign.starSignDescription
 			
 func _translateCoordinates(coordinates: Vector2):
 	var new_x = coordinates.x if coordinates.x < size.x else (coordinates.x * 100)/size.x
