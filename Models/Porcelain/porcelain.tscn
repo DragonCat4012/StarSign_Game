@@ -30,3 +30,10 @@ bones/15/rotation = Quaternion(-0.000322626, 0.22295, 0.974827, 0.0022819)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/rotation = Quaternion(-0.0860752, -8.52347e-06, 8.27472e-05, 0.996289)
 bones/17/rotation = Quaternion(0.560363, 0.0163034, 0.0294354, 0.827563)
+
+[node name="HandAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="10"]
+transform = Transform3D(-0.955403, 0.295306, 5.17629e-06, -0.295306, -0.955403, 1.75834e-06, 5.50179e-06, 2.68221e-07, 1, 0.231144, 0.914499, -0.0673392)
+bone_name = "Hand.L"
+bone_idx = 6
+
+[node name="HandContainer" type="Node3D" parent="Armature/Skeleton3D/HandAttachment" index="0"]
