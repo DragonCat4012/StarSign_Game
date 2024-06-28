@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=17 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/StarCounter.gd" id="4_fhyvq"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="6_gvhef"]
 [ext_resource type="Script" path="res://Scenes/InventoryPanel.gd" id="6_x4qck"]
+[ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="8_rv5tm"]
 [ext_resource type="Script" path="res://Scenes/SignFrame.gd" id="9_jjh24"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fkjhi"]
@@ -114,6 +115,7 @@ offset_left = 234.0
 offset_top = 212.0
 offset_right = 466.0
 offset_bottom = 261.0
+theme = ExtResource("8_rv5tm")
 text = "Resume"
 
 [node name="ExitButton" type="Button" parent="PausePopUp"]
@@ -123,6 +125,7 @@ offset_left = 606.0
 offset_top = 19.0
 offset_right = 680.0
 offset_bottom = 75.0
+theme = ExtResource("8_rv5tm")
 text = "Exit"
 
 [node name="MenuButton" type="Button" parent="PausePopUp"]
@@ -132,6 +135,7 @@ offset_left = 32.0
 offset_top = 20.0
 offset_right = 106.0
 offset_bottom = 76.0
+theme = ExtResource("8_rv5tm")
 text = "Menü
 "
 
@@ -198,52 +202,64 @@ vertical_alignment = 1
 [node name="Button" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♈"
 
 [node name="Button2" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♉"
 
 [node name="Button3" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♊"
 
 [node name="Button4" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♋"
 
 [node name="Button5" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♌"
 
 [node name="Button6" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♍"
 
 [node name="Button7" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♎"
 
 [node name="Button8" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♏"
 
 [node name="Button9" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♐"
 
 [node name="Button10" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♑"
 
 [node name="Button11" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♒"
 
 [node name="Button12" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("8_rv5tm")
 text = "♓"
 
 [node name="StarCountForSign" type="Label" parent="InventoryPanel"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://byyoklspddq7f"]
+[gd_scene load_steps=3 format=3 uid="uid://byyoklspddq7f"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/MainMenu.gd" id="1_8ymx2"]
+[ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="2_pu347"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_8ymx2")
@@ -23,19 +24,23 @@ theme_override_constants/separation = 20
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+theme = ExtResource("2_pu347")
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+theme = ExtResource("2_pu347")
 text = "Options"
 
 [node name="KeybindingsButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+theme = ExtResource("2_pu347")
 text = "Keybindings"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+theme = ExtResource("2_pu347")
 text = "Exit"

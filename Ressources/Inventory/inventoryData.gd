@@ -19,6 +19,7 @@ var allStars: Array[Star] = [
 
 func _init():
 	_load_data() # updates saveedData
+	_debug_stars()
 	_update_collected_stars()
 
 func get_star_count() -> int:
@@ -96,3 +97,6 @@ func remove_duplicate_star_ids():
 		if x not in arr:
 			arr.append(x)
 	SaveFileJSON["collectedStarIds"] = arr
+
+func _debug_stars():
+	SaveFileJSON["collectedStarIds"] = [0]
