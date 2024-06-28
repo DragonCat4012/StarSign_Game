@@ -104,16 +104,16 @@ offset_bottom = 103.0
 layout_mode = 0
 offset_right = 112.0
 offset_bottom = 54.0
-theme_override_colors/font_color = Color(0.351205, 0.260803, 0.589425, 1)
+theme_override_colors/font_color = Color(0.523113, 0.431394, 0.803886, 1)
 theme_override_font_sizes/font_size = 31
 text = "adadad"
 script = ExtResource("4_fhyvq")
 
 [node name="FPSLabel" type="Label" parent="Control"]
 layout_mode = 0
-offset_top = 54.0
+offset_top = 40.0
 offset_right = 151.0
-offset_bottom = 108.0
+offset_bottom = 78.0
 theme_override_colors/font_color = Color(0, 0, 0, 0.45098)
 theme_override_font_sizes/font_size = 25
 text = "FPS:"
