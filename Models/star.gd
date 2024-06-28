@@ -1,5 +1,7 @@
 extends Area3D
 
+@export var star: Star = preload("res://Ressources/Stars/star1.tres")
+
 signal starCollected 
 
 func _physics_process(delta):

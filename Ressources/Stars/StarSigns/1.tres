@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="StarSignModel" load_steps=2 format=3 uid="uid://cym6sjb5iq5rj"]
+
+[ext_resource type="Script" path="res://Ressources/Stars/StarSigns/StarSignModel.gd" id="1_ooshf"]
+
+[resource]
+script = ExtResource("1_ooshf")
+starSignId = 1
+starSignName = "First"
+starSignDescription = "aloha"
+starMapping = {
+"connections": {
+0: 5
+},
+"stars": {
+0: Vector2(500, 500),
+1: Vector2(600, 600),
+5: Vector2(700, 700),
+9: Vector2(800, 800)
+}
+}

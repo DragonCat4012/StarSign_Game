@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="StarSignModel" load_steps=2 format=3 uid="uid://uj2qbc4dvq5"]
+
+[ext_resource type="Script" path="res://Ressources/Stars/StarSigns/StarSignModel.gd" id="1_nnqc0"]
+
+[resource]
+script = ExtResource("1_nnqc0")
+starSignId = 0
+starSignName = "Crab"
+starSignDescription = "Some cool description"
+starMapping = {
+"connections": {
+0: 5,
+2: 9,
+5: 9,
+9: 1
+},
+"stars": {
+0: Vector2(285, 5),
+1: Vector2(160, 262),
+2: Vector2(414, 350),
+5: Vector2(270, 162),
+9: Vector2(270, 210)
+}
+}
