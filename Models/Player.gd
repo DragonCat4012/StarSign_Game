@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var spring_arm_pivot = $TwistPivot
 @onready var spring_arm = $TwistPivot/SpringArm3D
 @onready var animation_tree = $AnimationTree
+@onready var jumpParticleEmitter = $GPUParticles3D
 
 # Turning Camera
 var mouse_sensitivity := 0.001
@@ -14,6 +15,7 @@ var pitch_input := 0.0
 const SPEED = 8.0
 var isJumping = false
 var jump_count = 0
+var timer := Timer.new()
 
 const Jump_Velocity = 5.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -22,6 +24,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const LERP_VAL = 0.15
 
 func _ready():
+	add_child(timer)
+	timer.wait_time = 0.4
+	timer.connect("timeout", _on_timer_timeout)
+	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _process(delta: float):
@@ -52,6 +58,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("Move_Jump") and jump_count < 2:
 		jump_count += 1
+		_jump_particles()
 		isJumping = true
 		velocity.y = Jump_Velocity
 	
@@ -80,3 +87,12 @@ func _physics_process(delta):
 		
 		#animation_tree.set("parameters/BlendSpace1D/blend_position", velocity.length()/SPEED)
 	move_and_slide()
+
+# Jump animations
+func _jump_particles():
+	jumpParticleEmitter.emitting = true
+	timer.start()
+
+func _on_timer_timeout() -> void:
+	if jumpParticleEmitter.emitting:
+		jumpParticleEmitter.emitting = false

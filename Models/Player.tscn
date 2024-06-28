@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cb1xwmbnkdeun"]
+[gd_scene load_steps=66 format=3 uid="uid://cb1xwmbnkdeun"]
 
 [ext_resource type="Script" path="res://Models/Player.gd" id="1_cbw5j"]
 [ext_resource type="Script" path="res://Models/Camera3D.gd" id="2_1mlft"]
@@ -969,6 +969,17 @@ _data = {
 "walk": SubResource("Animation_ftjvh")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_beibe"]
+angle_max = 180.9
+spread = 30.0
+initial_velocity_max = 10.0
+angular_velocity_max = 1.0
+radial_velocity_max = 45.0
+gravity = Vector3(100, 1, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pfsqr"]
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_cbw5j")
 
@@ -1023,14 +1034,14 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.999993, -0.00380228, -0.000175749, 0.00380227, 0.995726, 0.0922794, -0.000175874, -0.0922794, 0.995733, -5.32907e-15, 0.0890516, -7.45056e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(-5.32907e-15, 0.0890516, -7.45056e-09)
-bones/3/rotation = Quaternion(-0.0460567, -0.00367491, -0.0775807, 0.995915)
+bones/3/rotation = Quaternion(-0.0461742, 0.00100772, 0.0236953, 0.998652)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "UpperArm.L"
 bones/4/parent = 1
 bones/4/rest = Transform3D(-0.998223, 0.0594893, -0.003459, -0.0560962, -0.957698, -0.282256, -0.0201039, -0.28156, 0.959334, 0.16148, 0.251413, -0.0171359)
 bones/4/enabled = true
 bones/4/position = Vector3(0.16148, 0.251413, -0.0171359)
-bones/4/rotation = Quaternion(-0.0151998, -0.142118, 0.986867, -0.0752693)
+bones/4/rotation = Quaternion(-0.0133023, -0.142216, 0.987556, -0.065816)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "LowerArm.L"
 bones/5/parent = 4
@@ -1058,7 +1069,7 @@ bones/8/parent = 1
 bones/8/rest = Transform3D(-0.998223, -0.0594893, 0.003459, 0.0560962, -0.957698, -0.282256, 0.0201039, -0.28156, 0.959334, -0.16148, 0.251413, -0.0171359)
 bones/8/enabled = true
 bones/8/position = Vector3(-0.16148, 0.251413, -0.0171359)
-bones/8/rotation = Quaternion(0.0144676, -0.142157, 0.987144, 0.0716212)
+bones/8/rotation = Quaternion(0.0127352, -0.142243, 0.987743, 0.0629906)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "LowerArm.R"
 bones/9/parent = 8
@@ -1086,21 +1097,21 @@ bones/12/parent = 0
 bones/12/rest = Transform3D(-0.99999, 0.00459254, -0.000388995, -0.00430506, -0.900575, 0.434681, 0.00164597, 0.434678, 0.900585, 0.120751, 0.0169393, -0.00985621)
 bones/12/enabled = true
 bones/12/position = Vector3(0.120751, 0.0169393, -0.00985621)
-bones/12/rotation = Quaternion(-0.000419153, 0.348989, 0.937123, -0.00270677)
+bones/12/rotation = Quaternion(-0.000303574, 0.33865, 0.940909, -0.00264503)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "LowerLeg.L"
 bones/13/parent = 12
 bones/13/rest = Transform3D(1, 0.000163417, 3.11526e-05, -0.000166339, 0.98518, 0.171521, -2.66139e-06, -0.171521, 0.98518, 1.67483e-08, 0.463759, 6.74481e-09)
 bones/13/enabled = true
 bones/13/position = Vector3(1.67483e-08, 0.463759, 6.74481e-09)
-bones/13/rotation = Quaternion(-0.449495, 7.60753e-06, -0.000432085, 0.893283)
+bones/13/rotation = Quaternion(-0.406698, 7.78033e-06, -0.000390946, 0.913563)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "Foot.L"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.997736, 0.0304477, -0.0599733, -0.066991, 0.370249, -0.926514, -0.00600512, 0.928433, 0.37145, -1.10522e-08, 0.444356, -1.99361e-09)
 bones/14/enabled = true
 bones/14/position = Vector3(-1.10522e-08, 0.444356, -1.99361e-09)
-bones/14/rotation = Quaternion(0.49037, 0.00316608, -0.0346043, 0.870821)
+bones/14/rotation = Quaternion(0.517251, -0.000503722, -0.034452, 0.85514)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "UpperLeg.R"
 bones/15/parent = 0
@@ -1169,3 +1180,13 @@ libraries = {
 "": SubResource("AnimationLibrary_7sjkc")
 }
 speed_scale = 1.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.127221, 0, 0, 0, 0.0109554, 0, 0, 0, 0.127221, 0, -0.084563, 0)
+emitting = false
+amount = 50
+lifetime = 0.02
+explosiveness = 0.1
+randomness = 0.16
+process_material = SubResource("ParticleProcessMaterial_beibe")
+draw_pass_1 = SubResource("BoxMesh_pfsqr")
