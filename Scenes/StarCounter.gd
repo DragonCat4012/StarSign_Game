@@ -13,17 +13,14 @@ var pauseMenuShown = false
 
 func _ready():
 	exitButton.pressed.connect(self._button_pressed.bind())
-	updateLabel()
+	var signRessource := load("res://Ressources/Inventory/starSignMapping.tres")
+	updateLabel(signRessource.get_star_count())
 	
 func _process(delta: float) -> void:
 	fpsLabel.text = "FPS: %s" % [Engine.get_frames_per_second()]
-	
-func _on_star_star_collected():
-	stars += 1
-	updateLabel()
 
-func updateLabel():
-	text = "Stars: " + str(stars)
+func updateLabel(count: int):
+	text = "Stars: " + str(count)
 	
 func _input(event):
 	if event.is_action_pressed("UI_Pause") and not isInvShown:
@@ -71,3 +68,8 @@ func _on_menu_button_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/Menu/MainMenu.tscn")
 
+func _on_star_star_collected_2(id):
+	print("Collect Star (in Counter) ", id)
+	var signRessource := load("res://Ressources/Inventory/starSignMapping.tres")
+	signRessource.add_collected_star(id)
+	updateLabel(signRessource.get_star_count())

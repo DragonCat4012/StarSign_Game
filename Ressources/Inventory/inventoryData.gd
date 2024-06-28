@@ -21,6 +21,9 @@ func _init():
 	_load_data() # updates saveedData
 	_update_collected_stars()
 
+func get_star_count() -> int:
+	return SaveFileJSON["collectedStarIds"].size()
+	
 func get_star_types_in_inventory(): # id: type
 	# Maps ids to types for drawing them, negtaive numbers if not collected
 	var dict = {}
@@ -38,9 +41,9 @@ func _update_collected_stars():
 func add_collected_star(id: int):
 	var arr = SaveFileJSON["collectedStarIds"]
 	if id not in arr:
-		pass
-	arr.append(id)
+		arr.append(id)
 	SaveFileJSON["collectedStarIds"] = arr
+	_save_data()
 	
 # Load and Store Data
 func _load_data():
@@ -56,12 +59,14 @@ func _load_data():
 				SaveFileJSON[key] = dict[key]
 			else:
 				print("Missing key: ", key)
+		remove_duplicate_star_ids()
 	else:
 		print("Save File doesnt exist")
 		
 func _save_data():
 		var saveDict = {}
 		var file = FileAccess.open(File_name, FileAccess.WRITE)
+		remove_duplicate_star_ids()
 		
 		for key in SaveFileJSON.keys():
 			saveDict[key] = SaveFileJSON[key]
@@ -70,3 +75,11 @@ func _save_data():
 		
 		file.store_string(JSON.stringify(saveDict))
 		file.close()
+
+func remove_duplicate_star_ids():
+	var arr = []
+	var current = SaveFileJSON["collectedStarIds"]
+	for x in current:
+		if x not in arr:
+			arr.append(x)
+	SaveFileJSON["collectedStarIds"] = arr

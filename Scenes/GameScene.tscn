@@ -306,6 +306,6 @@ theme_override_font_sizes/font_size = 15
 text = "Description UwU"
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
-[connection signal="starCollected" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected"]
+[connection signal="starCollected2" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected_2"]
 [connection signal="pressed" from="PausePopUp/Unpause" to="Control/StarCounter" method="_on_unpause_button_pressed"]
 [connection signal="pressed" from="PausePopUp/MenuButton" to="Control/StarCounter" method="_on_menu_button_pressed"]
