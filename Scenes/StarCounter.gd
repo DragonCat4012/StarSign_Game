@@ -4,7 +4,7 @@ extends Label
 #signal pauseGame
 
 @onready var exitButton := $"../../PausePopUp/ExitButton"
-
+@onready var fpsLabel := $"../FPSLabel"
 var stars := 0
 
 # Inventory
@@ -14,7 +14,10 @@ var pauseMenuShown = false
 func _ready():
 	exitButton.pressed.connect(self._button_pressed.bind())
 	updateLabel()
-
+	
+func _process(delta: float) -> void:
+	fpsLabel.text = "FPS: %s" % [Engine.get_frames_per_second()]
+	
 func _on_star_star_collected():
 	stars += 1
 	updateLabel()

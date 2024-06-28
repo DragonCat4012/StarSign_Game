@@ -35,4 +35,5 @@ func _on_button_pressed(num):
 func _draw():
 	backgroundTexture.data = signRessource.get_drawing_data(selectedSign)
 	backgroundTexture.inv = signRessource.get_star_types_in_inventory()
+	backgroundTexture.descrition = "E"
 	backgroundTexture.queue_redraw()

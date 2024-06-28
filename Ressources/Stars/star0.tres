@@ -7,4 +7,4 @@ script = ExtResource("1_ds44b")
 starId = 0
 starName = "Aloha"
 collected = false
-starType = 0
+starType = 1

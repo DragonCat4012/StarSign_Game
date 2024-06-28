@@ -7,4 +7,4 @@ script = ExtResource("1_iw487")
 starId = 9
 starName = "Aloha"
 collected = true
-starType = 0
+starType = 1

@@ -80,6 +80,15 @@ theme_override_font_sizes/font_size = 31
 text = "adadad"
 script = ExtResource("4_fhyvq")
 
+[node name="FPSLabel" type="Label" parent="Control"]
+offset_top = 54.0
+offset_right = 151.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.45098)
+theme_override_font_sizes/font_size = 25
+text = "FPS:"
+vertical_alignment = 1
+
 [node name="PausePopUp" type="Panel" parent="."]
 visible = false
 offset_left = 610.0
@@ -255,10 +264,38 @@ text = "StarSgin:"
 layout_mode = 0
 offset_left = 110.0
 offset_top = 138.0
-offset_right = 684.0
+offset_right = 690.0
 offset_bottom = 560.0
+pivot_offset = Vector2(0, 422)
 color = Color(1, 1, 1, 0)
 script = ExtResource("9_jjh24")
+
+[node name="DescriptionFrame" type="ColorRect" parent="InventoryPanel"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 581.0
+offset_right = 691.0
+offset_bottom = 968.0
+pivot_offset = Vector2(0, 422)
+color = Color(0, 0, 0, 0.447059)
+
+[node name="Label" type="Label" parent="InventoryPanel/DescriptionFrame"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 570.0
+offset_bottom = 33.0
+text = "Description"
+
+[node name="DescriptionLabel" type="Label" parent="InventoryPanel/DescriptionFrame"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 41.0
+offset_right = 570.0
+offset_bottom = 375.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.72549)
+theme_override_font_sizes/font_size = 15
+text = "Description UwU"
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected"]
