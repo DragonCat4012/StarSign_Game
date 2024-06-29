@@ -26,6 +26,11 @@ const LERP_VAL = 0.15
 # Weapons
 @onready var weaponNode := $Armature/Skeleton3D/HandAttachment/HandContainer
 
+# Emotes
+var emoteIndex = 0
+var emoteAnimations = ["reaction_disappoint"]
+var isEmoteAnimationPlaying = false
+
 func _ready():
 	add_child(timer)
 	timer.wait_time = 0.4
@@ -53,15 +58,23 @@ func _unhandled_input(event: InputEvent):
 
 func _physics_process(delta):
 	isJumping = !is_on_floor()
+	if $AnimationPlayer.current_animation == emoteAnimations[emoteIndex]: # dont move during emote
+		return 
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	
+
 	if is_on_floor():
 		jump_count = 0
 		if Input.is_action_just_pressed("Attack1"):
 			$AnimationPlayer.play(_select_attack_1_animation())
 		elif Input.is_action_just_pressed("Attack2"):
 			$AnimationPlayer.play(_select_attack_2_animation())
+		elif Input.is_action_just_pressed("Player_Reaction"):
+			isEmoteAnimationPlaying = true
+			$AnimationPlayer.play(_display_emotion())
+			$AnimationPlayer.animation_finished.connect(_finished_emotion_animation)
+			velocity = Vector3(0,0,0) # dont move after animation
+			return
 	
 	if Input.is_action_just_pressed("Move_Jump") and jump_count < 2:
 		jump_count += 1
@@ -131,3 +144,12 @@ func _select_attack_2_animation() -> String:
 		return "attack_forward"
 	
 	return GameManager.currentWeapon.animation2Name
+
+# Emotions
+func _display_emotion() -> String:
+	emoteIndex += 1 
+	emoteIndex = emoteIndex % emoteAnimations.size()
+	return emoteAnimations[emoteIndex]
+
+func _finished_emotion_animation():
+	isEmoteAnimationPlaying = false
