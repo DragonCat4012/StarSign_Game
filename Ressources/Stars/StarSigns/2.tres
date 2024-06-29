@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_0cmyj")
 starSignId = 2
-starSignName = "Second"
+starSignName = "Gemini"
 starSignDescription = "XD aloha #2"
 starMapping = {
 "connections": {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=25 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
 [ext_resource type="Script" path="res://Scenes/StarCounter.gd" id="4_fhyvq"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="6_gvhef"]
+[ext_resource type="Resource" uid="uid://cjk1wd322otqi" path="res://Ressources/Stars/star2.tres" id="6_oxw7v"]
 [ext_resource type="Script" path="res://Scenes/InventoryPanel.gd" id="6_x4qck"]
+[ext_resource type="Resource" uid="uid://dxa8ubvxniqc8" path="res://Ressources/Stars/star5.tres" id="7_pmc24"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="8_rv5tm"]
 [ext_resource type="Script" path="res://Scenes/SignFrame.gd" id="9_jjh24"]
 
@@ -91,6 +93,14 @@ shape = SubResource("ConcavePolygonShape3D_n6r7d")
 [node name="Star" parent="Stars" instance=ExtResource("3_p4imb")]
 transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, 1.75387, 0.156052, 0)
 
+[node name="Star2" parent="Stars" instance=ExtResource("3_p4imb")]
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -9.48863, 3.39798, 0)
+star = ExtResource("6_oxw7v")
+
+[node name="Star3" parent="Stars" instance=ExtResource("3_p4imb")]
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -1.40556, 4.01532, 9.67503)
+star = ExtResource("7_pmc24")
+
 [node name="Control" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
@@ -102,20 +112,24 @@ offset_bottom = 103.0
 
 [node name="StarCounter" type="Label" parent="Control"]
 layout_mode = 0
-offset_right = 112.0
-offset_bottom = 54.0
-theme_override_colors/font_color = Color(0.523113, 0.431394, 0.803886, 1)
-theme_override_font_sizes/font_size = 31
+offset_left = 102.0
+offset_top = -22.0
+offset_right = 214.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0.637344, 0.570516, 0.883082, 1)
+theme_override_font_sizes/font_size = 15
 text = "adadad"
+vertical_alignment = 1
 script = ExtResource("4_fhyvq")
 
 [node name="FPSLabel" type="Label" parent="Control"]
 layout_mode = 0
-offset_top = 40.0
-offset_right = 151.0
-offset_bottom = 78.0
-theme_override_colors/font_color = Color(0, 0, 0, 0.45098)
-theme_override_font_sizes/font_size = 25
+offset_left = -30.0
+offset_top = -21.0
+offset_right = 121.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 text = "FPS:"
 vertical_alignment = 1
 
@@ -176,14 +190,44 @@ mesh = SubResource("BoxMesh_sfwq1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
 shape = SubResource("BoxShape3D_fk3pu")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="Box1" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.67243, 0, 0, 0, 2.99633, 0, 0, 0, 8.33861, -10.7161, 0.439683, 0)
 mesh = SubResource("BoxMesh_sfwq1")
 surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Box1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box1/StaticBody3D"]
+shape = SubResource("BoxShape3D_fk3pu")
+
+[node name="Box2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.24153, 0, 0, 0, 1.43744, 0, 0, 0, 4.00032, -10.7161, -0.205001, -4.52162)
+mesh = SubResource("BoxMesh_sfwq1")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box2/StaticBody3D"]
+shape = SubResource("BoxShape3D_fk3pu")
+
+[node name="Box3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.24153, 0, 0, 0, 1.43744, 0, 0, 0, 4.00032, -7.77793, 2.13822, 9.90282)
+mesh = SubResource("BoxMesh_sfwq1")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box3/StaticBody3D"]
+shape = SubResource("BoxShape3D_fk3pu")
+
+[node name="Box4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.43677, 0, 0, 0, 0.921373, 0, 0, 0, 2.56413, -1.89282, 2.90459, 9.90282)
+mesh = SubResource("BoxMesh_sfwq1")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Box4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box4/StaticBody3D"]
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="InventoryPanel" type="Panel" parent="."]
@@ -363,5 +407,9 @@ text = "Description UwU"
 [connection signal="hideWeapon" from="." to="Player" method="_on_game_scene_hide_weapon"]
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected2" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="body_entered" from="Stars/Star2" to="Stars/Star2" method="_on_body_entered"]
+[connection signal="starCollected2" from="Stars/Star2" to="Control/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="body_entered" from="Stars/Star3" to="Stars/Star3" method="_on_body_entered"]
+[connection signal="starCollected2" from="Stars/Star3" to="Control/StarCounter" method="_on_star_star_collected_2"]
 [connection signal="pressed" from="PausePopUp/Unpause" to="Control/StarCounter" method="_on_unpause_button_pressed"]
 [connection signal="pressed" from="PausePopUp/MenuButton" to="Control/StarCounter" method="_on_menu_button_pressed"]

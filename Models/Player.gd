@@ -17,7 +17,7 @@ var isJumping = false
 var jump_count = 0
 var timer := Timer.new()
 
-const Jump_Velocity = 5.5
+const Jump_Velocity = 5.1
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Turning

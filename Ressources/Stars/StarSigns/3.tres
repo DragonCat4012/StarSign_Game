@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_nnqc0")
 starSignId = 0
-starSignName = "Crab"
+starSignName = "Cancer"
 starSignDescription = "Some cool description"
 starMapping = {
 "connections": {
