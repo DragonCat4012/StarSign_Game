@@ -24,6 +24,7 @@ extends Panel
 var star_dict = {}
 var selectedSign = 0
 var selectedWeaponId = 0
+var collectedStarsInInventory = []
 
 func _ready():
 	activateWeaponButton.pressed.connect(self._on_activate_weapon_pressed)
@@ -67,3 +68,25 @@ func _draw():
 		
 	backgroundTexture.inv = signRessource.get_star_types_in_inventory()
 	backgroundTexture.queue_redraw()
+
+
+func _set_button_visibility():
+	for but in buttons:
+		var neededStars = but.starSign.get_stars()
+		if _arrays_have_overlapping_content(neededStars, collectedStarsInInventory):
+			but.disabled  = true
+			but.focus_mode = FOCUS_NONE
+		else:
+			but.focus_mode = FOCUS_ALL
+			but.disabled  = false
+
+func _arrays_have_overlapping_content(array1, array2) -> bool:
+	for item in array1:
+		if !array2.has(item): return false
+	for item in array2:
+		if !array1.has(item): return false
+	return true
+
+func _on_star_counter_inventory_will_be_shown():
+	collectedStarsInInventory = signRessource.get_all_collected_stars()
+	_set_button_visibility()

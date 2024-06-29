@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=38 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -12,6 +12,19 @@
 [ext_resource type="Resource" uid="uid://dxa8ubvxniqc8" path="res://Ressources/Stars/Stars/star5.tres" id="7_pmc24"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="8_rv5tm"]
 [ext_resource type="Script" path="res://Scenes/SignFrame.gd" id="9_jjh24"]
+[ext_resource type="Script" path="res://Ressources/Inventory/StarSignButtons.gd" id="12_2n8vj"]
+[ext_resource type="Resource" uid="uid://bitithh64yj66" path="res://Ressources/Stars/StarSigns/0.tres" id="13_cs370"]
+[ext_resource type="Resource" uid="uid://cym6sjb5iq5rj" path="res://Ressources/Stars/StarSigns/1.tres" id="14_6sg7d"]
+[ext_resource type="Resource" uid="uid://ccn6ripcb6aue" path="res://Ressources/Stars/StarSigns/2.tres" id="15_3wrix"]
+[ext_resource type="Resource" uid="uid://uj2qbc4dvq5" path="res://Ressources/Stars/StarSigns/3.tres" id="16_uy68q"]
+[ext_resource type="Resource" uid="uid://ne0rn8cvifvx" path="res://Ressources/Stars/StarSigns/4.tres" id="17_m823u"]
+[ext_resource type="Resource" uid="uid://bh6xt4kiesyeu" path="res://Ressources/Stars/StarSigns/5.tres" id="18_3sm4r"]
+[ext_resource type="Resource" uid="uid://c753o0urgjppa" path="res://Ressources/Stars/StarSigns/6.tres" id="19_ncdhx"]
+[ext_resource type="Resource" uid="uid://diyjtgh0w6aq8" path="res://Ressources/Stars/StarSigns/7.tres" id="20_6ur2a"]
+[ext_resource type="Resource" uid="uid://bcwix2qnc4wad" path="res://Ressources/Stars/StarSigns/8.tres" id="21_jg2xd"]
+[ext_resource type="Resource" uid="uid://iehvnwofmcgm" path="res://Ressources/Stars/StarSigns/9.tres" id="22_8ed0a"]
+[ext_resource type="Resource" uid="uid://by7fwsoesdecg" path="res://Ressources/Stars/StarSigns/10.tres" id="23_7bmmk"]
+[ext_resource type="Resource" uid="uid://dak3jau0cbas4" path="res://Ressources/Stars/StarSigns/11.tres" id="24_6kbgp"]
 
 [sub_resource type="Gradient" id="Gradient_emwwf"]
 offsets = PackedFloat32Array(0.219718, 0.960563)
@@ -232,6 +245,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="InventoryPanel" type="Panel" parent="."]
+visible = false
 self_modulate = Color(0, 0, 0, 0)
 offset_left = 1197.0
 offset_right = 1921.0
@@ -286,63 +300,87 @@ process_mode = 2
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♈"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("13_cs370")
 
 [node name="Button2" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♉"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("14_6sg7d")
 
 [node name="Button3" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♊"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("15_3wrix")
 
 [node name="Button4" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♋"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("16_uy68q")
 
 [node name="Button5" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♌"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("17_m823u")
 
 [node name="Button6" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♍"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("18_3sm4r")
 
 [node name="Button7" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♎"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("19_ncdhx")
 
 [node name="Button8" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♏"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("20_6ur2a")
 
 [node name="Button9" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♐"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("21_jg2xd")
 
 [node name="Button10" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♑"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("22_8ed0a")
 
 [node name="Button11" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♒"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("23_7bmmk")
 
 [node name="Button12" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♓"
+script = ExtResource("12_2n8vj")
+starSign = ExtResource("24_6kbgp")
 
 [node name="StarCountForSign" type="Label" parent="InventoryPanel"]
 layout_mode = 0
@@ -428,5 +466,6 @@ text = "Description UwU"
 [connection signal="starCollected2" from="Stars/Star2" to="Control/StarCounter" method="_on_star_star_collected_2"]
 [connection signal="body_entered" from="Stars/Star3" to="Stars/Star3" method="_on_body_entered"]
 [connection signal="starCollected2" from="Stars/Star3" to="Control/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="inventoryWillBeShown" from="Control/StarCounter" to="InventoryPanel" method="_on_star_counter_inventory_will_be_shown"]
 [connection signal="pressed" from="PausePopUp/Unpause" to="Control/StarCounter" method="_on_unpause_button_pressed"]
 [connection signal="pressed" from="PausePopUp/MenuButton" to="Control/StarCounter" method="_on_menu_button_pressed"]

@@ -24,6 +24,10 @@ func _init():
 	_debug_stars()
 	_update_collected_stars()
 	
+func get_all_collected_stars() -> Array[int]:
+	var arr: Array[int] = []
+	arr.assign(SaveFileJSON["collectedStarIds"])
+	return arr
 
 func get_star_count() -> int:
 	return SaveFileJSON["collectedStarIds"].size()

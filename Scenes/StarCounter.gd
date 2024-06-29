@@ -2,6 +2,7 @@ extends Label
 
 #signal unpauseGame
 #signal pauseGame
+signal inventoryWillBeShown
 
 @onready var exitButton := $"../../PausePopUp/ExitButton"
 @onready var fpsLabel := $"../FPSLabel"
@@ -58,6 +59,7 @@ func toggleInventory():
 	get_tree().paused = not get_tree().paused
 	if get_tree().paused:
 		isInvShown = true
+		inventoryWillBeShown.emit()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		$"../../InventoryPanel".show()
 		#emit_signal("pauseGame")
