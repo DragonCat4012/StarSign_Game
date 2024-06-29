@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="StarSignModel" load_steps=2 format=3 uid="uid://ccn6ripcb6aue"]
+[gd_resource type="Resource" script_class="StarSignModel" load_steps=3 format=3 uid="uid://ccn6ripcb6aue"]
 
 [ext_resource type="Script" path="res://Ressources/Stars/StarSigns/StarSignModel.gd" id="1_0cmyj"]
+[ext_resource type="Resource" uid="uid://ny3oeq7xa03r" path="res://Ressources/Weapons/axe.tres" id="2_dk8o0"]
 
 [resource]
 script = ExtResource("1_0cmyj")
@@ -23,3 +24,4 @@ starMapping = {
 5: Vector2(180, 230)
 }
 }
+weaponRessource = ExtResource("2_dk8o0")

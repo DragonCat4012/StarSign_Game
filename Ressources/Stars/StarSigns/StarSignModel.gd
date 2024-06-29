@@ -4,6 +4,7 @@ class_name StarSignModel extends Resource
 @export var starSignName = "Default starsignname"
 @export var starSignDescription = "Default Starsign Description"
 @export var starMapping =  { "stars": { },	"connections": {} }
+@export var weaponRessource: WeaponModel = null
 
 func load_needed_star_ressources() -> Array[Star]:
 	var arr = []

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StarSignModel" load_steps=3 format=3 uid="uid://bcwix2qnc4wad"]
+
+[ext_resource type="Script" path="res://Ressources/Stars/StarSigns/StarSignModel.gd" id="1_2b0mx"]
+[ext_resource type="Resource" uid="uid://ny3oeq7xa03r" path="res://Ressources/Weapons/axe.tres" id="2_gq83v"]
+
+[resource]
+script = ExtResource("1_2b0mx")
+starSignId = 8
+starSignName = "Sagittarius"
+starSignDescription = "Some cool description"
+starMapping = {
+"connections": {},
+"stars": {
+0: Vector2(285, 5)
+}
+}
+weaponRessource = ExtResource("2_gq83v")

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StarSignModel" load_steps=3 format=3 uid="uid://bh6xt4kiesyeu"]
+
+[ext_resource type="Script" path="res://Ressources/Stars/StarSigns/StarSignModel.gd" id="1_8pmip"]
+[ext_resource type="Resource" uid="uid://cltln0ixl6mvb" path="res://Ressources/Weapons/sword.tres" id="2_unxnc"]
+
+[resource]
+script = ExtResource("1_8pmip")
+starSignId = 5
+starSignName = "Virgo"
+starSignDescription = "Some cool description"
+starMapping = {
+"connections": {},
+"stars": {
+5: Vector2(285, 5)
+}
+}
+weaponRessource = ExtResource("2_unxnc")

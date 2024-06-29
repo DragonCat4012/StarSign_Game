@@ -1,14 +1,6 @@
 extends Resource
 class_name InventoryData
 
-var _starSing_to_weaponMapping = {
-	0: load("res://Ressources/Weapons/axe.tres"),
-	1: load("res://Ressources/Weapons/axe.tres"),
-	2: load("res://Ressources/Weapons/axe.tres"),
-	3: load("res://Ressources/Weapons/axe.tres"),
-	4: load("res://Ressources/Weapons/sword.tres"),
-}
-
 const File_name = "user://saves.json"
 var SaveFileJSON = {
 	"collectedStarIds": [0],
@@ -119,10 +111,3 @@ func remove_duplicate_star_ids():
 
 func _debug_stars():
 	SaveFileJSON["collectedStarIds"] = [0]
-
-# Weapon Mapping
-func get_weaponName(signId: int) -> WeaponModel:
-	if signId not in _starSing_to_weaponMapping.keys():
-		Log.error("Weapon not found in mapping, id: ")
-		Log.error(signId)
-	return _starSing_to_weaponMapping[signId]

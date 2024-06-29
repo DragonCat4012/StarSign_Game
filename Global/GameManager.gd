@@ -25,4 +25,3 @@ func activate_weapon_from_inventory(weaponId: int):
 	Log.info(weaponId)
 	weaponactive = true
 	showWeaponById.emit()
-	#emit_signal("showWeaponById", weaponId)

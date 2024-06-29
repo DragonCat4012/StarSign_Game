@@ -113,7 +113,6 @@ func _on_game_scene_hide_weapon():
 
 func get_weapon_children(newVisible: bool):
 	for c in weaponNode.get_children():
-		print(c.name, GameManager.selectedWeaponId)
 		if c.name == str(GameManager.selectedWeaponId):
 			c.visible = newVisible	
 

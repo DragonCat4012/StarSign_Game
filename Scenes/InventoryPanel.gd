@@ -43,7 +43,7 @@ func _on_activate_weapon_pressed():
 func _draw():
 	selectedWeaponId = 0
 	
-	var data = load("res://Ressources/Stars/StarSigns/" + str(selectedSign) + ".tres")
+	var data: StarSignModel = load("res://Ressources/Stars/StarSigns/" + str(selectedSign) + ".tres")
 	backgroundTexture.starSign = data
 	
 	if not data:
@@ -60,7 +60,7 @@ func _draw():
 	
 	if starSignCountData.x == starSignCountData.y: # All needed stars collected
 		activateWeaponButton.visible = true
-		var weapon = signRessource.get_weaponName(selectedSign)
+		var weapon = data.weaponRessource
 		weaponNameLabel.text = weapon.weaponName
 		selectedWeaponId = weapon.weaponID
 	starSignStarCountLabel.text = str(starSignCountData.x) + " / " + str(starSignCountData.y)
