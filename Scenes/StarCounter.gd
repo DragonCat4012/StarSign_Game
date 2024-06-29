@@ -29,7 +29,7 @@ func _input(event):
 
 # Handle collected Stars	
 func _on_star_star_collected_2(id):
-	print("Collect Star (in Counter) ", id)
+	print("Collect Star (in Counter) id: ", id)
 	var signRessource := load("res://Ressources/Inventory/starSignMapping.tres")
 	signRessource.add_collected_star(id)
 	updateLabel(signRessource.get_star_count())

@@ -6,5 +6,5 @@
 script = ExtResource("1_5src1")
 starId = 2
 starName = "Cutie"
-collected = true
+collected = false
 starType = 2

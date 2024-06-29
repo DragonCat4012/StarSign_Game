@@ -11,7 +11,7 @@ starSignDescription = "Some cool description"
 starMapping = {
 "connections": {},
 "stars": {
-0: Vector2(285, 5)
+10: Vector2(285, 5)
 }
 }
 weaponRessource = ExtResource("2_nmv41")

@@ -73,20 +73,23 @@ func _draw():
 func _set_button_visibility():
 	for but in buttons:
 		var neededStars = but.starSign.get_stars()
-		if _arrays_have_overlapping_content(neededStars, collectedStarsInInventory):
+		if not _arrays_have_overlapping_content(neededStars, collectedStarsInInventory):
+			# Player has one star of the sign so he should be able to view it
 			but.disabled  = true
 			but.focus_mode = FOCUS_NONE
-		else:
+		else: # Player doesnt have any stars of the sign, should be hidden
 			but.focus_mode = FOCUS_ALL
 			but.disabled  = false
 
 func _arrays_have_overlapping_content(array1, array2) -> bool:
+	# Checks if two arrays have one overlapping element
 	for item in array1:
-		if !array2.has(item): return false
+		if array2.has(item): return true
 	for item in array2:
-		if !array1.has(item): return false
-	return true
+		if array1.has(item): return true
+	return false
 
 func _on_star_counter_inventory_will_be_shown():
+	# prepares button visbillity
 	collectedStarsInInventory = signRessource.get_all_collected_stars()
 	_set_button_visibility()
