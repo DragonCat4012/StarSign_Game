@@ -6,3 +6,5 @@
 script = ExtResource("1_l4hht")
 weaponID = 1
 weaponName = "Axe"
+animation1Name = "attack_base"
+animation2Name = "attack_forward"

@@ -3,6 +3,7 @@ extends Node
 # Weapon Switching
 var weaponactive = false
 var selectedWeaponId = 0 # 0 = none
+var currentWeapon: WeaponModel
 
 signal showWeapon
 signal hideWeapon

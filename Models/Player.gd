@@ -61,7 +61,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("Attack1"):
 			$AnimationPlayer.play(_select_attack_1_animation())
 		elif Input.is_action_just_pressed("Attack2"):
-			$AnimationPlayer.play("attack_forward")
+			$AnimationPlayer.play(_select_attack_2_animation())
 	
 	if Input.is_action_just_pressed("Move_Jump") and jump_count < 2:
 		jump_count += 1
@@ -119,9 +119,15 @@ func get_weapon_children(newVisible: bool):
 func _select_attack_1_animation() -> String:
 	if not GameManager.weaponactive: # default attack when no weapon
 		return "attack_base"
-		
-	var selectedIndex = GameManager.selectedWeaponIndex
-	if selectedIndex == 0: # sword
-		return "attack_1_sword"
-	else:
+	if not GameManager.currentWeapon: # No weapon selected use base attack
 		return "attack_base"
+	
+	return GameManager.currentWeapon.animation1Name
+
+func _select_attack_2_animation() -> String:
+	if not GameManager.weaponactive: # default attack when no weapon
+		return "attack_forward"
+	if not GameManager.currentWeapon: # No weapon selected use base attack
+		return "attack_forward"
+	
+	return GameManager.currentWeapon.animation2Name

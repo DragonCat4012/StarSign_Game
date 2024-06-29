@@ -24,6 +24,7 @@ extends Panel
 var star_dict = {}
 var selectedSign = 0
 var selectedWeaponId = 0
+var possibleNextWeapon: WeaponModel
 var collectedStarsInInventory = []
 
 func _ready():
@@ -39,6 +40,7 @@ func _on_button_pressed(num):
 	
 func _on_activate_weapon_pressed():
 	%"StarCounter".toggleInventory()
+	GameManager.currentWeapon = possibleNextWeapon
 	GameManager.activate_weapon_from_inventory(selectedWeaponId)
 
 func _draw():
@@ -64,6 +66,7 @@ func _draw():
 		var weapon = data.weaponRessource
 		weaponNameLabel.text = weapon.weaponName
 		selectedWeaponId = weapon.weaponID
+		possibleNextWeapon = weapon
 	starSignStarCountLabel.text = str(starSignCountData.x) + " / " + str(starSignCountData.y)
 		
 	backgroundTexture.inv = signRessource.get_star_types_in_inventory()
