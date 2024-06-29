@@ -8,3 +8,5 @@ func _physics_process(delta):
 func _process(delta: float):
 	if Input.is_action_just_pressed("drawWeapon"):
 		GameManager._toggle_weapon()
+		
+	$Compass._updateTexture($Player.compassDirection)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=40 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -26,6 +26,7 @@
 [ext_resource type="Resource" uid="uid://iehvnwofmcgm" path="res://Ressources/Stars/StarSigns/9.tres" id="22_8ed0a"]
 [ext_resource type="Resource" uid="uid://by7fwsoesdecg" path="res://Ressources/Stars/StarSigns/10.tres" id="23_7bmmk"]
 [ext_resource type="Resource" uid="uid://dak3jau0cbas4" path="res://Ressources/Stars/StarSigns/11.tres" id="24_6kbgp"]
+[ext_resource type="PackedScene" uid="uid://cvtm4nnjdhm5f" path="res://compass/Compass.tscn" id="27_oebk5"]
 
 [sub_resource type="Gradient" id="Gradient_emwwf"]
 offsets = PackedFloat32Array(0.219718, 0.960563)
@@ -460,6 +461,8 @@ offset_bottom = 292.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.72549)
 theme_override_font_sizes/font_size = 15
 text = "Description UwU"
+
+[node name="Compass" parent="." instance=ExtResource("27_oebk5")]
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected2" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected_2"]
