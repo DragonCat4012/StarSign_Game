@@ -3,30 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://not4hfp7n0ys" path="res://Models/Porcelain/Porcelain.glb" id="1_3a8av"]
 
 [node name="Porcelain" instance=ExtResource("1_3a8av")]
-
-[node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(2.01498e-10, 0.959169, -0.0787806)
-bones/0/rotation = Quaternion(0.16192, -0.00156875, 0.000257448, 0.986803)
-bones/1/rotation = Quaternion(-0.327063, 0.00148972, 1.17634e-05, 0.945002)
-bones/3/rotation = Quaternion(-0.0482134, 6.26624e-06, 0.00195459, 0.998835)
-bones/4/rotation = Quaternion(-0.00588332, -0.139578, 0.98976, -0.0292975)
-bones/5/rotation = Quaternion(0.0149968, 0.00458196, 0.0925167, 0.995588)
-bones/8/rotation = Quaternion(0.00589303, -0.140704, 0.989604, 0.0291736)
-bones/9/rotation = Quaternion(0.0153534, -0.0048251, -0.0923739, 0.995594)
-bones/12/rotation = Quaternion(0.00131135, 0.237127, 0.971475, -0.00223554)
-bones/13/rotation = Quaternion(-0.117268, 8.45768e-06, -0.000112727, 0.9931)
-bones/14/rotation = Quaternion(0.570013, -0.016137, -0.0295252, 0.820946)
-bones/15/rotation = Quaternion(0.00123742, 0.218513, 0.97583, 0.0024472)
-bones/16/rotation = Quaternion(-0.0776512, -8.52952e-06, 7.46496e-05, 0.996981)
-bones/17/rotation = Quaternion(0.555332, 0.0163446, 0.0294289, 0.830947)
-bones/18/position = Vector3(0.122635, 0.51754, 0.161067)
-bones/19/position = Vector3(0.124848, 0.0771975, -0.0475756)
-bones/19/rotation = Quaternion(-0.0015771, 0.710699, -0.703493, 0.00159325)
-bones/21/rotation = Quaternion(0.00158176, 0.708635, -0.705572, -0.00158862)
-
-[node name="HandAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="10"]
-transform = Transform3D(-0.955286, 0.295684, -0.000197865, -0.295651, -0.955167, 0.015711, 0.00445648, 0.0150669, 0.999878, 0.231029, 0.91556, -0.0611617)
-bone_name = "Hand.L"
-bone_idx = 6
-
-[node name="HandContainer" type="Node3D" parent="Armature/Skeleton3D/HandAttachment" index="0"]

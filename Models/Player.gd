@@ -33,6 +33,9 @@ func _ready():
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
+	GameManager.activateSword.connect(_on_game_scene_activate_sword)
+	GameManager.hideWeapon.connect(_on_game_scene_hide_weapon)
+	
 func _process(delta: float):
 	spring_arm_pivot.rotate_y(twist_input)
 	spring_arm.rotate_x(pitch_input)
@@ -55,7 +58,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		jump_count = 0
 		if Input.is_action_just_pressed("Attack1"):
-			$AnimationPlayer.play("attack_base")
+			$AnimationPlayer.play(_select_attack_1_animation())
 		elif Input.is_action_just_pressed("Attack2"):
 			$AnimationPlayer.play("attack_forward")
 	
@@ -101,3 +104,13 @@ func _on_game_scene_activate_sword():
 
 func _on_game_scene_hide_weapon():
 	weaponNode.visible = false
+
+func _select_attack_1_animation() -> String:
+	if not GameManager.weaponactive: # default attack when no weapon
+		return "attack_base"
+		
+	var selectedIndex = GameManager.selectedWeaponIndex
+	if selectedIndex == 0: # sword
+		return "attack_1_sword"
+	else:
+		return "attack_base"

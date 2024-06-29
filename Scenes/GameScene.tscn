@@ -403,8 +403,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.72549)
 theme_override_font_sizes/font_size = 15
 text = "Description UwU"
 
-[connection signal="activateSword" from="." to="Player" method="_on_game_scene_activate_sword"]
-[connection signal="hideWeapon" from="." to="Player" method="_on_game_scene_hide_weapon"]
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected2" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected_2"]
 [connection signal="body_entered" from="Stars/Star2" to="Stars/Star2" method="_on_body_entered"]
