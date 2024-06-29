@@ -31,6 +31,9 @@ var emoteIndex = 0
 var emoteAnimations = ["reaction_disappoint"]
 var isEmoteAnimationPlaying = false
 
+# Compass
+var compassDirection = 0
+
 func _ready():
 	add_child(timer)
 	timer.wait_time = 0.4
@@ -49,6 +52,8 @@ func _process(delta: float):
 	spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(-30), deg_to_rad(30))
 	twist_input = 0.0
 	pitch_input = 0.0
+		
+	compassDirection = $TwistPivot/SpringArm3D/Camera3D.global_rotation_degrees.y
 	
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
