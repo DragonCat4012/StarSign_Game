@@ -1,5 +1,5 @@
 extends Panel
-@onready var b1 := $ColorRect/VBoxContainer/Button
+@onready var b1 := $ColorRect/VBoxContainer/Button1
 @onready var b2 := $ColorRect/VBoxContainer/Button2
 @onready var b3 := $ColorRect/VBoxContainer/Button3
 @onready var b4 := $ColorRect/VBoxContainer/Button4
@@ -13,6 +13,9 @@ extends Panel
 @onready var b12 := $ColorRect/VBoxContainer/Button12
 @onready var buttons = [b1, b2, b3, b4, b5, b6, b7, b8, b9 ,b10, b11, b12]
 
+@onready var activateWeaponButton := $ActivateButton
+@onready var weaponNameLabel := $WeaponNameLabel
+
 @onready var pageNameLabel := $PageName
 @onready var signRessource = preload("res://Ressources/Inventory/starSignMapping.tres")
 @onready var starSignStarCountLabel := $StarCountForSign
@@ -20,8 +23,11 @@ extends Panel
 
 var star_dict = {}
 var selectedSign = 0
+var selectedWeaponId = 0
 
 func _ready():
+	activateWeaponButton.pressed.connect(self._on_activate_weapon_pressed)
+	
 	_on_button_pressed(0)
 	for i in range(buttons.size()):
 		buttons[i].pressed.connect(self._on_button_pressed.bind(i))
@@ -29,18 +35,35 @@ func _ready():
 func _on_button_pressed(num):
 	selectedSign = num
 	queue_redraw()
+	
+func _on_activate_weapon_pressed():
+	%"StarCounter".toggleInventory()
+	GameManager.activate_weapon_from_inventory(selectedWeaponId)
 
 func _draw():
+	selectedWeaponId = 0
+	
 	var data = load("res://Ressources/Stars/StarSigns/" + str(selectedSign) + ".tres")
 	backgroundTexture.starSign = data
 	
 	if not data:
 		pageNameLabel.text = "???"
-		starSignStarCountLabel.text = "0 Stars"
+		starSignStarCountLabel.text = "??? / ???"
 		backgroundTexture.queue_redraw()
 		return
 		
 	pageNameLabel.text = data.starSignName
-	starSignStarCountLabel.text = str(data.get_star_count()) + " Stars"
+	
+	activateWeaponButton.visible = false
+	weaponNameLabel.text = "???"
+	var starSignCountData = signRessource.get_needed_starts_for_sign(data)
+	
+	if starSignCountData.x == starSignCountData.y: # All needed stars collected
+		activateWeaponButton.visible = true
+		var weapon = signRessource.get_weaponName(selectedSign)
+		weaponNameLabel.text = weapon.weaponName
+		selectedWeaponId = weapon.weaponID
+	starSignStarCountLabel.text = str(starSignCountData.x) + " / " + str(starSignCountData.y)
+		
 	backgroundTexture.inv = signRessource.get_star_types_in_inventory()
 	backgroundTexture.queue_redraw()

@@ -33,7 +33,8 @@ func _ready():
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
-	GameManager.activateSword.connect(_on_game_scene_activate_sword)
+	GameManager.showWeaponById.connect(_on_game_scene_activate_weapon)
+	GameManager.showWeapon.connect(_on_game_scene_show_weapon)
 	GameManager.hideWeapon.connect(_on_game_scene_hide_weapon)
 	
 func _process(delta: float):
@@ -99,11 +100,22 @@ func _on_timer_timeout() -> void:
 		jumpParticleEmitter.emitting = false
 
 # weapon Switching
-func _on_game_scene_activate_sword():
-	weaponNode.visible = true
+func _on_game_scene_show_weapon():
+	get_weapon_children(true)
+	
+func _on_game_scene_activate_weapon():
+	for child in weaponNode.get_children():
+		child.visible = false
+	get_weapon_children(true)
 
 func _on_game_scene_hide_weapon():
-	weaponNode.visible = false
+	get_weapon_children(false)
+
+func get_weapon_children(newVisible: bool):
+	for c in weaponNode.get_children():
+		print(c.name, GameManager.selectedWeaponId)
+		if c.name == str(GameManager.selectedWeaponId):
+			c.visible = newVisible	
 
 func _select_attack_1_animation() -> String:
 	if not GameManager.weaponactive: # default attack when no weapon

@@ -1,6 +1,14 @@
 extends Resource
 class_name InventoryData
 
+var _starSing_to_weaponMapping = {
+	0: load("res://Ressources/Weapons/axe.tres"),
+	1: load("res://Ressources/Weapons/axe.tres"),
+	2: load("res://Ressources/Weapons/axe.tres"),
+	3: load("res://Ressources/Weapons/axe.tres"),
+	4: load("res://Ressources/Weapons/sword.tres"),
+}
+
 const File_name = "user://saves.json"
 var SaveFileJSON = {
 	"collectedStarIds": [0],
@@ -35,6 +43,14 @@ func get_star_types_in_inventory(): # id: type
 		dict[star.starId] = star.starType if star.collected else (-1)*star.starType
 	return dict
 
+func get_needed_starts_for_sign(sign: StarSignModel) -> Vector2:
+	# Returns (collectedStars, neddedStars)
+	var vec = Vector2(0, sign.get_star_count())
+	for starID in sign.get_stars():
+		if starID in SaveFileJSON["collectedStarIds"]:
+			vec.x += 1
+	return vec
+	
 func _update_collected_stars():
 	var starIDS: Array[int] = []
 	starIDS.assign(SaveFileJSON["collectedStarIds"])
@@ -103,3 +119,10 @@ func remove_duplicate_star_ids():
 
 func _debug_stars():
 	SaveFileJSON["collectedStarIds"] = [0]
+
+# Weapon Mapping
+func get_weaponName(signId: int) -> WeaponModel:
+	if signId not in _starSing_to_weaponMapping.keys():
+		Log.error("Weapon not found in mapping, id: ")
+		Log.error(signId)
+	return _starSing_to_weaponMapping[signId]
