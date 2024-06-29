@@ -14,3 +14,8 @@ func load_needed_star_ressources() -> Array[Star]:
 
 func get_star_count() -> int:
 	return starMapping["stars"].keys().size()
+
+func get_stars() -> Array[int]:
+	var arr: Array[int] = []
+	arr.assign(starMapping["stars"].keys())
+	return arr

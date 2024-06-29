@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="WeaponModel" load_steps=2 format=3 uid="uid://ny3oeq7xa03r"]
+
+[ext_resource type="Script" path="res://Ressources/Weapons/WeaponModel.gd" id="1_l4hht"]
+
+[resource]
+script = ExtResource("1_l4hht")
+weaponID = 1
+weaponName = "Axe"
