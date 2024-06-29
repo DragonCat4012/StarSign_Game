@@ -10,13 +10,29 @@ var SaveFileJSON = {
 }
 
 var allStars: Array[Star] = [
-	load("res://Ressources/Stars/Stars/star0.tres"),
-	load("res://Ressources/Stars/Stars/star1.tres"),
-	load("res://Ressources/Stars/Stars/star2.tres"),
-	load("res://Ressources/Stars/Stars/star3.tres"),
-	load("res://Ressources/Stars/Stars/star4.tres"),
-	load("res://Ressources/Stars/Stars/star5.tres"),
-	load("res://Ressources/Stars/Stars/star9.tres")
+ 	load("res://Ressources/Stars/Stars/Aries/star0.tres"),
+	load("res://Ressources/Stars/Stars/Aries/star1.tres"),
+	load("res://Ressources/Stars/Stars/Aries/star2.tres"),
+	load("res://Ressources/Stars/Stars/Aries/star3.tres"),
+	load("res://Ressources/Stars/Stars/Aries/star4.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star5.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star6.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star7.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star8.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star9.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star10.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star11.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star12.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star13.tres"),
+	load("res://Ressources/Stars/Stars/Taurus/star14.tres"),
+	load("res://Ressources/Stars/Stars/Gemini/star15.tres"),
+	load("res://Ressources/Stars/Stars/Gemini/star16.tres"),
+	load("res://Ressources/Stars/Stars/Gemini/star17.tres"),
+	load("res://Ressources/Stars/Stars/Gemini/star18.tres"),
+	load("res://Ressources/Stars/Stars/Gemini/star19.tres"),
+	load("res://Ressources/Stars/Stars/Gemini/star20.tres"),
+	load("res://Ressources/Stars/Stars/Gemini/star21.tres"),
+	load("res://Ressources/Stars/Stars/Gemini/star22.tres"),
 ]
 
 func _init():
@@ -52,7 +68,7 @@ func _update_collected_stars():
 	starIDS.assign(SaveFileJSON["collectedStarIds"])
 	
 	for star in allStars:
-		if star.starId not in starIDS:
+		if star.starId not in starIDS:	
 			star.collected = false
 		else:
 			star.collected = true
@@ -114,4 +130,5 @@ func remove_duplicate_star_ids():
 	SaveFileJSON["collectedStarIds"] = arr
 
 func _debug_stars():
-	SaveFileJSON["collectedStarIds"] = [0]
+	if GameManager.isDebug:
+		SaveFileJSON["collectedStarIds"] = [0]

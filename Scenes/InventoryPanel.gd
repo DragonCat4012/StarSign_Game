@@ -93,6 +93,8 @@ func _arrays_have_overlapping_content(array1, array2) -> bool:
 	return false
 
 func _on_star_counter_inventory_will_be_shown():
+	if GameManager.isDebug:
+		return
 	# prepares button visbillity
 	collectedStarsInInventory = signRessource.get_all_collected_stars()
 	_set_button_visibility()

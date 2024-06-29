@@ -1,4 +1,6 @@
 extends Node
+# Debug
+var isDebug = true
 
 # Weapon Switching
 var weaponactive = false

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Star" load_steps=2 format=3 uid="uid://bvixh4o51s7u5"]
+
+[ext_resource type="Script" path="res://Ressources/Stars/StarModel.gd" id="1_fb8b4"]
+
+[resource]
+script = ExtResource("1_fb8b4")
+starId = 22
+starName = "Aloha"
+collected = false
+starType = 1

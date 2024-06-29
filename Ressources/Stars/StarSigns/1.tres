@@ -10,13 +10,27 @@ starSignName = "Taurus"
 starSignDescription = "aloha"
 starMapping = {
 "connections": {
-0: 5
+5: 6,
+6: 7,
+7: 8,
+8: 12,
+9: 8,
+10: 9,
+11: 10,
+13: 12,
+14: 13
 },
 "stars": {
-0: Vector2(500, 500),
-1: Vector2(600, 600),
-5: Vector2(700, 700),
-9: Vector2(800, 800)
+5: Vector2(70, 200),
+6: Vector2(250, 220),
+7: Vector2(310, 230),
+8: Vector2(350, 210),
+9: Vector2(320, 180),
+10: Vector2(300, 160),
+11: Vector2(50, 110),
+12: Vector2(430, 300),
+13: Vector2(520, 320),
+14: Vector2(560, 340)
 }
 }
 weaponRessource = ExtResource("2_80wou")

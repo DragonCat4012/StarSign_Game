@@ -10,15 +10,17 @@ starSignName = "Aries"
 starSignDescription = "some cool description"
 starMapping = {
 "connections": {
-0: 1,
-1: 5,
-5: 9
+11: 12,
+12: 13,
+13: 14,
+14: 15
 },
 "stars": {
-0: Vector2(100, 300),
-1: Vector2(300, 200),
-5: Vector2(350, 180),
-9: Vector2(400, 200)
+11: Vector2(70, 270),
+12: Vector2(150, 100),
+13: Vector2(400, 230),
+14: Vector2(500, 300),
+15: Vector2(510, 360)
 }
 }
 weaponRessource = ExtResource("2_j1w4l")
