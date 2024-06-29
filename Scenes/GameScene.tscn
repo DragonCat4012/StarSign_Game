@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=39 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/InventoryPanel.gd" id="6_x4qck"]
 [ext_resource type="Resource" uid="uid://dxa8ubvxniqc8" path="res://Ressources/Stars/Stars/star5.tres" id="7_pmc24"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="8_rv5tm"]
+[ext_resource type="Theme" uid="uid://bwa0rxrtswmu7" path="res://Ressources/Themes/menu_title_theme.tres" id="9_3vl85"]
 [ext_resource type="Script" path="res://Scenes/SignFrame.gd" id="9_jjh24"]
 [ext_resource type="Script" path="res://Ressources/Inventory/StarSignButtons.gd" id="12_2n8vj"]
 [ext_resource type="Resource" uid="uid://bitithh64yj66" path="res://Ressources/Stars/StarSigns/0.tres" id="13_cs370"]
@@ -149,51 +150,51 @@ vertical_alignment = 1
 
 [node name="PausePopUp" type="Panel" parent="."]
 visible = false
-offset_left = 610.0
-offset_top = 444.0
-offset_right = 1311.0
-offset_bottom = 738.0
+offset_left = 591.0
+offset_top = 304.0
+offset_right = 1335.0
+offset_bottom = 672.0
 
 [node name="Label" type="Label" parent="PausePopUp"]
 layout_mode = 0
-offset_left = 16.0
+offset_left = 3.0
 offset_top = 20.0
-offset_right = 586.0
-offset_bottom = 71.0
+offset_right = 741.0
+offset_bottom = 75.0
+theme = ExtResource("9_3vl85")
 text = "Game paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Unpause" type="Button" parent="PausePopUp"]
-process_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePopUp"]
 layout_mode = 0
-offset_left = 234.0
-offset_top = 212.0
-offset_right = 466.0
-offset_bottom = 261.0
-theme = ExtResource("8_rv5tm")
-text = "Resume"
+offset_left = 182.0
+offset_top = 99.0
+offset_right = 572.0
+offset_bottom = 320.0
+theme_override_constants/separation = 30
 
-[node name="ExitButton" type="Button" parent="PausePopUp"]
+[node name="MenuButton" type="Button" parent="PausePopUp/VBoxContainer"]
 process_mode = 2
-layout_mode = 0
-offset_left = 606.0
-offset_top = 19.0
-offset_right = 680.0
-offset_bottom = 75.0
-theme = ExtResource("8_rv5tm")
-text = "Exit"
-
-[node name="MenuButton" type="Button" parent="PausePopUp"]
-process_mode = 2
-layout_mode = 0
-offset_left = 32.0
-offset_top = 20.0
-offset_right = 106.0
-offset_bottom = 76.0
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "Menü
 "
+
+[node name="ExitButton" type="Button" parent="PausePopUp/VBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("8_rv5tm")
+text = "Exit Game"
+
+[node name="Unpause" type="Button" parent="PausePopUp/VBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("8_rv5tm")
+text = "Resume"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 5.56495, 0, 0, 0, 23.0289, 20.334, 1.78904, 0)
@@ -467,5 +468,5 @@ text = "Description UwU"
 [connection signal="body_entered" from="Stars/Star3" to="Stars/Star3" method="_on_body_entered"]
 [connection signal="starCollected2" from="Stars/Star3" to="Control/StarCounter" method="_on_star_star_collected_2"]
 [connection signal="inventoryWillBeShown" from="Control/StarCounter" to="InventoryPanel" method="_on_star_counter_inventory_will_be_shown"]
-[connection signal="pressed" from="PausePopUp/Unpause" to="Control/StarCounter" method="_on_unpause_button_pressed"]
-[connection signal="pressed" from="PausePopUp/MenuButton" to="Control/StarCounter" method="_on_menu_button_pressed"]
+[connection signal="pressed" from="PausePopUp/VBoxContainer/MenuButton" to="Control/StarCounter" method="_on_menu_button_pressed"]
+[connection signal="pressed" from="PausePopUp/VBoxContainer/Unpause" to="Control/StarCounter" method="_on_unpause_button_pressed"]

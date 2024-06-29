@@ -74,6 +74,11 @@ layout_mode = 2
 theme = ExtResource("4_xfmug")
 text = "Hide/Show Weapon"
 
+[node name="Label9" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_xfmug")
+text = "Display Emotes"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -82,7 +87,7 @@ theme = ExtResource("4_xfmug")
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_40kuo")
-text = "w,a,s,d"
+text = "W, A, S, D"
 
 [node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -114,6 +119,12 @@ text = "X"
 layout_mode = 2
 theme = ExtResource("3_40kuo")
 text = "H
+"
+
+[node name="Label8" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_40kuo")
+text = "R
 "
 
 [node name="BackButton" type="Button" parent="."]

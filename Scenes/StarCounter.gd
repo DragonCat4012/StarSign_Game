@@ -4,7 +4,7 @@ extends Label
 #signal pauseGame
 signal inventoryWillBeShown
 
-@onready var exitButton := $"../../PausePopUp/ExitButton"
+@onready var exitButton := $"../../PausePopUp/VBoxContainer/ExitButton"
 @onready var fpsLabel := $"../FPSLabel"
 var stars := 0
 
