@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
 [ext_resource type="Script" path="res://Scenes/StarCounter.gd" id="4_fhyvq"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="6_gvhef"]
-[ext_resource type="Resource" uid="uid://cjk1wd322otqi" path="res://Ressources/Stars/star2.tres" id="6_oxw7v"]
+[ext_resource type="Resource" uid="uid://cjk1wd322otqi" path="res://Ressources/Stars/Stars/star2.tres" id="6_oxw7v"]
 [ext_resource type="Script" path="res://Scenes/InventoryPanel.gd" id="6_x4qck"]
-[ext_resource type="Resource" uid="uid://dxa8ubvxniqc8" path="res://Ressources/Stars/star5.tres" id="7_pmc24"]
+[ext_resource type="Resource" uid="uid://dxa8ubvxniqc8" path="res://Ressources/Stars/Stars/star5.tres" id="7_pmc24"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="8_rv5tm"]
 [ext_resource type="Script" path="res://Scenes/SignFrame.gd" id="9_jjh24"]
 

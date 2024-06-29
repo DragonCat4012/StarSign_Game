@@ -10,17 +10,20 @@ var SaveFileJSON = {
 }
 
 var allStars: Array[Star] = [
-	load("res://Ressources/Stars/star0.tres"),
-	load("res://Ressources/Stars/star1.tres"),
-	load("res://Ressources/Stars/star2.tres"),
-	load("res://Ressources/Stars/star5.tres"),
-	load("res://Ressources/Stars/star9.tres")
+	load("res://Ressources/Stars/Stars/star0.tres"),
+	load("res://Ressources/Stars/Stars/star1.tres"),
+	load("res://Ressources/Stars/Stars/star2.tres"),
+	load("res://Ressources/Stars/Stars/star3.tres"),
+	load("res://Ressources/Stars/Stars/star4.tres"),
+	load("res://Ressources/Stars/Stars/star5.tres"),
+	load("res://Ressources/Stars/Stars/star9.tres")
 ]
 
 func _init():
 	_load_data() # updates saveedData
 	_debug_stars()
 	_update_collected_stars()
+	
 
 func get_star_count() -> int:
 	return SaveFileJSON["collectedStarIds"].size()
