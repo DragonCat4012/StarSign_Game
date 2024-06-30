@@ -39,8 +39,6 @@ func _init():
 	_load_data() # updates saveedData
 	_debug_stars()
 	_update_collected_stars()
-	EventSystem.signal_initial_star_count(get_star_count())
-	EventSystem.signal_max_star_count(allStars.size())
 	
 func get_all_collected_stars() -> Array[int]:
 	var arr: Array[int] = []
@@ -74,7 +72,7 @@ func _update_collected_stars():
 			star.collected = false
 		else:
 			star.collected = true
-
+	
 func add_collected_star(id: int):
 	var arr: Array[int] = []
 	arr.assign(SaveFileJSON["collectedStarIds"])
@@ -90,6 +88,9 @@ func add_collected_star(id: int):
 	for star in allStars:
 		if star.starId == id:
 			star.collected = true
+	
+func _init_progress_bar_data() -> Vector2:
+	return Vector2(allStars.size(), get_star_count())
 	
 # Load and Store Data
 func _load_data():

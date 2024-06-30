@@ -28,3 +28,7 @@ func activate_weapon_from_inventory(weaponId: int):
 	Log.info(weaponId)
 	weaponactive = true
 	showWeaponById.emit()
+
+
+# Manage Inventory data
+@onready var INVENTORY = load("res://Ressources/Inventory/starSignMapping.tres")
