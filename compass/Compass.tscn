@@ -35,11 +35,13 @@ theme_override_constants/separation = 100
 custom_minimum_size = Vector2(1, 8)
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(1, 1, 1, 0.6)
 
 [node name="ColorRect3" type="ColorRect" parent="CenterContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(1, 8)
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(1, 1, 1, 0.6)
 
 [node name="BoxContainer" type="BoxContainer" parent="CenterContainer2/HBoxContainer"]
 layout_mode = 2
@@ -48,8 +50,10 @@ layout_mode = 2
 custom_minimum_size = Vector2(1, 8)
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(1, 1, 1, 0.6)
 
 [node name="ColorRect5" type="ColorRect" parent="CenterContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(1, 8)
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(1, 1, 1, 0.6)
