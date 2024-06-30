@@ -1,19 +1,26 @@
-[gd_scene load_steps=41 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=49 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
 [ext_resource type="PackedScene" uid="uid://cb1xwmbnkdeun" path="res://Models/Player.tscn" id="2_rw8m4"]
 [ext_resource type="Texture2D" uid="uid://drdqhewnmiq1o" path="res://Ressources/Textures/blueprint.jpg" id="3_3mjig"]
 [ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
-[ext_resource type="Script" path="res://Scenes/StarCounter.gd" id="4_fhyvq"]
+[ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/StarCounter.gd" id="4_fhyvq"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="6_gvhef"]
 [ext_resource type="Resource" uid="uid://cjk1wd322otqi" path="res://Ressources/Stars/Stars/Aries/star2.tres" id="6_oxw7v"]
-[ext_resource type="Script" path="res://Scenes/InventoryPanel.gd" id="6_x4qck"]
+[ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/InventoryPanel.gd" id="6_x4qck"]
+[ext_resource type="Resource" uid="uid://dsxbbxbpejm3j" path="res://Ressources/Stars/Stars/Aries/star3.tres" id="7_cl0cx"]
 [ext_resource type="Resource" uid="uid://dxa8ubvxniqc8" path="res://Ressources/Stars/Stars/Taurus/star5.tres" id="7_pmc24"]
+[ext_resource type="Resource" uid="uid://dha8827twab3n" path="res://Ressources/Stars/Stars/Aries/star4.tres" id="8_06aqp"]
+[ext_resource type="Resource" uid="uid://b1uvcb7583p6i" path="res://Ressources/Stars/Stars/Taurus/star7.tres" id="8_j746x"]
+[ext_resource type="Resource" uid="uid://c7c45v0j111ap" path="res://Ressources/Stars/Stars/Taurus/star6.tres" id="8_qfx1p"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="8_rv5tm"]
 [ext_resource type="Theme" uid="uid://bwa0rxrtswmu7" path="res://Ressources/Themes/menu_title_theme.tres" id="9_3vl85"]
-[ext_resource type="Script" path="res://Scenes/SignFrame.gd" id="9_jjh24"]
+[ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/SignFrame.gd" id="9_jjh24"]
+[ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/PausePopUp.gd" id="9_r13c3"]
 [ext_resource type="Script" path="res://Ressources/Inventory/StarSignButtons.gd" id="12_2n8vj"]
+[ext_resource type="Resource" uid="uid://f52rw7qj75qn" path="res://Ressources/Stars/Stars/Taurus/star8.tres" id="12_5x6bm"]
+[ext_resource type="Resource" uid="uid://bb8cxcm5cpjmf" path="res://Ressources/Stars/Stars/Taurus/star9.tres" id="12_fnesn"]
 [ext_resource type="Resource" uid="uid://bitithh64yj66" path="res://Ressources/Stars/StarSigns/0.tres" id="13_cs370"]
 [ext_resource type="Resource" uid="uid://cym6sjb5iq5rj" path="res://Ressources/Stars/StarSigns/1.tres" id="14_6sg7d"]
 [ext_resource type="Resource" uid="uid://ccn6ripcb6aue" path="res://Ressources/Stars/StarSigns/2.tres" id="15_3wrix"]
@@ -28,6 +35,7 @@
 [ext_resource type="Resource" uid="uid://dak3jau0cbas4" path="res://Ressources/Stars/StarSigns/11.tres" id="24_6kbgp"]
 [ext_resource type="PackedScene" uid="uid://cvtm4nnjdhm5f" path="res://compass/Compass.tscn" id="27_oebk5"]
 [ext_resource type="PackedScene" uid="uid://jbdwfx2nid4t" path="res://Scenes/UI_Overlays_ingame/star_progress_scene.tscn" id="28_y50i6"]
+[ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/UIManager.gd" id="30_j2okk"]
 
 [sub_resource type="Gradient" id="Gradient_emwwf"]
 offsets = PackedFloat32Array(0.219718, 0.960563)
@@ -107,7 +115,7 @@ shape = SubResource("ConcavePolygonShape3D_n6r7d")
 [node name="Stars" type="Node3D" parent="."]
 
 [node name="Star" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, 1.75387, 0.156052, 0)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, 20.5303, 5.29881, 0)
 
 [node name="Star2" parent="Stars" instance=ExtResource("3_p4imb")]
 transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -9.48863, 3.39798, 0)
@@ -115,88 +123,31 @@ star = ExtResource("6_oxw7v")
 
 [node name="Star3" parent="Stars" instance=ExtResource("3_p4imb")]
 transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -1.40556, 4.01532, 9.67503)
+star = ExtResource("7_cl0cx")
+
+[node name="Star4" parent="Stars" instance=ExtResource("3_p4imb")]
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.126245, 0)
+star = ExtResource("8_06aqp")
+
+[node name="Star5" parent="Stars" instance=ExtResource("3_p4imb")]
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.126245, -1.44754)
 star = ExtResource("7_pmc24")
 
-[node name="Control" type="Control" parent="."]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 0
-offset_left = 31.0
-offset_top = 22.0
-offset_right = 195.0
-offset_bottom = 103.0
+[node name="Star6" parent="Stars" instance=ExtResource("3_p4imb")]
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.126245, -2.69138)
+star = ExtResource("8_qfx1p")
 
-[node name="StarCounter" type="Label" parent="Control"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 102.0
-offset_top = -22.0
-offset_right = 214.0
-offset_bottom = 16.0
-theme_override_colors/font_color = Color(0.637344, 0.570516, 0.883082, 1)
-theme_override_font_sizes/font_size = 15
-text = "adadad"
-vertical_alignment = 1
-script = ExtResource("4_fhyvq")
+[node name="Star7" parent="Stars" instance=ExtResource("3_p4imb")]
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.126245, -4.06808)
+star = ExtResource("8_j746x")
 
-[node name="FPSLabel" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = -30.0
-offset_top = -21.0
-offset_right = 121.0
-offset_bottom = 17.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 15
-text = "FPS:"
-vertical_alignment = 1
+[node name="Star8" parent="Stars" instance=ExtResource("3_p4imb")]
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.126245, -5.12577)
+star = ExtResource("12_5x6bm")
 
-[node name="PausePopUp" type="Panel" parent="."]
-visible = false
-offset_left = 591.0
-offset_top = 304.0
-offset_right = 1335.0
-offset_bottom = 672.0
-
-[node name="Label" type="Label" parent="PausePopUp"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 20.0
-offset_right = 741.0
-offset_bottom = 75.0
-theme = ExtResource("9_3vl85")
-text = "Game paused"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PausePopUp"]
-layout_mode = 0
-offset_left = 182.0
-offset_top = 99.0
-offset_right = 572.0
-offset_bottom = 320.0
-theme_override_constants/separation = 30
-
-[node name="MenuButton" type="Button" parent="PausePopUp/VBoxContainer"]
-process_mode = 2
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme = ExtResource("8_rv5tm")
-text = "Menü
-"
-
-[node name="ExitButton" type="Button" parent="PausePopUp/VBoxContainer"]
-process_mode = 2
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme = ExtResource("8_rv5tm")
-text = "Exit Game"
-
-[node name="Unpause" type="Button" parent="PausePopUp/VBoxContainer"]
-process_mode = 2
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme = ExtResource("8_rv5tm")
-text = "Resume"
+[node name="Star9" parent="Stars" instance=ExtResource("3_p4imb")]
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6837, 0.126246, -6.10104)
+star = ExtResource("12_fnesn")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 5.56495, 0, 0, 0, 23.0289, 20.334, 1.78904, 0)
@@ -247,15 +198,35 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box4/StaticBody3D"]
 shape = SubResource("BoxShape3D_fk3pu")
 
-[node name="InventoryPanel" type="Panel" parent="."]
+[node name="UIManager" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("30_j2okk")
+
+[node name="UIOverlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="InventoryPanel" type="Panel" parent="UIOverlay"]
+process_mode = 2
 visible = false
 self_modulate = Color(0, 0, 0, 0)
+layout_mode = 0
 offset_left = 1197.0
 offset_right = 1921.0
 offset_bottom = 1080.0
 script = ExtResource("6_x4qck")
 
-[node name="TextureRect" type="TextureRect" parent="InventoryPanel"]
+[node name="TextureRect" type="TextureRect" parent="UIOverlay/InventoryPanel"]
 modulate = Color(0.886262, 0.886261, 0.886262, 1)
 layout_mode = 0
 offset_left = -22.0
@@ -265,7 +236,7 @@ texture = ExtResource("6_gvhef")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="InventoryPanel"]
+[node name="Label" type="Label" parent="UIOverlay/InventoryPanel"]
 layout_mode = 0
 offset_left = 107.0
 offset_top = 44.0
@@ -276,7 +247,7 @@ text = "Inventory"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="InventoryPanel"]
+[node name="ColorRect" type="ColorRect" parent="UIOverlay/InventoryPanel"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 12.0
@@ -284,7 +255,7 @@ offset_right = 92.0
 offset_bottom = 1063.0
 color = Color(0, 0, 0, 0.52549)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="InventoryPanel/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UIOverlay/InventoryPanel/ColorRect"]
 process_mode = 2
 layout_mode = 0
 offset_top = 89.0
@@ -292,13 +263,13 @@ offset_right = 64.0
 offset_bottom = 1015.0
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Label" type="Label" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 text = "x"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button1" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button1" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
@@ -306,21 +277,21 @@ text = "♈"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("13_cs370")
 
-[node name="Button2" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button2" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♉"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("14_6sg7d")
 
-[node name="Button3" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button3" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♊"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("15_3wrix")
 
-[node name="Button4" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button4" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
@@ -328,28 +299,28 @@ text = "♋"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("16_uy68q")
 
-[node name="Button5" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button5" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♌"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("17_m823u")
 
-[node name="Button6" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button6" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♍"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("18_3sm4r")
 
-[node name="Button7" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button7" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♎"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("19_ncdhx")
 
-[node name="Button8" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button8" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
@@ -357,35 +328,35 @@ text = "♏"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("20_6ur2a")
 
-[node name="Button9" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button9" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♐"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("21_jg2xd")
 
-[node name="Button10" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button10" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♑"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("22_8ed0a")
 
-[node name="Button11" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button11" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♒"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("23_7bmmk")
 
-[node name="Button12" type="Button" parent="InventoryPanel/ColorRect/VBoxContainer"]
+[node name="Button12" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
 text = "♓"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("24_6kbgp")
 
-[node name="StarCountForSign" type="Label" parent="InventoryPanel"]
+[node name="StarCountForSign" type="Label" parent="UIOverlay/InventoryPanel"]
 layout_mode = 0
 offset_left = 625.0
 offset_top = 968.0
@@ -395,7 +366,7 @@ text = "??? / ???"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="WeaponNameLabel" type="Label" parent="InventoryPanel"]
+[node name="WeaponNameLabel" type="Label" parent="UIOverlay/InventoryPanel"]
 layout_mode = 0
 offset_left = 352.0
 offset_top = 967.0
@@ -404,7 +375,7 @@ offset_bottom = 1025.0
 text = "???"
 vertical_alignment = 1
 
-[node name="ActivateButton" type="Button" parent="InventoryPanel"]
+[node name="ActivateButton" type="Button" parent="UIOverlay/InventoryPanel"]
 process_mode = 2
 layout_mode = 2
 offset_left = 114.0
@@ -414,7 +385,7 @@ offset_bottom = 1019.0
 theme = ExtResource("8_rv5tm")
 text = "Activate Weapon"
 
-[node name="PageName" type="Label" parent="InventoryPanel"]
+[node name="PageName" type="Label" parent="UIOverlay/InventoryPanel"]
 layout_mode = 0
 offset_left = 106.0
 offset_top = 98.0
@@ -426,7 +397,7 @@ text = "???
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SignFrame" type="ColorRect" parent="InventoryPanel"]
+[node name="SignFrame" type="ColorRect" parent="UIOverlay/InventoryPanel"]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 149.0
@@ -436,7 +407,7 @@ pivot_offset = Vector2(0, 411)
 color = Color(1, 1, 1, 0)
 script = ExtResource("9_jjh24")
 
-[node name="DescriptionFrame" type="ColorRect" parent="InventoryPanel"]
+[node name="DescriptionFrame" type="ColorRect" parent="UIOverlay/InventoryPanel"]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 581.0
@@ -445,7 +416,7 @@ offset_bottom = 889.0
 pivot_offset = Vector2(0, 422)
 color = Color(0, 0, 0, 0.447059)
 
-[node name="Label" type="Label" parent="InventoryPanel/DescriptionFrame"]
+[node name="Label" type="Label" parent="UIOverlay/InventoryPanel/DescriptionFrame"]
 layout_mode = 2
 offset_left = 13.0
 offset_top = 10.0
@@ -453,7 +424,7 @@ offset_right = 570.0
 offset_bottom = 33.0
 text = "Description"
 
-[node name="DescriptionLabel" type="Label" parent="InventoryPanel/DescriptionFrame"]
+[node name="DescriptionLabel" type="Label" parent="UIOverlay/InventoryPanel/DescriptionFrame"]
 layout_mode = 2
 offset_left = 13.0
 offset_top = 41.0
@@ -463,20 +434,110 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.72549)
 theme_override_font_sizes/font_size = 15
 text = "Description UwU"
 
-[node name="Compass" parent="." instance=ExtResource("27_oebk5")]
+[node name="PausePopUp" type="Panel" parent="UIOverlay"]
+process_mode = 2
+visible = false
+layout_mode = 0
+offset_left = 591.0
+offset_top = 304.0
+offset_right = 1335.0
+offset_bottom = 672.0
+script = ExtResource("9_r13c3")
 
-[node name="StarProgressScene" parent="." instance=ExtResource("28_y50i6")]
-offset_left = 1857.0
-offset_top = 381.0
-offset_right = 2146.0
-offset_bottom = 3019.0
+[node name="Label" type="Label" parent="UIOverlay/PausePopUp"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 20.0
+offset_right = 741.0
+offset_bottom = 75.0
+theme = ExtResource("9_3vl85")
+text = "Game paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIOverlay/PausePopUp"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 99.0
+offset_right = 572.0
+offset_bottom = 320.0
+theme_override_constants/separation = 30
+
+[node name="MenuButton" type="Button" parent="UIOverlay/PausePopUp/VBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("8_rv5tm")
+text = "Menü
+"
+
+[node name="ExitButton" type="Button" parent="UIOverlay/PausePopUp/VBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("8_rv5tm")
+text = "Exit Game"
+
+[node name="Unpause" type="Button" parent="UIOverlay/PausePopUp/VBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("8_rv5tm")
+text = "Resume"
+
+[node name="Compass" parent="UIOverlay" instance=ExtResource("27_oebk5")]
+process_mode = 3
+
+[node name="StarProgressScene" parent="UIOverlay" instance=ExtResource("28_y50i6")]
+layout_mode = 0
+offset_left = 1872.0
+offset_top = 790.0
+offset_right = 2161.0
+offset_bottom = 3428.0
+scale = Vector2(0.101707, 0.101707)
+mouse_filter = 2
+
+[node name="StarCounter" type="Label" parent="UIOverlay"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 133.0
+offset_right = 245.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.637344, 0.570516, 0.883082, 1)
+theme_override_font_sizes/font_size = 15
+text = "adadad"
+vertical_alignment = 1
+script = ExtResource("4_fhyvq")
+
+[node name="FPSLabel" type="Label" parent="UIOverlay"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 152.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "FPS:"
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
-[connection signal="starCollected2" from="Stars/Star" to="Control/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="starCollected2" from="Stars/Star" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
 [connection signal="body_entered" from="Stars/Star2" to="Stars/Star2" method="_on_body_entered"]
-[connection signal="starCollected2" from="Stars/Star2" to="Control/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="starCollected2" from="Stars/Star2" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
 [connection signal="body_entered" from="Stars/Star3" to="Stars/Star3" method="_on_body_entered"]
-[connection signal="starCollected2" from="Stars/Star3" to="Control/StarCounter" method="_on_star_star_collected_2"]
-[connection signal="inventoryWillBeShown" from="Control/StarCounter" to="InventoryPanel" method="_on_star_counter_inventory_will_be_shown"]
-[connection signal="pressed" from="PausePopUp/VBoxContainer/MenuButton" to="Control/StarCounter" method="_on_menu_button_pressed"]
-[connection signal="pressed" from="PausePopUp/VBoxContainer/Unpause" to="Control/StarCounter" method="_on_unpause_button_pressed"]
+[connection signal="starCollected2" from="Stars/Star3" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="body_entered" from="Stars/Star4" to="Stars/Star4" method="_on_body_entered"]
+[connection signal="starCollected2" from="Stars/Star4" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="body_entered" from="Stars/Star5" to="Stars/Star5" method="_on_body_entered"]
+[connection signal="starCollected2" from="Stars/Star5" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="body_entered" from="Stars/Star6" to="Stars/Star6" method="_on_body_entered"]
+[connection signal="starCollected2" from="Stars/Star6" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="body_entered" from="Stars/Star7" to="Stars/Star7" method="_on_body_entered"]
+[connection signal="starCollected2" from="Stars/Star7" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="body_entered" from="Stars/Star8" to="Stars/Star8" method="_on_body_entered"]
+[connection signal="starCollected2" from="Stars/Star8" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="body_entered" from="Stars/Star9" to="Stars/Star9" method="_on_body_entered"]
+[connection signal="starCollected2" from="Stars/Star9" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
+[connection signal="pressed" from="UIOverlay/PausePopUp/VBoxContainer/MenuButton" to="UIOverlay/PausePopUp" method="_on_menu_button_pressed"]
+[connection signal="pressed" from="UIOverlay/PausePopUp/VBoxContainer/ExitButton" to="UIOverlay/PausePopUp" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UIOverlay/PausePopUp/VBoxContainer/Unpause" to="UIOverlay/PausePopUp" method="_on_unpause_pressed"]

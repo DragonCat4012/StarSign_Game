@@ -107,13 +107,13 @@ text = "TAB"
 [node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_40kuo")
-text = "Y, Z
+text = "Left Click
 "
 
 [node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_40kuo")
-text = "X"
+text = "Right Click"
 
 [node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

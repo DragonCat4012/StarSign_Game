@@ -28,7 +28,7 @@ const LERP_VAL = 0.15
 
 # Emotes
 var emoteIndex = 0
-var emoteAnimations = ["reaction_disappoint"]
+var emoteAnimations = ["reaction_disappoint", "reaction_looking_around"]
 var isEmoteAnimationPlaying = false
 
 # Compass
