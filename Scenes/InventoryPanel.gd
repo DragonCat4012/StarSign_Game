@@ -39,7 +39,7 @@ func _on_button_pressed(num):
 	queue_redraw()
 	
 func _on_activate_weapon_pressed():
-	%"StarCounter".toggleInventory()
+	$"..".toggleInventory()
 	GameManager.currentWeapon = possibleNextWeapon
 	GameManager.activate_weapon_from_inventory(selectedWeaponId)
 
