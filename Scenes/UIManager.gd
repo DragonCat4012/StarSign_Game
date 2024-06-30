@@ -38,13 +38,13 @@ func toggleInventory():
 		EventSystem.InventoryWillBeShown.emit()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		inventory_panel.show()
-		$StarProgressScene.visible = false
+		star_progress_scene.visible = false
 		compass.visible = false
 		#emit_signal("pauseGame")
 	else:
 		isInvShown = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		inventory_panel.hide()
-		$StarProgressScene.visible = true
+		star_progress_scene.visible = true
 		compass.visible = true
 		#emit_signal("unpauseGame")	
