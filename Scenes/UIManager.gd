@@ -3,10 +3,10 @@ extends Control
 var isInvShown = false
 var pauseMenuShown = false
 
-@onready var pause_pop_up = $UIManager/PausePopUp
-@onready var compass = $UIManager/Compass
-@onready var inventory_panel = $UIManager/InventoryPanel
-@onready var star_progress_scene = $UIManager/StarProgressScene
+@onready var pause_pop_up = $"../UIOverlay/PausePopUp"
+@onready var compass = $"../UIOverlay/Compass"
+@onready var inventory_panel = $"../UIOverlay/InventoryPanel"
+@onready var star_progress_scene = $"../UIOverlay/StarProgressScene"
 	
 func _init():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

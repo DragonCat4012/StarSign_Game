@@ -1,5 +1,5 @@
 extends Node3D
-@onready var compass = $UIManager/Compass
+@onready var compass = $UIOverlay/Compass
 
 func _physics_process(delta):
 	if $Player.position.y < -75:

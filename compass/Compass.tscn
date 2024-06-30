@@ -9,8 +9,9 @@ script = ExtResource("1_epltg")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_top = 13.0
-offset_right = 1923.0
+offset_right = 2324.0
 offset_bottom = 55.0
+scale = Vector2(0.827747, 0.907476)
 
 [node name="CompassBar" type="TextureRect" parent="CenterContainer"]
 material = ExtResource("2_6qwgm")
@@ -18,12 +19,12 @@ layout_mode = 2
 texture = ExtResource("3_y1r8o")
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
-offset_top = 55.0
+offset_top = 49.0
 offset_right = 1923.0
-offset_bottom = 85.0
+offset_bottom = 79.0
 
 [node name="ColorRect" type="ColorRect" parent="CenterContainer2"]
-custom_minimum_size = Vector2(3, 25)
+custom_minimum_size = Vector2(3, 15)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2"]
@@ -31,12 +32,12 @@ layout_mode = 2
 theme_override_constants/separation = 100
 
 [node name="ColorRect2" type="ColorRect" parent="CenterContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(1, 15)
+custom_minimum_size = Vector2(1, 8)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ColorRect3" type="ColorRect" parent="CenterContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(1, 15)
+custom_minimum_size = Vector2(1, 8)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -44,11 +45,11 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="ColorRect4" type="ColorRect" parent="CenterContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(1, 15)
+custom_minimum_size = Vector2(1, 8)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ColorRect5" type="ColorRect" parent="CenterContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(1, 15)
+custom_minimum_size = Vector2(1, 8)
 layout_mode = 2
 size_flags_horizontal = 3
