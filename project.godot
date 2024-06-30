@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Global/GameManager.gd"
 Log="*res://Global/Log.gd"
+EventSystem="*res://Global/EventSystem.gd"
 
 [display]
 

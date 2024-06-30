@@ -39,6 +39,8 @@ func _init():
 	_load_data() # updates saveedData
 	_debug_stars()
 	_update_collected_stars()
+	EventSystem.signal_initial_star_count(get_star_count())
+	EventSystem.signal_max_star_count(allStars.size())
 	
 func get_all_collected_stars() -> Array[int]:
 	var arr: Array[int] = []
@@ -79,6 +81,7 @@ func add_collected_star(id: int):
 	
 	if not id in arr:
 		arr.append(id)
+		EventSystem.signal_increased_star_count()
 		
 	SaveFileJSON["collectedStarIds"] = arr
 	_save_data()
