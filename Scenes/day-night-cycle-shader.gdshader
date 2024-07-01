@@ -8,9 +8,11 @@ uniform vec3 horizonSkyNight: source_color;
 uniform vec3 topSunRiseSet: source_color;
 uniform vec3 horizonSunRiseSet: source_color;
 
+group_uniforms sun;
 uniform vec3 sunColor: source_color;
 uniform float sunSize = 0.1;
 
+group_uniforms moon;
 uniform vec3 moonColor: source_color;
 uniform float moonSize = 0.1;
 uniform float moonOffset = 0.05;
