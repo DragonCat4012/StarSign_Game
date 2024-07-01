@@ -11,3 +11,4 @@ func _process(delta: float):
 		GameManager._toggle_weapon()
 		
 	compass._updateTexture($Player.compassDirection)
+	$DirectionalLight3D.rotate_x(deg_to_rad(0.4))

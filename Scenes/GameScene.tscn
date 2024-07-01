@@ -1,7 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=47 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
+[ext_resource type="Shader" path="res://Scenes/day-night-cycle-shader.gdshader" id="2_7xet1"]
 [ext_resource type="PackedScene" uid="uid://cb1xwmbnkdeun" path="res://Models/Player.tscn" id="2_rw8m4"]
 [ext_resource type="Texture2D" uid="uid://drdqhewnmiq1o" path="res://Ressources/Textures/blueprint.jpg" id="3_3mjig"]
 [ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
@@ -37,31 +38,22 @@
 [ext_resource type="PackedScene" uid="uid://jbdwfx2nid4t" path="res://Scenes/UI_Overlays_ingame/star_progress_scene.tscn" id="28_y50i6"]
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/UIManager.gd" id="30_j2okk"]
 
-[sub_resource type="Gradient" id="Gradient_emwwf"]
-offsets = PackedFloat32Array(0.219718, 0.960563)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_gs340"]
-seed = 1
-frequency = 0.0207
-fractal_gain = 0.52
-metadata/_preview_in_3d_space_ = true
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sr8m8"]
-seamless = true
-color_ramp = SubResource("Gradient_emwwf")
-noise = SubResource("FastNoiseLite_gs340")
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5sk1y"]
-sky_top_color = Color(0.385572, 0.526978, 0.787744, 1)
-sky_horizon_color = Color(0.407478, 0.506715, 0.793939, 1)
-sky_curve = 0.0081
-sky_cover = SubResource("NoiseTexture2D_sr8m8")
-ground_bottom_color = Color(0.0833987, 0.099318, 0.249792, 1)
-ground_horizon_color = Color(0.466071, 0.561516, 0.832016, 1)
-ground_curve = 0.0606287
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lk4hg"]
+shader = ExtResource("2_7xet1")
+shader_parameter/topSkyDay = Color(0.7381, 0.7588, 0.884513, 1)
+shader_parameter/horizonSkyDay = Color(0.234297, 0.42134, 0.766038, 1)
+shader_parameter/topSkyNight = Color(0.132587, 0.20671, 0.438882, 1)
+shader_parameter/horizonSkyNight = Color(0.02298, 0.048783, 0.176547, 1)
+shader_parameter/topSunRiseSet = Color(0.914342, 0.564298, 0.851265, 1)
+shader_parameter/horizonSunRiseSet = Color(0.917788, 0.505656, 0.227997, 1)
+shader_parameter/sunColor = Color(0.956334, 0.914527, 0.812635, 1)
+shader_parameter/sunSize = 0.1
+shader_parameter/moonColor = Color(0.720467, 0.720468, 0.720467, 1)
+shader_parameter/moonSize = 0.1
+shader_parameter/moonOffset = 0.05
 
 [sub_resource type="Sky" id="Sky_rvsrr"]
-sky_material = SubResource("ProceduralSkyMaterial_5sk1y")
+sky_material = SubResource("ShaderMaterial_lk4hg")
 
 [sub_resource type="Environment" id="Environment_gbmld"]
 background_mode = 2
@@ -91,12 +83,8 @@ script = ExtResource("1_mm86k")
 environment = SubResource("Environment_gbmld")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0.227087, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.227087, 0)
 shadow_enabled = true
-
-[node name="DefaultCube" parent="DirectionalLight3D" instance=ExtResource("1_hxdoa")]
-transform = Transform3D(1, 0, -1.49012e-08, 1.49012e-07, 1, 1.49012e-07, 2.08616e-07, 0, 1, 1.3678, -2.02515, 1.31468)
-mass = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(20.9791, 0, 0, 0, 20.9791, 0, 0, 0, 20.9791, 0, -0.800235, 0)
@@ -519,6 +507,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 15
 text = "FPS:"
 vertical_alignment = 1
+
+[node name="DefaultCube" parent="." instance=ExtResource("1_hxdoa")]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 2.55173e-07, 0.5, 0.866026, -0.5, 0.75, -0.433012, 0.0210368, 0.353058, -2.77204)
+mass = 0.5
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected2" from="Stars/Star" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
