@@ -5,7 +5,9 @@ render_mode use_half_res_pass;
 uniform float SunSetDuration = 0.5;
 
 group_uniforms skyColors;
+uniform vec3 dayColor: source_color;
 uniform vec3 dayTopColor: source_color;
+uniform vec3 nightColor: source_color;
 uniform vec3 nightTopColor: source_color;
 uniform vec3 sunriseColor: source_color;
 uniform vec3 sunsetColor: source_color;
@@ -48,9 +50,9 @@ void sky() {
 	float currentAngle = LIGHT0_DIRECTION.y;
 	float currentSide = LIGHT0_DIRECTION.z;
 	
-	vec3 blue = dayTopColor;//vec3(0.0, 0.0, 1.0);
+	vec3 blue = dayColor;//vec3(0.0, 0.0, 1.0);
 	vec3 green = sunriseColor;//vec3(0.0, 1.0, 0.0); 
-	vec3 red = nightTopColor;//vec3(1.0, 0.0, 0.0);
+	vec3 red = nightColor;//vec3(1.0, 0.0, 0.0);
 	vec3 pink = sunsetColor;//vec3(1.0, 0.0, 1.0); 
 
 	if (currentAngle > 0.0 && currentAngle < SunSetDuration) {
