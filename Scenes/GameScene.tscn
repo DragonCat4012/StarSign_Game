@@ -43,8 +43,8 @@ shader = ExtResource("2_7xet1")
 shader_parameter/SunSetDuration = 0.3
 shader_parameter/dayColor = Color(0.437123, 0.648819, 0.834795, 1)
 shader_parameter/dayTopColor = Color(0.786113, 1, 0.743535, 1)
-shader_parameter/nightColor = Color(0.132145, 0.148378, 0.23446, 1)
-shader_parameter/nightTopColor = Color(0.0650412, 0.115274, 0.33826, 1)
+shader_parameter/nightColor = Color(0.0189742, 0.044752, 0.109693, 1)
+shader_parameter/nightTopColor = Color(0.165353, 0.182164, 0.261057, 1)
 shader_parameter/sunriseColor = Color(0.888018, 0.554976, 0.395547, 1)
 shader_parameter/sunsetColor = Color(0.944165, 0.412657, 0.51578, 1)
 shader_parameter/horizonSkyDay = Color(0.234297, 0.42134, 0.766038, 1)
@@ -130,19 +130,20 @@ environment = SubResource("Environment_gbmld")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.227087, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(20.9791, 0, 0, 0, 20.9791, 0, 0, 0, 20.9791, 0, -0.800235, 0)
+[node name="FloorPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(20.9791, 0, 0, 0, 20.9791, 0, 0, 0, 20.9791, 0, -0.0769215, 0)
 material_override = SubResource("StandardMaterial3D_jfl0u")
 mesh = SubResource("PlaneMesh_in0bf")
 
-[node name="Floor" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="Floor" type="StaticBody3D" parent="FloorPlane"]
 transform = Transform3D(0.66195, 0, 0, 0, 0.66195, 0, 0, 0, 0.66195, 0, 0.000853974, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorPlane/Floor"]
 transform = Transform3D(1.51447, 0, 0, 0, 1.51447, 0, 0, 0, 1.51447, 0, -0.00766056, 0)
 shape = SubResource("ConcavePolygonShape3D_n6r7d")
 
 [node name="Player" parent="." instance=ExtResource("2_rw8m4")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.440202, 0)
 
 [node name="Stars" type="Node3D" parent="."]
 
@@ -181,17 +182,17 @@ star = ExtResource("12_5x6bm")
 transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6837, 0.126246, -6.10104)
 star = ExtResource("12_fnesn")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="Wall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 5.56495, 0, 0, 0, 23.0289, 20.334, 1.78904, 0)
 mesh = SubResource("BoxMesh_sfwq1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="Box1" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.67243, 0, 0, 0, 2.99633, 0, 0, 0, 8.33861, -10.7161, 0.439683, 0)
+transform = Transform3D(4.67243, 0, 0, 0, 2.99633, 0, 0, 0, 8.33861, -10.7161, 1.27817, 0)
 mesh = SubResource("BoxMesh_sfwq1")
 surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 
@@ -201,7 +202,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="Box2" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.24153, 0, 0, 0, 1.43744, 0, 0, 0, 4.00032, -10.7161, -0.205001, -4.52162)
+transform = Transform3D(2.24153, 0, 0, 0, 1.43744, 0, 0, 0, 4.00032, -10.7161, 0.633489, -4.52162)
 mesh = SubResource("BoxMesh_sfwq1")
 surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 
@@ -211,7 +212,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="Box3" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.24153, 0, 0, 0, 1.43744, 0, 0, 0, 4.00032, -7.77793, 2.13822, 9.90282)
+transform = Transform3D(2.24153, 0, 0, 0, 1.43744, 0, 0, 0, 4.00032, -7.77793, 2.97671, 9.90282)
 mesh = SubResource("BoxMesh_sfwq1")
 surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 
@@ -221,7 +222,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="Box4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.43677, 0, 0, 0, 0.921373, 0, 0, 0, 2.56413, -1.89282, 2.90459, 9.90282)
+transform = Transform3D(1.43677, 0, 0, 0, 0.921373, 0, 0, 0, 2.56413, -1.89282, 3.74308, 9.90282)
 mesh = SubResource("BoxMesh_sfwq1")
 surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 
@@ -569,7 +570,7 @@ offset_right = 19.126
 offset_bottom = 38.7738
 
 [node name="DefaultCube" parent="." instance=ExtResource("1_hxdoa")]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 2.55173e-07, 0.5, 0.866026, -0.5, 0.75, -0.433012, 0.0210368, 0.353058, -2.77204)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 2.55173e-07, 0.5, 0.866026, -0.5, 0.75, -0.433012, 0.0210368, 0.747234, -2.77204)
 mass = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
