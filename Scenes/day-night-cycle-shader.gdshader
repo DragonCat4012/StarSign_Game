@@ -51,17 +51,39 @@ void sky() {
 	vec3 skyColorSunRiseSet = mix(horizonSunRiseSet, topSunRiseSet, colorGradient);
 	vec3 skyColor = vec3(0.0, 0.0, 0.0);
 	
-	if (LIGHT0_DIRECTION.y < -0.5) { // Night
-		skyColor = vec3(0.0, 0.0, 1.0); // blue
-	} else if (LIGHT0_DIRECTION.y < 0.0) { // Sunset
-		skyColor = vec3(1.0, 0.0, 1.0); // pink
-	} else if (LIGHT0_DIRECTION.y > 0.5) { // day 
-		skyColor = vec3(1.0, 1.0, 0.0); //yellow
-	} else if (LIGHT0_DIRECTION.y > 0.0) { 
+	float currentAngle = LIGHT0_DIRECTION.y;
+	/*if (currentAngle > 0.0 && currentAngle < 0.1) {
 		skyColor = vec3(0.0, 1.0, 0.0); // green
-	} else {  // sunrise
+	} else if (currentAngle > 0.1 && currentAngle < 0.9) {
+			skyColor = vec3(0.0, 0.0, 1.0); // blue
+	} else if (currentAngle > 0.9 && currentAngle < 1.0) { 
+		skyColor = vec3(1.0, 0.0, 1.0); // pink
+	} else if (currentAngle > -0.9 && currentAngle < 0.0) { 
+		skyColor = vec3(1.0, 1.0, 0.0); //yellow
+	} else if (currentAngle > -0.9 && currentAngle < -0.1) {
+		skyColor = vec3(1.0, 1.0, 1.0); // white
+	} else if (currentAngle < -0.1 && currentAngle <= 0.0) {
 		skyColor = vec3(1.0, 0.0, 0.0); // red
+	} */
+	
+		vec3 blue = vec3(0.0, 0.0, 1.0);
+		vec3 green = vec3(0.0, 1.0, 0.0); 
+		vec3 red = vec3(1.0, 0.0, 0.0);
+		vec3 yellow = vec3(1.0, 1.0, 0.0); 
+		
+	if (currentAngle > 0.0 && currentAngle < 0.5) {
+
+		vec3 skyColorDay = mix(blue, green, colorGradient);
+		//skyColor = mix(skyColorDay, skyColorNight, abs(LIGHT0_DIRECTION.y));
+		 skyColor = green;//skyColorDay;//vec3(0.0, 1.0, 0.0); // green
+	} else if (currentAngle > 0.5 && currentAngle < 1.0) {
+			skyColor = blue;
+	} else if (currentAngle < 0.0 && currentAngle < -0.5) {
+			skyColor = red;
+	} else if (currentAngle > -0.5 && currentAngle < -0.0) {
+		skyColor = yellow;
 	} 
+
 /*	if (LIGHT0_DIRECTION.y > 0.0){
 		if(LIGHT0_DIRECTION.y > 0.1) {
 			skyColor = skyColorDay;
