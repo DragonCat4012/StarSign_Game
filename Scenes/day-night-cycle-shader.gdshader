@@ -1,7 +1,20 @@
 shader_type sky;
 render_mode use_half_res_pass;
 
-uniform vec3 topSkyDay: source_color;
+
+group_uniforms daySky;
+uniform vec3 dayTopColor: source_color;
+uniform vec3 dayBottomColor: source_color;
+uniform vec3 daySunriseColor: source_color;
+uniform vec3 daySunsetColor: source_color;
+
+group_uniforms nightSky;
+uniform vec3 nightTopColor: source_color;
+uniform vec3 nightBottomColor: source_color;
+uniform vec3 nightSunriseColor: source_color;
+uniform vec3 nightSunsetColor: source_color;
+
+group_uniforms deprecated;
 uniform vec3 horizonSkyDay: source_color;
 uniform vec3 topSkyNight: source_color;
 uniform vec3 horizonSkyNight: source_color;
@@ -33,12 +46,22 @@ void sky() {
 	vec4 moon = vec4(moonColor, clamp((moonDisk - moonCrescentDisk), 0.0, 1.0));
 	
 	float colorGradient = clamp(EYEDIR.y, 0.0, 1.0);
-	vec3 skyColorDay = mix(horizonSkyDay, topSkyDay, colorGradient);
+	vec3 skyColorDay = mix(horizonSkyDay, dayTopColor, colorGradient);
 	vec3 skyColorNight = mix (horizonSkyNight, topSkyNight, colorGradient);
 	vec3 skyColorSunRiseSet = mix(horizonSunRiseSet, topSunRiseSet, colorGradient);
 	vec3 skyColor = vec3(0.0, 0.0, 0.0);
 	
-	if (LIGHT0_DIRECTION.y > 0.0){
+	
+	if (LIGHT0_DIRECTION.y > 0.5) { 
+		skyColor = vec3(1.0, 0.0, 0.0); // red
+	} else if (LIGHT0_DIRECTION.y < -0.5) { // 1.5
+		skyColor = vec3(0.0, 0.0, 1.0); // blue
+	} else if (LIGHT0_DIRECTION.y >  0.0) { //3.0*PI/2.0
+		skyColor = vec3(1.0, 1.0, 0.0); //yellow
+	}  else if (LIGHT0_DIRECTION.y <  1.0) { //3.0*PI/2.0
+			skyColor = vec3(0.0, 1.0, 0.0); // green
+	}
+/*	if (LIGHT0_DIRECTION.y > 0.0){
 		if(LIGHT0_DIRECTION.y > 0.1) {
 			skyColor = skyColorDay;
 		} else {
@@ -50,7 +73,7 @@ void sky() {
 		} else {
 			skyColor = skyColorNight;
 		}
-	}
+	}*/
 	skyColor = mix(skyColor, sun.rgb, sun.a);
 	skyColor = mix(skyColor, moon.rgb, moon.a);
 	COLOR = skyColor;
