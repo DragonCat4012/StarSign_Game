@@ -4,17 +4,11 @@ render_mode use_half_res_pass;
 
 uniform float SunSetDuration = 0.5;
 
-group_uniforms daySky;
+group_uniforms skyColors;
 uniform vec3 dayTopColor: source_color;
-uniform vec3 dayBottomColor: source_color;
-uniform vec3 daySunriseColor: source_color;
-uniform vec3 daySunsetColor: source_color;
-
-group_uniforms nightSky;
 uniform vec3 nightTopColor: source_color;
-uniform vec3 nightBottomColor: source_color;
-uniform vec3 nightSunriseColor: source_color;
-uniform vec3 nightSunsetColor: source_color;
+uniform vec3 sunriseColor: source_color;
+uniform vec3 sunsetColor: source_color;
 
 group_uniforms deprecated;
 uniform vec3 horizonSkyDay: source_color;
@@ -47,20 +41,17 @@ void sky() {
 	float moonCrescentDisk = step(moonSize, moonCrescentPosition);
 	vec4 moon = vec4(moonColor, clamp((moonDisk - moonCrescentDisk), 0.0, 1.0));
 	
-	float colorGradient = clamp(EYEDIR.y, 0.0, 1.0);
-	vec3 skyColorDay = mix(horizonSkyDay, dayTopColor, colorGradient);
-	vec3 skyColorNight = mix (horizonSkyNight, topSkyNight, colorGradient);
-	vec3 skyColorSunRiseSet = mix(horizonSunRiseSet, topSunRiseSet, colorGradient);
-	vec3 skyColor = vec3(0.0, 0.0, 0.0);
 	
 	// Sky Gradient
+	float colorGradient = clamp(EYEDIR.y, 0.0, 1.0);
+	vec3 skyColor = vec3(0.0, 0.0, 0.0);
 	float currentAngle = LIGHT0_DIRECTION.y;
 	float currentSide = LIGHT0_DIRECTION.z;
 	
-	vec3 blue = vec3(0.0, 0.0, 1.0);
-	vec3 green = vec3(0.0, 1.0, 0.0); 
-	vec3 red = vec3(1.0, 0.0, 0.0);
-	vec3 pink = vec3(1.0, 0.0, 1.0); 
+	vec3 blue = dayTopColor;//vec3(0.0, 0.0, 1.0);
+	vec3 green = sunriseColor;//vec3(0.0, 1.0, 0.0); 
+	vec3 red = nightTopColor;//vec3(1.0, 0.0, 0.0);
+	vec3 pink = sunsetColor;//vec3(1.0, 0.0, 1.0); 
 
 	if (currentAngle > 0.0 && currentAngle < SunSetDuration) {
 		if (currentSide > 0.0) { // upper pink gradient
