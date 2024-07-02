@@ -2,6 +2,8 @@ shader_type sky;
 render_mode use_half_res_pass;
 
 
+uniform float SunSetDuration = 0.3;
+
 group_uniforms daySky;
 uniform vec3 dayTopColor: source_color;
 uniform vec3 dayBottomColor: source_color;
@@ -51,53 +53,36 @@ void sky() {
 	vec3 skyColorSunRiseSet = mix(horizonSunRiseSet, topSunRiseSet, colorGradient);
 	vec3 skyColor = vec3(0.0, 0.0, 0.0);
 	
-	float currentAngle = LIGHT0_DIRECTION.y;
-	/*if (currentAngle > 0.0 && currentAngle < 0.1) {
-		skyColor = vec3(0.0, 1.0, 0.0); // green
-	} else if (currentAngle > 0.1 && currentAngle < 0.9) {
-			skyColor = vec3(0.0, 0.0, 1.0); // blue
-	} else if (currentAngle > 0.9 && currentAngle < 1.0) { 
-		skyColor = vec3(1.0, 0.0, 1.0); // pink
-	} else if (currentAngle > -0.9 && currentAngle < 0.0) { 
-		skyColor = vec3(1.0, 1.0, 0.0); //yellow
-	} else if (currentAngle > -0.9 && currentAngle < -0.1) {
-		skyColor = vec3(1.0, 1.0, 1.0); // white
-	} else if (currentAngle < -0.1 && currentAngle <= 0.0) {
-		skyColor = vec3(1.0, 0.0, 0.0); // red
-	} */
 	
-		vec3 blue = vec3(0.0, 0.0, 1.0);
-		vec3 green = vec3(0.0, 1.0, 0.0); 
-		vec3 red = vec3(1.0, 0.0, 0.0);
-		vec3 yellow = vec3(1.0, 1.0, 0.0); 
-		
-	if (currentAngle > 0.0 && currentAngle < 0.5) {
+	float currentAngle = LIGHT0_DIRECTION.y;
+	float currentSide = LIGHT0_DIRECTION.z;
+	vec3 blue = vec3(0.0, 0.0, 1.0);
+	vec3 green = vec3(0.0, 1.0, 0.0); 
+	vec3 red = vec3(1.0, 0.0, 0.0);
+	vec3 yellow = vec3(1.0, 1.0, 0.0); 
+	vec3 pink = vec3(1.0, 0.0, 1.0); 
+	vec3 purple = vec3(0.55, 1.0, 1.0); 
 
-		vec3 skyColorDay = mix(blue, green, colorGradient);
-		//skyColor = mix(skyColorDay, skyColorNight, abs(LIGHT0_DIRECTION.y));
-		 skyColor = green;//skyColorDay;//vec3(0.0, 1.0, 0.0); // green
-	} else if (currentAngle > 0.5 && currentAngle < 1.0) {
+	if (currentAngle > 0.0 && currentAngle < SunSetDuration) {
+		//vec3 skyColorDay = mix(blue, green, colorGradient);
+		if (currentSide > 0.0) { // right side
+			skyColor = pink;
+		} else { // left side
+			skyColor = green;
+		}
+	} else if (currentAngle > SunSetDuration && currentAngle < 1.0) {
 			skyColor = blue;
-	} else if (currentAngle < 0.0 && currentAngle < -0.5) {
+	} else if (currentAngle < 0.0 && currentAngle < -SunSetDuration) {
 			skyColor = red;
-	} else if (currentAngle > -0.5 && currentAngle < -0.0) {
-		skyColor = yellow;
+	} else if (currentAngle > -SunSetDuration && currentAngle < -0.0) {
+			if (currentSide > 0.0) { // right side
+			skyColor = purple;
+		} else { // left side
+			skyColor = yellow;
+		}
 	} 
 
-/*	if (LIGHT0_DIRECTION.y > 0.0){
-		if(LIGHT0_DIRECTION.y > 0.1) {
-			skyColor = skyColorDay;
-		} else {
-			skyColor = mix(skyColorSunRiseSet, skyColorDay, LIGHT0_DIRECTION.y);
-		}
-	} else {
-		if(LIGHT0_DIRECTION.y > -0.3) {
-			skyColor = mix(skyColorSunRiseSet, skyColorNight, abs(LIGHT0_DIRECTION.y));
-		} else {
-			skyColor = skyColorNight;
-		}
-	}*/
-	skyColor = mix(skyColor, sun.rgb, sun.a);
-	skyColor = mix(skyColor, moon.rgb, moon.a);
-	COLOR = skyColor;
-}
+		skyColor = mix(skyColor, sun.rgb, sun.a);
+		skyColor = mix(skyColor, moon.rgb, moon.a);
+		COLOR = skyColor;
+	}
