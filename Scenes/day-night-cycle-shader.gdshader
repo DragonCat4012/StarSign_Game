@@ -51,16 +51,17 @@ void sky() {
 	vec3 skyColorSunRiseSet = mix(horizonSunRiseSet, topSunRiseSet, colorGradient);
 	vec3 skyColor = vec3(0.0, 0.0, 0.0);
 	
-	
-	if (LIGHT0_DIRECTION.y > 0.5) { 
-		skyColor = vec3(1.0, 0.0, 0.0); // red
-	} else if (LIGHT0_DIRECTION.y < -0.5) { // 1.5
+	if (LIGHT0_DIRECTION.y < -0.5) { // Night
 		skyColor = vec3(0.0, 0.0, 1.0); // blue
-	} else if (LIGHT0_DIRECTION.y >  0.0) { //3.0*PI/2.0
+	} else if (LIGHT0_DIRECTION.y < 0.0) { // Sunset
+		skyColor = vec3(1.0, 0.0, 1.0); // pink
+	} else if (LIGHT0_DIRECTION.y > 0.5) { // day 
 		skyColor = vec3(1.0, 1.0, 0.0); //yellow
-	}  else if (LIGHT0_DIRECTION.y <  1.0) { //3.0*PI/2.0
-			skyColor = vec3(0.0, 1.0, 0.0); // green
-	}
+	} else if (LIGHT0_DIRECTION.y > 0.0) { 
+		skyColor = vec3(0.0, 1.0, 0.0); // green
+	} else {  // sunrise
+		skyColor = vec3(1.0, 0.0, 0.0); // red
+	} 
 /*	if (LIGHT0_DIRECTION.y > 0.0){
 		if(LIGHT0_DIRECTION.y > 0.1) {
 			skyColor = skyColorDay;
