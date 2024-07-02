@@ -2,7 +2,7 @@ extends Node3D
 @onready var compass = $UIOverlay/Compass
 @onready var needle = $UIOverlay/Clock/Needle
 @onready var lightSource = $DirectionalLight3D
-
+const TIME_PER_DAY = 0.05
 func _physics_process(delta):
 	if $Player.position.y < -75:
 		Log.info("Player died due to height :c")
@@ -13,7 +13,7 @@ func _process(delta: float):
 		GameManager._toggle_weapon()
 		
 	compass._updateTexture($Player.compassDirection)
-	lightSource.rotate_x(deg_to_rad(0.5))
+	lightSource.rotate_x(deg_to_rad(TIME_PER_DAY))
 
 	if lightSource.rotation_degrees.x > 0: # Night
 		lightSource.light_energy = 0.01

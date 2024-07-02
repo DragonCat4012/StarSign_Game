@@ -22,6 +22,7 @@ uniform vec3 horizonSunRiseSet: source_color;
 group_uniforms sun;
 uniform vec3 sunColor: source_color;
 uniform float sunSize = 0.2;
+uniform float sun_blur: hint_range(0.01, 1.0) = 0.4;
 
 group_uniforms moon;
 uniform vec3 moonColor: source_color;
@@ -31,7 +32,7 @@ uniform float moonOffset = 0.05;
 void sky() {
 	float sunDirection = distance(EYEDIR.xyz, LIGHT0_DIRECTION);
 	float sunPosition = 1.0 - clamp(sunDirection/sunSize, 0.0, 1.0);
-	float sunDisk = step(sunSize, sunPosition);
+	float sunDisk = clamp(sunPosition / sun_blur, sunPosition, 1.0);
 	vec4 sun = vec4(sunColor, sunDisk);
 	
 	float moonDirection = distance(EYEDIR.xyz, -LIGHT0_DIRECTION);
