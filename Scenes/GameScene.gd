@@ -1,5 +1,6 @@
 extends Node3D
 @onready var compass = $UIOverlay/Compass
+@onready var needle = $UIOverlay/Clock/Needle
 
 func _physics_process(delta):
 	if $Player.position.y < -75:
@@ -11,4 +12,5 @@ func _process(delta: float):
 		GameManager._toggle_weapon()
 		
 	compass._updateTexture($Player.compassDirection)
-	$DirectionalLight3D.rotate_x(deg_to_rad(0.4))
+	$DirectionalLight3D.rotate_x(deg_to_rad(0.1))
+	needle.rotation_degrees += 0.1
