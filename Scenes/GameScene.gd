@@ -2,8 +2,7 @@ extends Node3D
 @onready var compass = $UIOverlay/Compass
 @onready var needle = $UIOverlay/Clock/Needle
 @onready var lightSource = $DirectionalLight3D
-const TIME_PER_DAY = 0.05
-
+const TIME_PER_DAY = 0.005
 
 func _physics_process(delta):
 	if $Player.position.y < -75:

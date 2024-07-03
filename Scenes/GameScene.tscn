@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
-[ext_resource type="Shader" path="res://Scenes/day-night-cycle-shader.gdshader" id="2_7xet1"]
+[ext_resource type="Shader" path="res://Ressources/ShaderTextures/day-night-cycle-shader.gdshader" id="2_7xet1"]
 [ext_resource type="PackedScene" uid="uid://cb1xwmbnkdeun" path="res://Models/Player.tscn" id="2_rw8m4"]
 [ext_resource type="Texture2D" uid="uid://drdqhewnmiq1o" path="res://Ressources/Textures/blueprint.jpg" id="3_3mjig"]
 [ext_resource type="Texture2D" uid="uid://cp05y7uvcttym" path="res://Ressources/ShaderTextures/CloudsDistort.bmp" id="3_bytqq"]
@@ -567,19 +567,20 @@ vertical_alignment = 1
 
 [node name="Clock" type="ColorRect" parent="UIOverlay"]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 928.0
-offset_right = 81.0
-offset_bottom = 968.0
-scale = Vector2(3.03432, 3.03432)
+offset_left = 21.0
+offset_top = 1004.0
+offset_right = 61.0
+offset_bottom = 1044.0
+scale = Vector2(1.44115, 1.44115)
 color = Color(0, 0, 0, 1)
 
 [node name="Needle" type="ColorRect" parent="UIOverlay/Clock"]
 layout_mode = 0
-offset_left = 18.126
-offset_top = 19.7738
-offset_right = 19.126
-offset_bottom = 38.7738
+offset_left = 19.1147
+offset_top = 24.3877
+offset_right = 20.1147
+offset_bottom = 34.3877
+scale = Vector2(1, 1.561)
 
 [node name="DefaultCube" parent="." instance=ExtResource("1_hxdoa")]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 2.55173e-07, 0.5, 0.866026, -0.5, 0.75, -0.433012, 0.0210368, 0.747234, -2.77204)
