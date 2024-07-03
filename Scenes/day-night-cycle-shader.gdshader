@@ -12,12 +12,18 @@ uniform vec3 nightTopColor: source_color;
 uniform vec3 sunriseColor: source_color;
 uniform vec3 sunsetColor: source_color;
 
-group_uniforms deprecated;
-uniform vec3 horizonSkyDay: source_color;
-uniform vec3 topSkyNight: source_color;
-uniform vec3 horizonSkyNight: source_color;
-uniform vec3 topSunRiseSet: source_color;
-uniform vec3 horizonSunRiseSet: source_color;
+// Clouds Stuff
+group_uniforms clouds;
+uniform sampler2D clouds_texture: filter_linear_mipmap;
+uniform sampler2D clouds_distort_texture: filter_linear_mipmap;
+uniform sampler2D clouds_noise_texture: filter_linear_mipmap;
+uniform vec3 clouds_main_color: source_color = vec3(1.0, 1.0, 1.0);
+uniform vec3 clouds_edge_color: source_color = vec3(1.0, 1.0, 1.0);
+uniform float clouds_speed: hint_range(0.0, 0.1, 0.01);
+uniform float clouds_scale: hint_range(0.0, 1.0, 0.01);
+uniform float clouds_cutoff: hint_range(0.0, 1.0, 0.01);
+uniform float clouds_fuzziness: hint_range(0.0, 1.0, 0.01);
+
 
 group_uniforms sun;
 uniform vec3 sunColor: source_color;
@@ -77,8 +83,21 @@ void sky() {
 			skyColor = mix(skyColorGradient, red, abs(LIGHT0_DIRECTION.y/SunSetDuration));
 		}
 	} 
+	
+	// Clouds from https://godotshaders.com/shader/stylized-sky-shader-with-clouds/
+	vec2 sky_uv = EYEDIR.xz / EYEDIR.y;
+	float clouds_movement = TIME * clouds_speed * 0.5;
+	float clouds_base_noise = texture(clouds_texture, (sky_uv + clouds_movement ) * clouds_scale).r;
+	float noise1 = texture(clouds_distort_texture, (sky_uv + clouds_base_noise + (clouds_movement * 0.75)) * clouds_scale).r;
+	float noise2 = texture(clouds_noise_texture, (sky_uv + noise1 + (clouds_movement * 0.25)) * clouds_scale).r;
+	float clouds_noise_value = clamp(noise1 * noise2, 0.0, 1.0) * clamp(EYEDIR.y, 0.0, 1.0);
+	float clouds_value = clamp(smoothstep(clouds_cutoff, clouds_cutoff + clouds_fuzziness, clouds_noise_value), 0.0, 1.0);
+	vec3 clouds = mix(clouds_edge_color,  clouds_main_color , clouds_value) * clouds_value;
+	
+	float clouds_negative = 1.0 - clouds_value;
 
-		skyColor = mix(skyColor, sun.rgb, sun.a);
-		skyColor = mix(skyColor, moon.rgb, moon.a);
-		COLOR = skyColor;
-	}
+	skyColor = mix(skyColor, sun.rgb, sun.a);
+	skyColor = mix(skyColor, moon.rgb, moon.a);
+	vec3 sky = skyColor + clouds;
+	COLOR = sky;
+}
