@@ -107,6 +107,6 @@ void sky() {
 
 	skyColor = mix(skyColor, sun.rgb, sun.a);
 	skyColor = mix(skyColor, moon.rgb, moon.a);
-	vec3 sky = skyColor + clouds  + stars; //clouds
+	vec3 sky = skyColor +  stars +clouds; //clouds
 	COLOR = sky;
 }

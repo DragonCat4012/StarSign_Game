@@ -3,6 +3,8 @@ extends Node3D
 @onready var needle = $UIOverlay/Clock/Needle
 @onready var lightSource = $DirectionalLight3D
 const TIME_PER_DAY = 0.05
+
+
 func _physics_process(delta):
 	if $Player.position.y < -75:
 		Log.info("Player died due to height :c")
@@ -19,4 +21,4 @@ func _process(delta: float):
 		lightSource.light_energy = 0.01
 	else:
 		lightSource.light_energy = 1.0 # Day
-	needle.rotation_degrees += 0.1
+	needle.rotation_degrees += 2*TIME_PER_DAY
