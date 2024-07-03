@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=54 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://o5es8qrx4r3d" path="res://Models/star.tscn" id="3_p4imb"]
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/StarCounter.gd" id="4_fhyvq"]
 [ext_resource type="Texture2D" uid="uid://c4aieymtlgqp" path="res://Ressources/ShaderTextures/Clouds_2.bmp" id="5_omm86"]
+[ext_resource type="Texture2D" uid="uid://cak2xtjmv87xs" path="res://Ressources/ShaderTextures/stars.bmp" id="6_5hopn"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="6_gvhef"]
 [ext_resource type="Resource" uid="uid://cjk1wd322otqi" path="res://Ressources/Stars/Stars/Aries/star2.tres" id="6_oxw7v"]
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/InventoryPanel.gd" id="6_x4qck"]
@@ -54,11 +55,14 @@ shader_parameter/clouds_main_color = Color(1, 1, 1, 1)
 shader_parameter/clouds_edge_color = Color(0.228758, 0.104365, 0.671744, 1)
 shader_parameter/clouds_speed = 0.05
 shader_parameter/clouds_scale = 0.18
-shader_parameter/clouds_cutoff = 0.17
-shader_parameter/clouds_fuzziness = 0.2
+shader_parameter/clouds_cutoff = 0.02
+shader_parameter/clouds_fuzziness = 0.47
 shader_parameter/clouds_texture = ExtResource("5_omm86")
 shader_parameter/clouds_distort_texture = ExtResource("3_bytqq")
 shader_parameter/clouds_noise_texture = ExtResource("3_mxlox")
+shader_parameter/stars_cutoff = 0.08
+shader_parameter/stars_speed = 0.046
+shader_parameter/stars_texture = ExtResource("6_5hopn")
 shader_parameter/sunColor = Color(0.968627, 0.937255, 0.690196, 1)
 shader_parameter/sunSize = 0.1
 shader_parameter/sun_blur = 0.4

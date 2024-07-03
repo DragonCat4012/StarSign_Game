@@ -24,6 +24,10 @@ uniform float clouds_scale: hint_range(0.0, 1.0, 0.01);
 uniform float clouds_cutoff: hint_range(0.0, 1.0, 0.01);
 uniform float clouds_fuzziness: hint_range(0.0, 1.0, 0.01);
 
+group_uniforms stars;
+uniform sampler2D stars_texture: filter_linear_mipmap;
+uniform float stars_cutoff;
+uniform float stars_speed: hint_range(0.0, 0.1);
 
 group_uniforms sun;
 uniform vec3 sunColor: source_color;
@@ -84,8 +88,13 @@ void sky() {
 		}
 	} 
 	
-	// Clouds from https://godotshaders.com/shader/stylized-sky-shader-with-clouds/
+	// Star Stuff from https://godotshaders.com/shader/stylized-sky-shader-with-clouds/
 	vec2 sky_uv = EYEDIR.xz / EYEDIR.y;
+	vec3 stars = texture(stars_texture, sky_uv + (stars_speed * TIME)).rgb;
+	stars *= clamp(-LIGHT0_DIRECTION.y, 0.0, 1.0);
+	stars = step(stars_cutoff, stars);
+
+	// Clouds from https://godotshaders.com/shader/stylized-sky-shader-with-clouds/
 	float clouds_movement = TIME * clouds_speed * 0.5;
 	float clouds_base_noise = texture(clouds_texture, (sky_uv + clouds_movement ) * clouds_scale).r;
 	float noise1 = texture(clouds_distort_texture, (sky_uv + clouds_base_noise + (clouds_movement * 0.75)) * clouds_scale).r;
@@ -98,6 +107,6 @@ void sky() {
 
 	skyColor = mix(skyColor, sun.rgb, sun.a);
 	skyColor = mix(skyColor, moon.rgb, moon.a);
-	vec3 sky = skyColor + clouds;
+	vec3 sky = skyColor + clouds  + stars; //clouds
 	COLOR = sky;
 }
