@@ -4,6 +4,9 @@ extends Node3D
 @onready var lightSource = $DirectionalLight3D
 const TIME_PER_DAY = 0.005
 
+func _ready():
+	lightSource.rotation_degrees.x = -170 # Init to day
+	
 func _physics_process(delta):
 	if $Player.position.y < -75:
 		Log.info("Player died due to height :c")
