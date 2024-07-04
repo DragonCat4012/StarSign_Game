@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=55 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -36,6 +36,7 @@
 [ext_resource type="Resource" uid="uid://diyjtgh0w6aq8" path="res://Ressources/Stars/StarSigns/7.tres" id="20_6ur2a"]
 [ext_resource type="Resource" uid="uid://bcwix2qnc4wad" path="res://Ressources/Stars/StarSigns/8.tres" id="21_jg2xd"]
 [ext_resource type="Resource" uid="uid://iehvnwofmcgm" path="res://Ressources/Stars/StarSigns/9.tres" id="22_8ed0a"]
+[ext_resource type="FontFile" uid="uid://vbcxsf2ea7l" path="res://Ressources/UI/Starsign.ttf" id="22_sat0d"]
 [ext_resource type="Resource" uid="uid://by7fwsoesdecg" path="res://Ressources/Stars/StarSigns/10.tres" id="23_7bmmk"]
 [ext_resource type="Resource" uid="uid://dak3jau0cbas4" path="res://Ressources/Stars/StarSigns/11.tres" id="24_6kbgp"]
 [ext_resource type="PackedScene" uid="uid://cvtm4nnjdhm5f" path="res://compass/Compass.tscn" id="27_oebk5"]
@@ -324,21 +325,24 @@ vertical_alignment = 1
 process_mode = 2
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♈"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "C"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("13_cs370")
 
 [node name="Button2" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♉"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "D"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("14_6sg7d")
 
 [node name="Button3" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♊"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "E"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("15_3wrix")
 
@@ -346,28 +350,32 @@ starSign = ExtResource("15_3wrix")
 process_mode = 2
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♋"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "F"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("16_uy68q")
 
 [node name="Button5" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♌"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "G"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("17_m823u")
 
 [node name="Button6" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♍"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "H"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("18_3sm4r")
 
 [node name="Button7" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♎"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "I"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("19_ncdhx")
 
@@ -375,35 +383,40 @@ starSign = ExtResource("19_ncdhx")
 process_mode = 2
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♏"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "J"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("20_6ur2a")
 
 [node name="Button9" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♐"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "L"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("21_jg2xd")
 
 [node name="Button10" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♑"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "M"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("22_8ed0a")
 
 [node name="Button11" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♒"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "A"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("23_7bmmk")
 
 [node name="Button12" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("8_rv5tm")
-text = "♓"
+theme_override_fonts/font = ExtResource("22_sat0d")
+text = "B"
 script = ExtResource("12_2n8vj")
 starSign = ExtResource("24_6kbgp")
 
