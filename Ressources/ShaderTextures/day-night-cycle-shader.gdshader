@@ -83,14 +83,12 @@ void sky() {
 	float moonCrescentDisk = step(moonSize, moonCrescentPosition);
 	vec4 moon = vec4(moonColor, clamp((moonDisk - moonCrescentDisk), 0.0, 1.0));
 	
-	
 	// Horizon Glow from https://godotshaders.com/shader/stylized-sky-shader-with-clouds/
-	float horizon = 0.5 - abs(EYEDIR.y + horizon_falloff);
+	float horizon = 0.6 - abs(EYEDIR.y+horizon_falloff) ;
 	vec3 horizon_glow_amount_day = clamp(horizon * clamp(LIGHT0_DIRECTION.y, 0.0, 1.0), 0.0, 1.0) * horizon_color_day;
 	vec3 horizon_glow_amount_sunset = clamp(horizon * clamp(1.0 - abs(LIGHT0_DIRECTION.y), 0.0, 1.0), 0.0, 1.0) * horizon_color_sunset;
 	vec3 horizon_glow_night = clamp(horizon * clamp(-LIGHT0_DIRECTION.y, 0.0, 1.0), 0.0, 1.0) * horizon_color_night;
 	vec3 horizon_glow =  horizon_glow_amount_sunset + horizon_glow_night;
-	
 	
 	// Sky Gradient
 	vec3 blue = dayColor;
@@ -139,6 +137,6 @@ void sky() {
 
 	skyColor = mix(skyColor, sun.rgb, sun.a);
 	skyColor = mix(skyColor, moon.rgb, moon.a);
-	vec3 sky = horizon_glow + skyColor +  stars +clouds; //clouds
+	vec3 sky = skyColor +  stars +clouds; //+ horizon_glow
 	COLOR = sky;
 }
