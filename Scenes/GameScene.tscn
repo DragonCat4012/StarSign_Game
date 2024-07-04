@@ -146,7 +146,7 @@ script = ExtResource("1_mm86k")
 environment = SubResource("Environment_gbmld")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.227087, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.227087, -0.199935)
 shadow_enabled = true
 
 [node name="FloorPlane" type="MeshInstance3D" parent="."]
@@ -602,7 +602,7 @@ offset_bottom = 34.3877
 scale = Vector2(1, 1.561)
 
 [node name="DefaultCube" parent="." instance=ExtResource("1_hxdoa")]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 2.55173e-07, 0.5, 0.866026, -0.5, 0.75, -0.433012, 0.0210368, 0.747234, -2.77204)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 2.55173e-07, 0.5, 0.866026, -0.5, 0.75, -0.433012, 0.0210368, 1.40758, -2.77204)
 mass = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
