@@ -51,8 +51,13 @@ shader_parameter/nightColor = Color(0.0189742, 0.044752, 0.109693, 1)
 shader_parameter/nightTopColor = Color(0.165353, 0.182164, 0.261057, 1)
 shader_parameter/sunriseColor = Color(0.888018, 0.554976, 0.395547, 1)
 shader_parameter/sunsetColor = Color(0.944165, 0.412657, 0.51578, 1)
+shader_parameter/horizon_falloff = 0.5
+shader_parameter/horizon_color_day = Color(0.267247, 0.89758, 0.555776, 1)
+shader_parameter/horizon_color_sunset = Color(0.868754, 0.211866, 0.293465, 1)
+shader_parameter/horizon_color_night = Color(0.123465, 0.0059564, 0.358798, 1)
 shader_parameter/clouds_main_color = Color(1, 1, 1, 1)
 shader_parameter/clouds_edge_color = Color(0.228758, 0.104365, 0.671744, 1)
+shader_parameter/cloudsSunsetEdgeColor = Color(0.386576, 0.0189799, 0.152415, 1)
 shader_parameter/clouds_speed = 0.05
 shader_parameter/clouds_scale = 0.18
 shader_parameter/clouds_cutoff = 0.02
@@ -64,6 +69,7 @@ shader_parameter/stars_cutoff = 0.08
 shader_parameter/stars_speed = 0.046
 shader_parameter/stars_texture = ExtResource("6_5hopn")
 shader_parameter/sunColor = Color(0.968627, 0.937255, 0.690196, 1)
+shader_parameter/sunColorSunrise = Color(0.940861, 0.335791, 0.275079, 1)
 shader_parameter/sunSize = 0.1
 shader_parameter/sun_blur = 0.4
 shader_parameter/moonColor = Color(0.720467, 0.720468, 0.720467, 1)
@@ -167,7 +173,7 @@ transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, 
 star = ExtResource("6_oxw7v")
 
 [node name="Star3" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -1.40556, 4.01532, 9.67503)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -1.40556, 4.80792, 9.67503)
 star = ExtResource("7_cl0cx")
 
 [node name="Star4" parent="Stars" instance=ExtResource("3_p4imb")]
