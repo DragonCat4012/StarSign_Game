@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=56 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://cvtm4nnjdhm5f" path="res://compass/Compass.tscn" id="27_oebk5"]
 [ext_resource type="PackedScene" uid="uid://jbdwfx2nid4t" path="res://Scenes/UI_Overlays_ingame/star_progress_scene.tscn" id="28_y50i6"]
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/UIManager.gd" id="30_j2okk"]
+[ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Scenes/Enviroment/SpatialGrass.tscn" id="43_j7omm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lk4hg"]
 shader = ExtResource("2_7xet1")
@@ -609,6 +610,9 @@ mass = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_kp2qe")
 }
+
+[node name="SpatialGrass" parent="." instance=ExtResource("43_j7omm")]
+transform = Transform3D(0.518589, 0, 0, 0, 0.518589, 0, 0, 0, 0.518589, 0, -0.0483425, -3.07291)
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected2" from="Stars/Star" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
