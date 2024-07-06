@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=58 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -44,6 +44,7 @@
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/UIManager.gd" id="30_j2okk"]
 [ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Scenes/Enviroment/SpatialGrass.tscn" id="43_j7omm"]
 [ext_resource type="PackedScene" uid="uid://dqny5y5aeqft6" path="res://Models/Enviroment/tree.tscn" id="44_bvo41"]
+[ext_resource type="PackedScene" uid="uid://c45cpn8ua01d2" path="res://Models/Enviroment/Buildings/column.tscn" id="45_hjfmc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lk4hg"]
 shader = ExtResource("2_7xet1")
@@ -619,6 +620,9 @@ transform = Transform3D(0.518589, 0, 0, 0, 0.518589, 0, 0, 0, 0.518589, 0, -0.04
 
 [node name="tree" parent="Enviroment" instance=ExtResource("44_bvo41")]
 transform = Transform3D(1.43775, 0, 0, 0, 1.43775, 0, 0, 0, 1.43775, 5.76937, 0, 0)
+
+[node name="column" parent="Enviroment" instance=ExtResource("45_hjfmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.38084)
 
 [connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="starCollected2" from="Stars/Star" to="UIOverlay/StarCounter" method="_on_star_star_collected_2"]
