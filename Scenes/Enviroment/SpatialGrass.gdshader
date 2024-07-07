@@ -6,18 +6,14 @@ uniform vec3 color2: source_color;
 uniform sampler2D noise;
 uniform float noiseScale = 20.0;
 varying vec3 worldPos;
-uniform bool enableSway = false;
+uniform bool enableSway = true;
 
 void vertex() {
 	worldPos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	// Called for every vertex the material is visible on.
 	float idk = 0.0;
 	if (enableSway) {
-		if (int(TIME)%2 == 0){
-		idk = 0.15;
-	} else if (int(TIME)%3 == 0) {
-		idk = 0.3;
-	}
+		idk = sin(TIME) *0.2;
 	}
 	
 	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
