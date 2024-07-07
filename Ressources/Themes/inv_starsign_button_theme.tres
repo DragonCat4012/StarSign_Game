@@ -8,12 +8,12 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avbhc"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.760946, 0.51512, 0.976131, 1)
+bg_color = Color(0.278431, 0.211765, 0.45098, 0.8)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.31397, 0.131768, 0.557479, 1)
 border_blend = true
 corner_radius_top_left = 2
 corner_radius_top_right = 2
@@ -49,6 +49,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [resource]
+Button/font_sizes/font_size = 22
 Button/styles/focus = SubResource("StyleBoxFlat_p7xio")
 Button/styles/hover = SubResource("StyleBoxFlat_avbhc")
 Button/styles/pressed = SubResource("StyleBoxFlat_bvp32")
