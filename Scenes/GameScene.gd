@@ -10,7 +10,7 @@ func _ready():
 func _physics_process(delta):
 	if $Player.position.y < -75:
 		Log.info("Player died due to height :c")
-		get_tree().change_scene_to_file("res://Scenes/Menu/MainMenu.tscn")
+		get_tree().change_scene_to_file(SceneManger.MenuSceneKey)
 
 func _process(delta: float):
 	if Input.is_action_just_pressed("drawWeapon"):

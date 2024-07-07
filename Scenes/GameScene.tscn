@@ -80,12 +80,12 @@ shader_parameter/moonColor = Color(0.720467, 0.720468, 0.720467, 1)
 shader_parameter/moonSize = 0.1
 shader_parameter/moonOffset = 0.05
 
-[sub_resource type="Sky" id="Sky_rvsrr"]
+[sub_resource type="Sky" id="Sky_qehcw"]
 sky_material = SubResource("ShaderMaterial_lk4hg")
 
 [sub_resource type="Environment" id="Environment_gbmld"]
 background_mode = 2
-sky = SubResource("Sky_rvsrr")
+sky = SubResource("Sky_qehcw")
 tonemap_mode = 2
 glow_enabled = true
 
