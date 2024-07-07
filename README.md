@@ -10,3 +10,7 @@ Game about collecting stars and recreating starsigns
 
 ## Requierements
 Godot v4.2.0
+
+
+## Credits
+* Gras Mesh: https://stayathomedev.itch.io/stylized-grass-shader
