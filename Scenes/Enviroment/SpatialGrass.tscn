@@ -22,6 +22,7 @@ shader = ExtResource("1_6i323")
 shader_parameter/color = Color(0.0389207, 0.159203, 0.106544, 1)
 shader_parameter/color2 = Color(0.1174, 0.48364, 0.338914, 1)
 shader_parameter/noiseScale = 20.0
+shader_parameter/enableSway = true
 shader_parameter/noise = SubResource("NoiseTexture2D_nb50d")
 
 [sub_resource type="MultiMesh" id="MultiMesh_jxlho"]

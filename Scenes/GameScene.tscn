@@ -173,7 +173,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.4
 transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, 13.6347, 5.27514, -0.0473013)
 
 [node name="Star2" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -9.48863, 3.39798, 0)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -11.3291, 3.63194, 0)
 star = ExtResource("6_oxw7v")
 
 [node name="Star3" parent="Stars" instance=ExtResource("3_p4imb")]
@@ -181,27 +181,27 @@ transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, 
 star = ExtResource("7_cl0cx")
 
 [node name="Star4" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.833714, 0)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, 0)
 star = ExtResource("8_06aqp")
 
 [node name="Star5" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.833714, -1.44754)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, -1.44754)
 star = ExtResource("7_pmc24")
 
 [node name="Star6" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.833714, -2.69138)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, -2.69138)
 star = ExtResource("8_qfx1p")
 
 [node name="Star7" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.833714, -4.06808)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, -4.06808)
 star = ExtResource("8_j746x")
 
 [node name="Star8" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6738, 0.833714, -5.12577)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, -5.12577)
 star = ExtResource("12_5x6bm")
 
 [node name="Star9" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -15.6837, 0.833714, -6.10104)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.2849, 0.833714, -6.10104)
 star = ExtResource("12_fnesn")
 
 [node name="Wall" type="MeshInstance3D" parent="."]

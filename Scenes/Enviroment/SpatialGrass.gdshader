@@ -10,10 +10,10 @@ uniform bool enableSway = true;
 
 void vertex() {
 	worldPos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	// Called for every vertex the material is visible on.
+	float swayNoise = texture(noise, worldPos.xz / noiseScale).r * 6.0;
 	float idk = 0.0;
 	if (enableSway) {
-		idk = sin(TIME) *0.2;
+		idk = sin(TIME/2.0+ swayNoise) *0.2 ;
 	}
 	
 	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
