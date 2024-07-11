@@ -39,3 +39,6 @@ func _keybindings_button_pressed():
 	
 func _exit_button_pressed():
 	get_tree().quit()
+
+func _on_tutorial_button_pressed():
+	get_tree().change_scene_to_file(SceneManger.tutorialScene)

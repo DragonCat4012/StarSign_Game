@@ -30,6 +30,12 @@ layout_mode = 2
 theme = ExtResource("2_pu347")
 text = "Play"
 
+[node name="TutorialButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme = ExtResource("2_pu347")
+text = "Tutorial"
+
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
@@ -54,3 +60,5 @@ layout_mode = 2
 text = "?.?.?"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
