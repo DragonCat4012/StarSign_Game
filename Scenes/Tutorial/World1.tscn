@@ -34,10 +34,11 @@ custom_globalmap_shader = null
 texture_set = SubResource("Resource_umtf7")
 render_layers = 1
 cast_shadow = 1
-shader_params/u_ground_uv_scale = 20
-shader_params/u_depth_blending = true
-shader_params/u_triplanar = false
-shader_params/u_tile_reduction = Vector4(1, 1, 1, 1)
+shader_params/u_ground_uv_scale = null
+shader_params/u_depth_blending = null
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+shader_params/u_specular = null
 
 [node name="@Node3D@29007" type="Node3D" parent="HTerrain"]
 script = ExtResource("8_lq662")
