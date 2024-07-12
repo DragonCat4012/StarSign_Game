@@ -1,0 +1,50 @@
+[gd_scene load_steps=14 format=3 uid="uid://b1y82ad1e02iv"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_nf1h1"]
+[ext_resource type="Resource" path="res://Models/TerrainData/data.hterrain" id="2_fmba0"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_liwvf"]
+[ext_resource type="Texture2D" uid="uid://bqy88aq8fe5iy" path="res://World1_slot0_albedo_bump.png" id="4_ajruk"]
+[ext_resource type="Texture2D" uid="uid://bhwlvwoeuvt4e" path="res://World1_slot1_albedo_bump.png" id="5_toquc"]
+[ext_resource type="Texture2D" uid="uid://uw4qkpxr62p1" path="res://World1_slot2_albedo_bump.png" id="6_vnarr"]
+[ext_resource type="Texture2D" uid="uid://hw6e3ryp8mcs" path="res://World1_slot0_normal_roughness.png" id="7_7dnit"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="8_lq662"]
+[ext_resource type="Texture2D" uid="uid://deim5mpers6q4" path="res://World1_slot1_normal_roughness.png" id="8_xeafa"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="9_20jql"]
+[ext_resource type="Texture2D" uid="uid://ctpbg7j4c1mu2" path="res://World1_slot2_normal_roughness.png" id="9_wwwdn"]
+[ext_resource type="Texture2D" uid="uid://0qqtdgvv2717" path="res://Models/TerrainData/grassTexture.PNG" id="11_fv8t0"]
+
+[sub_resource type="Resource" id="Resource_umtf7"]
+script = ExtResource("3_liwvf")
+mode = 0
+textures = [[ExtResource("4_ajruk"), ExtResource("5_toquc"), ExtResource("6_vnarr")], [ExtResource("7_7dnit"), ExtResource("8_xeafa"), ExtResource("9_wwwdn")]]
+
+[node name="World1" type="Node3D"]
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_nf1h1")
+map_scale = Vector3(0.3, 0.3, 0.3)
+_terrain_data = ExtResource("2_fmba0")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_umtf7")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = false
+shader_params/u_tile_reduction = Vector4(1, 1, 1, 1)
+
+[node name="@Node3D@29007" type="Node3D" parent="HTerrain"]
+script = ExtResource("8_lq662")
+texture = ExtResource("11_fv8t0")
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = null
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("9_20jql")

@@ -8,6 +8,7 @@ extends Node2D
 @onready var animation_player_2 = $"../../Porcelain/AnimationPlayer2"
 @onready var camera_3d = $"../../Camera3D"
 var rotationCamera = 0.01
+@onready var color_rect = $ColorRect
 
 func _ready():
 	PlayButton.pressed.connect(self._play_button_pressed.bind())
@@ -41,4 +42,6 @@ func _exit_button_pressed():
 	get_tree().quit()
 
 func _on_tutorial_button_pressed():
-	get_tree().change_scene_to_file(SceneManger.tutorialScene)
+	color_rect.visible = true # TODO: is necesary?
+	var scene = load(SceneManger.tutorialScene)
+	get_tree().change_scene_to_packed(scene)

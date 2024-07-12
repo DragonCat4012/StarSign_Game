@@ -17,3 +17,10 @@ func signal_decreased_star_count():
 
 # Inventory
 signal InventoryWillBeShown
+
+
+
+# Tutorial
+signal MovementEnterd
+func signal_tutorial_enetred_movement_test():
+	MovementEnterd.emit()
