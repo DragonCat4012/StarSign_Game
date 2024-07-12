@@ -4,9 +4,7 @@ extends Node3D
 @onready var quest_label = $UIOverlay/QuestRect/Label
 
 @onready var compass = $UIOverlay/Compass
-@onready var needle = $UIOverlay/Clock/Needle
 var hasMoved = false
-
 
 func _ready():
 	EventSystem.MovementEnterd.connect(_on_movement_collison_entered)
