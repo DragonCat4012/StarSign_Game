@@ -1,4 +1,7 @@
 extends Node
+
+const TIME_PER_DAY = 0.005
+
 # Debug
 var isDebug = true
 

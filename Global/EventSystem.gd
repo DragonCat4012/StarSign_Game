@@ -5,6 +5,7 @@ extends Node
 #signal aloha(id: int)
 
 # StarCounter
+signal StarCollect(id: int)
 signal IncreaseStarCountProgress
 signal DecreaseStarCountProgress
 

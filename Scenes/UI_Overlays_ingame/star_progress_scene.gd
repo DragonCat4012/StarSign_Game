@@ -14,13 +14,13 @@ func _ready():
 	_init_max(data.x)
 	
 func _increase():
-	print("increase")
+	#print("increase")
 	update_progress(progress+1)
 	
 func _decrease():
 	update_progress(progress-1)
 	
-func _init_max(max:int):
+func _init_max(max: int):
 	#print("init max ", max)
 	progressBar.max_value = max
 	damageBar.max_value = max
@@ -32,7 +32,7 @@ func _init_default(value: int):
 	progress = value
 	
 func update_progress(new_value: int):
-	print("update ", new_value)
+	#print("update star progress: ", new_value)
 	var prev_progress = progressBar.value
 	damageBar.value = min(progressBar.max_value, new_value)
 	
@@ -43,6 +43,5 @@ func update_progress(new_value: int):
 	progress = new_value
 
 func _on_timer_timeout():
-	print("ayyyy")
 	damageBar.value = 0
 	progressBar.value = min(progressBar.max_value, progress)

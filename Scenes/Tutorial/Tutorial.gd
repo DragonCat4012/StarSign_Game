@@ -1,22 +1,12 @@
 extends Node3D
 
-@onready var quest_rect = $UIOverlay/QuestRect
-@onready var quest_label = $UIOverlay/QuestRect/Label
-
-@onready var compass = $UIOverlay/Compass
 var hasMoved = false
+@onready var ui_manager = $Player/%UIManager
 
 func _ready():
 	EventSystem.MovementEnterd.connect(_on_movement_collison_entered)
-	quest_rect.visible = true
-	quest_label.text = "Walk through the pillars?"
-	
-func _process(delta: float):
-	if Input.is_action_just_pressed("drawWeapon"):
-		GameManager._toggle_weapon()
-		
-	compass._updateTexture($Player.compassDirection)
+	ui_manager.showQuest("Walk through the pillars. Use WASD to move")
 
 func _on_movement_collison_entered():
 	hasMoved = true
-	quest_rect.visible = false
+	ui_manager.hideQuest()

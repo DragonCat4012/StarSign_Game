@@ -5,6 +5,8 @@ var stars := 0
 
 func _ready():
 	updateLabel(GameManager.INVENTORY.get_star_count())
+	EventSystem.StarCollect.connect(_on_star_star_collected_2)
+	_on_star_star_collected_2
 	
 func _process(delta: float) -> void:
 	fpsLabel.text = "FPS: %s" % [Engine.get_frames_per_second()]
