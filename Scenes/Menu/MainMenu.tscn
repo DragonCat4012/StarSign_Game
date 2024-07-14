@@ -61,4 +61,10 @@ text = "?.?.?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 2003.0
+offset_bottom = 1110.0
+color = Color(0.117647, 0.117647, 0.117647, 0.670588)
+
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
