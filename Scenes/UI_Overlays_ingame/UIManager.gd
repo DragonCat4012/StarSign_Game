@@ -11,11 +11,17 @@ var pauseMenuShown = false
 # Orientation
 @onready var compass = $"../UIOverlay/Compass"
 @onready var needle = $"../UIOverlay/Clock/Needle"
+@onready var clock = $"../UIOverlay/Clock"
 
 # Quests
 @onready var quest_rect = $"../UIOverlay/QuestRect"
 @onready var quest_label = $"../UIOverlay/QuestRect/Label"
 
+func _ready():
+	compass.visible = false
+	clock.visible = false
+	quest_rect.visible = false
+	
 func _init():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -29,9 +35,15 @@ func _process(delta: float):
 func _input(event):
 	if event.is_action_pressed("UI_Pause") and not isInvShown:
 		togglePause()
+	elif event.is_action_pressed("UI_Pause"): # hide inventory
+		toggleInventory()
 		
 	if event.is_action_pressed("UI_Inv") and not pauseMenuShown:
 		toggleInventory()
+	
+	if not pauseMenuShown:
+		if event.is_action_pressed("UI_Detail") or event.is_action_released("UI_Detail"):
+			toggleDetails()	
 		
 func togglePause():
 	get_tree().paused = not get_tree().paused
@@ -64,6 +76,11 @@ func toggleInventory():
 		compass.visible = true
 		#emit_signal("unpauseGame")	
 
+func toggleDetails():
+	compass.visible = !compass.visible
+	clock.visible = !clock.visible
+	
+# Quests
 func showQuest(str: String):
 	print("Show quest")
 	quest_rect.visible = true

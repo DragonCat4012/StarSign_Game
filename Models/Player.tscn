@@ -2590,20 +2590,29 @@ scale = Vector2(1, 1.561)
 
 [node name="QuestRect" type="ColorRect" parent="UIOverlay"]
 visible = false
-offset_left = 619.0
-offset_top = 1010.0
-offset_right = 1414.0
-offset_bottom = 1075.0
+layout_mode = 0
+offset_left = 17.0
+offset_top = 78.0
+offset_right = 394.0
+offset_bottom = 291.0
 color = Color(0, 0, 0, 0.345098)
 
 [node name="Label" type="Label" parent="UIOverlay/QuestRect"]
 layout_mode = 0
-offset_left = 14.0
-offset_right = 785.0
-offset_bottom = 57.0
+offset_left = 21.0
+offset_top = 24.0
+offset_right = 356.0
+offset_bottom = 192.0
 text = "Aloha"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UIOverlay/QuestRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 20.0
+offset_right = 355.0
+offset_bottom = 196.0
 
 [connection signal="pressed" from="UIOverlay/PausePopUp/VBoxContainer/MenuButton" to="UIOverlay/PausePopUp" method="_on_menu_button_pressed"]
 [connection signal="pressed" from="UIOverlay/PausePopUp/VBoxContainer/ExitButton" to="UIOverlay/PausePopUp" method="_on_exit_button_pressed"]
