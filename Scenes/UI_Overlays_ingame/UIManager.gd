@@ -8,12 +8,16 @@ var pauseMenuShown = false
 @onready var star_progress_scene = $"../UIOverlay/StarProgressScene"
 @onready var player = $".."
 
+# Orientation
 @onready var compass = $"../UIOverlay/Compass"
 @onready var needle = $"../UIOverlay/Clock/Needle"
 
+# Quests
+@onready var quest_rect = $"../UIOverlay/QuestRect"
+@onready var quest_label = $"../UIOverlay/QuestRect/Label"
+
 func _init():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
 	
 func _process(delta: float):
 	if Input.is_action_just_pressed("drawWeapon"):
@@ -59,3 +63,12 @@ func toggleInventory():
 		star_progress_scene.visible = true
 		compass.visible = true
 		#emit_signal("unpauseGame")	
+
+func showQuest(str: String):
+	print("Show quest")
+	quest_rect.visible = true
+	quest_label.text = str
+	
+func hideQuest():
+	quest_rect.visible = false
+	print("hide quest")

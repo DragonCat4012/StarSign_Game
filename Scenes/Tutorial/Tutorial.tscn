@@ -180,29 +180,6 @@ script = ExtResource("48_183ge")
 transform = Transform3D(1, 8.40217e-13, -4.94765e-10, -2.8777e-13, 1, 0, 0, 0, 1, 5.11147, -3.49973, -4.24678)
 shape = SubResource("BoxShape3D_0uod2")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="QuestRect" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 619.0
-offset_top = 1010.0
-offset_right = 1414.0
-offset_bottom = 1075.0
-color = Color(0, 0, 0, 0.345098)
-
-[node name="Label" type="Label" parent="Control/QuestRect"]
-layout_mode = 0
-offset_left = 14.0
-offset_right = 785.0
-offset_bottom = 57.0
-text = "Aloha"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [connection signal="body_entered" from="Stars/Star2" to="Stars/Star2" method="_on_body_entered"]
 [connection signal="body_entered" from="Stars/Star4" to="Stars/Star4" method="_on_body_entered"]
 [connection signal="body_entered" from="Stars/Star5" to="Stars/Star5" method="_on_body_entered"]
