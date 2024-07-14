@@ -102,7 +102,7 @@ text = "ESC"
 [node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_40kuo")
-text = "TAB"
+text = "I"
 
 [node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
