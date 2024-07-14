@@ -1,5 +1,4 @@
 extends Node3D
-@onready var needle = $UIOverlay/Clock/Needle
 @onready var lightSource = $DirectionalLight3D
 
 
