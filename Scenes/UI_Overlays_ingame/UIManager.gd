@@ -15,7 +15,11 @@ var pauseMenuShown = false
 
 # Quests
 @onready var quest_rect = $"../UIOverlay/QuestRect"
-@onready var quest_label = $"../UIOverlay/QuestRect/Label"
+@onready var quest_label = $"../UIOverlay/MapPopups/QuestTitle"
+@onready var quest_title_animation_player = $"../UIOverlay/MapPopups/AnimationPlayer"
+@onready var quest_title = $"../UIOverlay/MapPopups/QuestTitle"
+@onready var quest_subtitle = $"../UIOverlay/MapPopups/Subtitle"
+@onready var map_popups = $"../UIOverlay/MapPopups"
 
 func _ready():
 	compass.visible = false
@@ -79,13 +83,46 @@ func toggleInventory():
 func toggleDetails():
 	compass.visible = !compass.visible
 	clock.visible = !clock.visible
+	quest_rect.visible = !quest_rect.visible
 	
-# Quests
-func showQuest(str: String):
-	print("Show quest")
-	quest_rect.visible = true
-	quest_label.text = str
+# Quest Board
+func _addQuestToBoard(str: String):
+	var quest_box = $"../UIOverlay/QuestRect/QuestBox"
+	var quest_container = $"../UIOverlay/QuestRect/QuestBox/QuestContainer"
 	
-func hideQuest():
-	quest_rect.visible = false
-	print("hide quest")
+	var newOne = quest_container.duplicate()
+	newOne.visible = true
+	
+	for child in newOne.get_children():
+		if child.name == "DefaultQuestLabel":
+			child.text = str
+	
+	quest_box.add_child(newOne)
+
+func addQuest(title: String, subtitle: String):
+	print("Show questboard")
+	_showQuestTitle("New Quest", subtitle)
+	_addQuestToBoard(title)
+
+func removeQuest(title: String):
+	var quest_containerAll = $"../UIOverlay/QuestRect/QuestBox"
+	for questContainer in quest_containerAll.get_children(): # every quest
+		for child in questContainer.get_children(): #  every node in quest
+			if child.name == "DefaultQuestLabel":
+				if child.text == title:
+					quest_containerAll.remove_child(questContainer)
+
+# Quest Titles
+func _showQuestTitle(title: String, subtitle: String):
+	quest_title.text = title
+	quest_subtitle.text = subtitle
+	quest_title_animation_player.play("fade_in")
+	var timer := Timer.new()
+	add_child(timer)
+	timer.wait_time = 2.2
+	timer.one_shot = true
+	timer.start()
+	timer.timeout.connect(_hideQuestTitle)
+	
+func _hideQuestTitle():
+	quest_title_animation_player.play("fade_out")
