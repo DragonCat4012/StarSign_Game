@@ -39,6 +39,9 @@
 [ext_resource type="PackedScene" uid="uid://cvtm4nnjdhm5f" path="res://compass/Compass.tscn" id="37_0pd2a"]
 [ext_resource type="PackedScene" uid="uid://jbdwfx2nid4t" path="res://Scenes/UI_Overlays_ingame/star_progress_scene.tscn" id="38_p6t7m"]
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/StarCounter.gd" id="39_y0f6b"]
+[ext_resource type="Texture2D" uid="uid://3vs84jijkrxw" path="res://Ressources/Quests/questBackground.png" id="40_jhtk3"]
+[ext_resource type="Texture2D" uid="uid://c4wkl1tdx0e5e" path="res://Ressources/Quests/objective.png" id="41_4xwv1"]
+[ext_resource type="Texture2D" uid="uid://bgrkquq3f1cc7" path="res://Ressources/Quests/marker.png" id="41_6vnk3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dlrw2"]
 
@@ -1979,6 +1982,312 @@ _data = {
 "walk": SubResource("Animation_b76hn")
 }
 
+[sub_resource type="Animation" id="Animation_4bc7t"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(0.7, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 410), Vector2(302, 410)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(635, 328), Vector2(152, 328)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1116, 328), Vector2(1626, 328)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Right:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Left:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("QuestTitle:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.784314), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Subtitle:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.784314), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mvk50"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.7, 1), Vector2(1e-05, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(302, 410), Vector2(960, 410)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(152, 328), Vector2(725, 328)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1632, 328), Vector2(1020, 328)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Left:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Right:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("QuestTitle:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Subtitle:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ilw1e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 4.076)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 403)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 328)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1632, 328)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Right:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Left:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("QuestTitle:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Subtitle:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eseug"]
+_data = {
+"RESET": SubResource("Animation_ilw1e"),
+"fade_in": SubResource("Animation_4bc7t"),
+"fade_out": SubResource("Animation_mvk50")
+}
+
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_cbw5j")
@@ -2589,30 +2898,102 @@ offset_bottom = 34.3877
 scale = Vector2(1, 1.561)
 
 [node name="QuestRect" type="ColorRect" parent="UIOverlay"]
-visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_top = 78.0
-offset_right = 394.0
-offset_bottom = 291.0
-color = Color(0, 0, 0, 0.345098)
+offset_right = 390.0
+offset_bottom = 220.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
-[node name="Label" type="Label" parent="UIOverlay/QuestRect"]
+[node name="QuestBackground" type="TextureRect" parent="UIOverlay/QuestRect"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 24.0
-offset_right = 356.0
-offset_bottom = 192.0
+offset_right = 1668.0
+offset_bottom = 656.0
+scale = Vector2(0.223768, 0.223768)
+texture = ExtResource("40_jhtk3")
+
+[node name="QuestBox" type="VBoxContainer" parent="UIOverlay/QuestRect"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 15.0
+offset_right = 329.0
+offset_bottom = 131.0
+alignment = 1
+
+[node name="QuestContainer" type="HBoxContainer" parent="UIOverlay/QuestRect/QuestBox"]
+layout_mode = 2
+
+[node name="ObjectiveRect" type="TextureRect" parent="UIOverlay/QuestRect/QuestBox/QuestContainer"]
+layout_mode = 2
+texture = ExtResource("41_4xwv1")
+expand_mode = 2
+
+[node name="DefaultQuestLabel" type="Label" parent="UIOverlay/QuestRect/QuestBox/QuestContainer"]
+layout_mode = 2
 text = "Aloha"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UIOverlay/QuestRect"]
+[node name="MapPopups" type="Control" parent="UIOverlay"]
+anchors_preset = 0
+offset_right = 1923.0
+offset_bottom = 1079.0
+mouse_filter = 2
+
+[node name="QuestTitle" type="Label" parent="UIOverlay/MapPopups"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 20.0
-offset_right = 355.0
-offset_bottom = 196.0
+offset_left = 1.0
+offset_top = 345.0
+offset_right = 1924.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 40
+text = "Aloha"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="UIOverlay/MapPopups"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 412.0
+offset_right = 1924.0
+offset_bottom = 467.0
+theme_override_font_sizes/font_size = 20
+text = "Aloha"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="UIOverlay/MapPopups"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 403.0
+offset_right = 2883.97
+offset_bottom = 405.0
+scale = Vector2(1e-05, 4.076)
+
+[node name="Left" type="TextureRect" parent="UIOverlay/MapPopups"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 328.0
+offset_right = 652.0
+offset_bottom = 828.0
+scale = Vector2(0.336904, 0.336904)
+texture = ExtResource("41_6vnk3")
+
+[node name="Right" type="TextureRect" parent="UIOverlay/MapPopups"]
+layout_mode = 0
+offset_left = 1632.0
+offset_top = 328.0
+offset_right = 2132.0
+offset_bottom = 828.0
+scale = Vector2(0.336904, 0.336904)
+texture = ExtResource("41_6vnk3")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UIOverlay/MapPopups"]
+libraries = {
+"": SubResource("AnimationLibrary_eseug")
+}
 
 [connection signal="pressed" from="UIOverlay/PausePopUp/VBoxContainer/MenuButton" to="UIOverlay/PausePopUp" method="_on_menu_button_pressed"]
 [connection signal="pressed" from="UIOverlay/PausePopUp/VBoxContainer/ExitButton" to="UIOverlay/PausePopUp" method="_on_exit_button_pressed"]

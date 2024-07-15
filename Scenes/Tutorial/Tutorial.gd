@@ -5,8 +5,8 @@ var hasMoved = false
 
 func _ready():
 	EventSystem.MovementEnterd.connect(_on_movement_collison_entered)
-	ui_manager.showQuest("Walk through the pillars. Use WASD to move")
+	ui_manager.addQuest("New Grounds","Walk through the pillars. Use WASD to move")
 
 func _on_movement_collison_entered():
 	hasMoved = true
-	ui_manager.hideQuest()
+	# TODO: remove quest
