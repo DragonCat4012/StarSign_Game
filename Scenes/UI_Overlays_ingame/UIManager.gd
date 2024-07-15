@@ -104,11 +104,18 @@ func addQuest(title: String, subtitle: String):
 	_showQuestTitle("New Quest", subtitle)
 	_addQuestToBoard(title)
 
+func removeQuest(title: String):
+	var quest_containerAll = $"../UIOverlay/QuestRect/QuestBox"
+	for questContainer in quest_containerAll.get_children(): # every quest
+		for child in questContainer.get_children(): #  every node in quest
+			if child.name == "DefaultQuestLabel":
+				if child.text == title:
+					quest_containerAll.remove_child(questContainer)
+
 # Quest Titles
 func _showQuestTitle(title: String, subtitle: String):
 	quest_title.text = title
 	quest_subtitle.text = subtitle
-	print("qwq2")
 	quest_title_animation_player.play("fade_in")
 	var timer := Timer.new()
 	add_child(timer)
