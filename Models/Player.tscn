@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://cb1xwmbnkdeun"]
+[gd_scene load_steps=107 format=3 uid="uid://cb1xwmbnkdeun"]
 
 [ext_resource type="Script" path="res://Models/Player.gd" id="1_cbw5j"]
 [ext_resource type="Script" path="res://Models/Camera3D.gd" id="2_1mlft"]
@@ -1982,6 +1982,105 @@ _data = {
 "walk": SubResource("Animation_b76hn")
 }
 
+[sub_resource type="Animation" id="Animation_ilw1e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 4.076)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 403)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 328)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1632, 328)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Right:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Left:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("QuestTitle:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Subtitle:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_4bc7t"]
 resource_name = "fade_in"
 length = 2.0
@@ -2182,105 +2281,6 @@ tracks/7/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ilw1e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 4.076)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(960, 403)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Left:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(152, 328)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Right:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1632, 328)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Right:self_modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Left:self_modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("QuestTitle:self_modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Subtitle:self_modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eseug"]
 _data = {
 "RESET": SubResource("Animation_ilw1e"),
@@ -2352,14 +2352,14 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.999993, -0.00380228, -0.000175749, 0.00380227, 0.995726, 0.0922794, -0.000175874, -0.0922794, 0.995733, -5.32907e-15, 0.0890516, -7.45056e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(-5.32907e-15, 0.0890516, -7.45056e-09)
-bones/3/rotation = Quaternion(-0.0461874, 0.000259205, 0.00750765, 0.998905)
+bones/3/rotation = Quaternion(-0.0461865, -0.000694724, -0.0131219, 0.998846)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "UpperArm.L"
 bones/4/parent = 1
 bones/4/rest = Transform3D(-0.998223, 0.0594893, -0.003459, -0.0560962, -0.957698, -0.282256, -0.0201039, -0.28156, 0.959334, 0.16148, 0.251413, -0.0171359)
 bones/4/enabled = true
 bones/4/position = Vector3(0.16148, 0.251413, -0.0171359)
-bones/4/rotation = Quaternion(-0.0136721, -0.142198, 0.987429, -0.0676579)
+bones/4/rotation = Quaternion(-0.00734805, -0.142438, 0.989116, -0.0361518)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "LowerArm.L"
 bones/5/parent = 4
@@ -2387,7 +2387,7 @@ bones/8/parent = 1
 bones/8/rest = Transform3D(-0.998223, -0.0594893, 0.003459, 0.0560962, -0.957698, -0.282256, 0.0201039, -0.28156, 0.959334, -0.16148, 0.251413, -0.0171359)
 bones/8/enabled = true
 bones/8/position = Vector3(-0.16148, 0.251413, -0.0171359)
-bones/8/rotation = Quaternion(0.0130765, -0.142227, 0.987631, 0.0646906)
+bones/8/rotation = Quaternion(0.00724044, -0.142441, 0.989136, 0.0356157)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "LowerArm.R"
 bones/9/parent = 8
@@ -2415,21 +2415,21 @@ bones/12/parent = 0
 bones/12/rest = Transform3D(-0.99999, 0.00459254, -0.000388995, -0.00430506, -0.900575, 0.434681, 0.00164597, 0.434678, 0.900585, 0.120751, 0.0169393, -0.00985621)
 bones/12/enabled = true
 bones/12/position = Vector3(0.120751, 0.0169393, -0.00985621)
-bones/12/rotation = Quaternion(-0.000326837, 0.34092, 0.940089, -0.00265747)
+bones/12/rotation = Quaternion(0.000151478, 0.26936, 0.963037, -0.00238937)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "LowerLeg.L"
 bones/13/parent = 12
 bones/13/rest = Transform3D(1, 0.000163417, 3.11526e-05, -0.000166339, 0.98518, 0.171521, -2.66139e-06, -0.171521, 0.98518, 1.67483e-08, 0.463759, 6.74481e-09)
 bones/13/enabled = true
 bones/13/position = Vector3(1.67483e-08, 0.463759, 6.74481e-09)
-bones/13/rotation = Quaternion(-0.415531, 7.74649e-06, -0.000399437, 0.909579)
+bones/13/rotation = Quaternion(-0.197918, 8.3481e-06, -0.000190253, 0.980219)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "Foot.L"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.997736, 0.0304477, -0.0599733, -0.066991, 0.370249, -0.926514, -0.00600512, 0.928433, 0.37145, -1.10522e-08, 0.444356, -1.99361e-09)
 bones/14/enabled = true
 bones/14/position = Vector3(-1.10522e-08, 0.444356, -1.99361e-09)
-bones/14/rotation = Quaternion(0.51215, 0.000219445, -0.0345102, 0.858203)
+bones/14/rotation = Quaternion(0.573475, -0.012754, -0.0312291, 0.818528)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "UpperLeg.R"
 bones/15/parent = 0
@@ -2463,8 +2463,8 @@ bones/19/name = "IKLegTarget.L"
 bones/19/parent = -1
 bones/19/rest = Transform3D(-0.99999, 0, 0.0044836, -0.0044836, 5.96046e-08, -0.99999, 0, -1, -1.19209e-07, 0.124848, 0.0737027, -0.0475756)
 bones/19/enabled = true
-bones/19/position = Vector3(0.124848, 0.152691, -0.123641)
-bones/19/rotation = Quaternion(-0.00109223, 0.873279, -0.487216, 0.00195774)
+bones/19/position = Vector3(0.124848, 0.0879622, -0.0613073)
+bones/19/rotation = Quaternion(-0.00150527, 0.741037, -0.671461, 0.00166125)
 bones/19/scale = Vector3(1, 1, 1)
 bones/20/name = "IKLegPole.R"
 bones/20/parent = -1
@@ -2526,7 +2526,7 @@ mesh = SubResource("ArrayMesh_k85lq")
 skin = SubResource("Skin_i6hei")
 
 [node name="HandAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.92929, 0.369352, 4.99748e-06, -0.369352, -0.92929, 2.29478e-06, 5.52367e-06, 3.65078e-07, 1, 0.271107, 0.921543, -0.0673393)
+transform = Transform3D(-0.951121, 0.308818, 5.15394e-06, -0.308818, -0.951121, 1.9744e-06, 5.50319e-06, 2.5332e-07, 1, 0.238395, 0.915538, -0.0673394)
 bone_name = "Hand.L"
 bone_idx = 6
 
@@ -2566,7 +2566,6 @@ mouse_filter = 1
 
 [node name="InventoryPanel" type="Panel" parent="UIOverlay"]
 process_mode = 2
-visible = false
 self_modulate = Color(0, 0, 0, 0)
 layout_mode = 0
 offset_left = 1197.0
@@ -2606,19 +2605,15 @@ color = Color(0, 0, 0, 0.52549)
 [node name="VBoxContainer" type="VBoxContainer" parent="UIOverlay/InventoryPanel/ColorRect"]
 process_mode = 2
 layout_mode = 0
-offset_top = 89.0
+offset_top = 77.0
 offset_right = 64.0
-offset_bottom = 1015.0
-theme_override_constants/separation = 20
-
-[node name="Label" type="Label" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-layout_mode = 2
-text = "x"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_bottom = 973.0
+theme_override_constants/separation = 30
+alignment = 1
 
 [node name="Button1" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2627,6 +2622,7 @@ script = ExtResource("21_li0j4")
 starSign = ExtResource("22_qfexk")
 
 [node name="Button2" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2635,6 +2631,7 @@ script = ExtResource("21_li0j4")
 starSign = ExtResource("23_kgm1y")
 
 [node name="Button3" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2644,6 +2641,7 @@ starSign = ExtResource("24_llkms")
 
 [node name="Button4" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2652,6 +2650,7 @@ script = ExtResource("21_li0j4")
 starSign = ExtResource("25_o6lag")
 
 [node name="Button5" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2660,6 +2659,7 @@ script = ExtResource("21_li0j4")
 starSign = ExtResource("26_nqsld")
 
 [node name="Button6" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2668,6 +2668,7 @@ script = ExtResource("21_li0j4")
 starSign = ExtResource("27_cn4md")
 
 [node name="Button7" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2677,6 +2678,7 @@ starSign = ExtResource("28_2ce4k")
 
 [node name="Button8" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
 process_mode = 2
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2685,6 +2687,7 @@ script = ExtResource("21_li0j4")
 starSign = ExtResource("29_otnpt")
 
 [node name="Button9" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2693,6 +2696,7 @@ script = ExtResource("21_li0j4")
 starSign = ExtResource("30_g8ukv")
 
 [node name="Button10" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2701,6 +2705,7 @@ script = ExtResource("21_li0j4")
 starSign = ExtResource("31_xfe7b")
 
 [node name="Button11" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
@@ -2709,6 +2714,7 @@ script = ExtResource("21_li0j4")
 starSign = ExtResource("32_tourw")
 
 [node name="Button12" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("19_r1qhh")
 theme_override_fonts/font = ExtResource("20_q3n46")
