@@ -21,6 +21,7 @@ GameManager="*res://Global/GameManager.gd"
 Log="*res://Global/Log.gd"
 EventSystem="*res://Global/EventSystem.gd"
 SceneManger="*res://Global/SceneManger.gd"
+QuestManager="*res://Global/Quests/QuestManager.gd"
 
 [display]
 

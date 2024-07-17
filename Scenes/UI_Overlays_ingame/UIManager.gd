@@ -89,31 +89,39 @@ func toggleDetails():
 	quest_rect.visible = !quest_rect.visible
 	
 # Quest Board
-func _addQuestToBoard(str: String):
+func _update_quest_board():
 	var quest_box = $"../UIOverlay/QuestRect/QuestBox"
 	var quest_container = $"../UIOverlay/QuestRect/QuestBox/QuestContainer"
 	
-	var newOne = quest_container.duplicate()
-	newOne.visible = true
+	for child in quest_box.get_children():
+		quest_container.remove_child(child)
+		child.queue_free()
 	
-	for child in newOne.get_children():
-		if child.name == "DefaultQuestLabel":
-			child.text = str
+	for quest in QuestManager.get_quest_array():	
+		var newOne = quest_container.duplicate()
+		newOne.visible = true
 	
-	quest_box.add_child(newOne)
+		for child in newOne.get_children():
+			if child.name == "DefaultQuestLabel":
+				child.text = quest
+	
+		quest_box.add_child(newOne)
 
 func addQuest(title: String, subtitle: String):
 	print("Show questboard")
 	_showQuestTitle("New Quest", subtitle)
-	_addQuestToBoard(title)
+	QuestManager.add_quest(Quest.new(title, subtitle, ""))
+	_update_quest_board()
 
 func removeQuest(title: String):
 	var quest_containerAll = $"../UIOverlay/QuestRect/QuestBox"
+	
 	for questContainer in quest_containerAll.get_children(): # every quest
 		for child in questContainer.get_children(): #  every node in quest
 			if child.name == "DefaultQuestLabel":
 				if child.text == title:
 					quest_containerAll.remove_child(questContainer)
+					QuestManager.remove_quest_from_title(title)
 
 # Quest Titles
 func _showQuestTitle(title: String, subtitle: String):
