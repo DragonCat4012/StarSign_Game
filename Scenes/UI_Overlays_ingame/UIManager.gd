@@ -22,9 +22,12 @@ var pauseMenuShown = false
 @onready var map_popups = $"../UIOverlay/MapPopups"
 
 func _ready():
+	inventory_panel.visible = false
+	pause_pop_up.visible = false
 	compass.visible = false
 	clock.visible = false
 	quest_rect.visible = false
+	map_popups.visible = false
 	
 func _init():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -116,6 +119,7 @@ func removeQuest(title: String):
 func _showQuestTitle(title: String, subtitle: String):
 	quest_title.text = title
 	quest_subtitle.text = subtitle
+	map_popups.visible = true
 	quest_title_animation_player.play("fade_in")
 	var timer := Timer.new()
 	add_child(timer)

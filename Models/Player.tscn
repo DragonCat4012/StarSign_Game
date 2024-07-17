@@ -2566,6 +2566,7 @@ mouse_filter = 1
 
 [node name="InventoryPanel" type="Panel" parent="UIOverlay"]
 process_mode = 2
+visible = false
 self_modulate = Color(0, 0, 0, 0)
 layout_mode = 0
 offset_left = 1197.0
