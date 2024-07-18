@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://cb1xwmbnkdeun"]
+[gd_scene load_steps=91 format=3 uid="uid://cb1xwmbnkdeun"]
 
 [ext_resource type="Script" path="res://Models/Player.gd" id="1_cbw5j"]
 [ext_resource type="Script" path="res://Models/Camera3D.gd" id="2_1mlft"]
@@ -16,24 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bh88gie8s5oc" path="res://Models/Weapons/sword.tscn" id="13_abq5a"]
 [ext_resource type="PackedScene" uid="uid://c5tln1hxg3vny" path="res://Models/Weapons/axe.tscn" id="14_egyhs"]
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/UIManager.gd" id="16_6dsmf"]
-[ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/InventoryPanel.gd" id="17_c6dq7"]
-[ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="18_yv2f0"]
+[ext_resource type="PackedScene" uid="uid://db7j88xj8xbdb" path="res://Scenes/UI_Overlays_ingame/Inventory/InventoryPanel.tscn" id="17_3m35y"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="19_r1qhh"]
-[ext_resource type="FontFile" uid="uid://vbcxsf2ea7l" path="res://Ressources/UI/Starsign.ttf" id="20_q3n46"]
-[ext_resource type="Script" path="res://Ressources/Inventory/StarSignButtons.gd" id="21_li0j4"]
-[ext_resource type="Resource" uid="uid://bitithh64yj66" path="res://Ressources/Stars/StarSigns/0.tres" id="22_qfexk"]
-[ext_resource type="Resource" uid="uid://cym6sjb5iq5rj" path="res://Ressources/Stars/StarSigns/1.tres" id="23_kgm1y"]
-[ext_resource type="Resource" uid="uid://ccn6ripcb6aue" path="res://Ressources/Stars/StarSigns/2.tres" id="24_llkms"]
-[ext_resource type="Resource" uid="uid://uj2qbc4dvq5" path="res://Ressources/Stars/StarSigns/3.tres" id="25_o6lag"]
-[ext_resource type="Resource" uid="uid://ne0rn8cvifvx" path="res://Ressources/Stars/StarSigns/4.tres" id="26_nqsld"]
-[ext_resource type="Resource" uid="uid://bh6xt4kiesyeu" path="res://Ressources/Stars/StarSigns/5.tres" id="27_cn4md"]
-[ext_resource type="Resource" uid="uid://c753o0urgjppa" path="res://Ressources/Stars/StarSigns/6.tres" id="28_2ce4k"]
-[ext_resource type="Resource" uid="uid://diyjtgh0w6aq8" path="res://Ressources/Stars/StarSigns/7.tres" id="29_otnpt"]
-[ext_resource type="Resource" uid="uid://bcwix2qnc4wad" path="res://Ressources/Stars/StarSigns/8.tres" id="30_g8ukv"]
-[ext_resource type="Resource" uid="uid://iehvnwofmcgm" path="res://Ressources/Stars/StarSigns/9.tres" id="31_xfe7b"]
-[ext_resource type="Resource" uid="uid://by7fwsoesdecg" path="res://Ressources/Stars/StarSigns/10.tres" id="32_tourw"]
-[ext_resource type="Resource" uid="uid://dak3jau0cbas4" path="res://Ressources/Stars/StarSigns/11.tres" id="33_ktv1b"]
-[ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/SignFrame.gd" id="34_hikwt"]
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/PausePopUp.gd" id="35_36k8l"]
 [ext_resource type="Theme" uid="uid://bwa0rxrtswmu7" path="res://Ressources/Themes/menu_title_theme.tres" id="36_munwf"]
 [ext_resource type="PackedScene" uid="uid://cvtm4nnjdhm5f" path="res://compass/Compass.tscn" id="37_0pd2a"]
@@ -2352,14 +2336,14 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.999993, -0.00380228, -0.000175749, 0.00380227, 0.995726, 0.0922794, -0.000175874, -0.0922794, 0.995733, -5.32907e-15, 0.0890516, -7.45056e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(-5.32907e-15, 0.0890516, -7.45056e-09)
-bones/3/rotation = Quaternion(-0.0461865, -0.000694724, -0.0131219, 0.998846)
+bones/3/rotation = Quaternion(-0.0461889, 4.45241e-05, 0.00286541, 0.998929)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "UpperArm.L"
 bones/4/parent = 1
 bones/4/rest = Transform3D(-0.998223, 0.0594893, -0.003459, -0.0560962, -0.957698, -0.282256, -0.0201039, -0.28156, 0.959334, 0.16148, 0.251413, -0.0171359)
 bones/4/enabled = true
 bones/4/position = Vector3(0.16148, 0.251413, -0.0171359)
-bones/4/rotation = Quaternion(-0.00734805, -0.142438, 0.989116, -0.0361518)
+bones/4/rotation = Quaternion(-0.00607165, -0.142469, 0.989332, -0.0297929)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "LowerArm.L"
 bones/5/parent = 4
@@ -2387,7 +2371,7 @@ bones/8/parent = 1
 bones/8/rest = Transform3D(-0.998223, -0.0594893, 0.003459, 0.0560962, -0.957698, -0.282256, 0.0201039, -0.28156, 0.959334, -0.16148, 0.251413, -0.0171359)
 bones/8/enabled = true
 bones/8/position = Vector3(-0.16148, 0.251413, -0.0171359)
-bones/8/rotation = Quaternion(0.00724044, -0.142441, 0.989136, 0.0356157)
+bones/8/rotation = Quaternion(0.00606258, -0.142469, 0.989334, 0.0297477)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "LowerArm.R"
 bones/9/parent = 8
@@ -2415,21 +2399,21 @@ bones/12/parent = 0
 bones/12/rest = Transform3D(-0.99999, 0.00459254, -0.000388995, -0.00430506, -0.900575, 0.434681, 0.00164597, 0.434678, 0.900585, 0.120751, 0.0169393, -0.00985621)
 bones/12/enabled = true
 bones/12/position = Vector3(0.120751, 0.0169393, -0.00985621)
-bones/12/rotation = Quaternion(0.000151478, 0.26936, 0.963037, -0.00238937)
+bones/12/rotation = Quaternion(0.000317181, 0.224672, 0.974432, -0.00228521)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "LowerLeg.L"
 bones/13/parent = 12
 bones/13/rest = Transform3D(1, 0.000163417, 3.11526e-05, -0.000166339, 0.98518, 0.171521, -2.66139e-06, -0.171521, 0.98518, 1.67483e-08, 0.463759, 6.74481e-09)
 bones/13/enabled = true
 bones/13/position = Vector3(1.67483e-08, 0.463759, 6.74481e-09)
-bones/13/rotation = Quaternion(-0.197918, 8.3481e-06, -0.000190253, 0.980219)
+bones/13/rotation = Quaternion(-0.0899941, 8.48203e-06, -8.65085e-05, 0.995942)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "Foot.L"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.997736, 0.0304477, -0.0599733, -0.066991, 0.370249, -0.926514, -0.00600512, 0.928433, 0.37145, -1.10522e-08, 0.444356, -1.99361e-09)
 bones/14/enabled = true
 bones/14/position = Vector3(-1.10522e-08, 0.444356, -1.99361e-09)
-bones/14/rotation = Quaternion(0.573475, -0.012754, -0.0312291, 0.818528)
+bones/14/rotation = Quaternion(0.561283, -0.0162066, -0.0294899, 0.82694)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "UpperLeg.R"
 bones/15/parent = 0
@@ -2463,8 +2447,8 @@ bones/19/name = "IKLegTarget.L"
 bones/19/parent = -1
 bones/19/rest = Transform3D(-0.99999, 0, 0.0044836, -0.0044836, 5.96046e-08, -0.99999, 0, -1, -1.19209e-07, 0.124848, 0.0737027, -0.0475756)
 bones/19/enabled = true
-bones/19/position = Vector3(0.124848, 0.0879622, -0.0613073)
-bones/19/rotation = Quaternion(-0.00150527, 0.741037, -0.671461, 0.00166125)
+bones/19/position = Vector3(0.124848, 0.0740106, -0.047872)
+bones/19/rotation = Quaternion(-0.00158352, 0.70785, -0.706359, 0.00158686)
 bones/19/scale = Vector3(1, 1, 1)
 bones/20/name = "IKLegPole.R"
 bones/20/parent = -1
@@ -2526,7 +2510,7 @@ mesh = SubResource("ArrayMesh_k85lq")
 skin = SubResource("Skin_i6hei")
 
 [node name="HandAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.951121, 0.308818, 5.15394e-06, -0.308818, -0.951121, 1.9744e-06, 5.50319e-06, 2.5332e-07, 1, 0.238395, 0.915538, -0.0673394)
+transform = Transform3D(-0.955049, 0.296447, 5.1856e-06, -0.296447, -0.955049, 1.69873e-06, 5.46407e-06, 1.11759e-07, 1, 0.231756, 0.914583, -0.0673395)
 bone_name = "Hand.L"
 bone_idx = 6
 
@@ -2564,242 +2548,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="InventoryPanel" type="Panel" parent="UIOverlay"]
-process_mode = 2
-visible = false
-self_modulate = Color(0, 0, 0, 0)
+[node name="InventoryPanel" parent="UIOverlay" instance=ExtResource("17_3m35y")]
 layout_mode = 0
-offset_left = 1197.0
-offset_right = 1921.0
-offset_bottom = 1080.0
-script = ExtResource("17_c6dq7")
-
-[node name="TextureRect" type="TextureRect" parent="UIOverlay/InventoryPanel"]
-modulate = Color(0.886262, 0.886261, 0.886262, 1)
-layout_mode = 0
-offset_left = -22.0
-offset_right = 1668.0
-offset_bottom = 1079.0
-texture = ExtResource("18_yv2f0")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Label" type="Label" parent="UIOverlay/InventoryPanel"]
-layout_mode = 0
-offset_left = 107.0
-offset_top = 44.0
-offset_right = 691.0
-offset_bottom = 102.0
-theme_override_font_sizes/font_size = 35
-text = "Inventory"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="UIOverlay/InventoryPanel"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 12.0
-offset_right = 92.0
-offset_bottom = 1063.0
-color = Color(0, 0, 0, 0.52549)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UIOverlay/InventoryPanel/ColorRect"]
-process_mode = 2
-layout_mode = 0
-offset_top = 77.0
-offset_right = 64.0
-offset_bottom = 973.0
-theme_override_constants/separation = 30
-alignment = 1
-
-[node name="Button1" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-process_mode = 2
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "C"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("22_qfexk")
-
-[node name="Button2" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "D"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("23_kgm1y")
-
-[node name="Button3" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "E"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("24_llkms")
-
-[node name="Button4" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-process_mode = 2
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "F"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("25_o6lag")
-
-[node name="Button5" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "G"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("26_nqsld")
-
-[node name="Button6" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "H"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("27_cn4md")
-
-[node name="Button7" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "I"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("28_2ce4k")
-
-[node name="Button8" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-process_mode = 2
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "J"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("29_otnpt")
-
-[node name="Button9" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "L"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("30_g8ukv")
-
-[node name="Button10" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "M"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("31_xfe7b")
-
-[node name="Button11" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "A"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("32_tourw")
-
-[node name="Button12" type="Button" parent="UIOverlay/InventoryPanel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme = ExtResource("19_r1qhh")
-theme_override_fonts/font = ExtResource("20_q3n46")
-text = "B"
-script = ExtResource("21_li0j4")
-starSign = ExtResource("33_ktv1b")
-
-[node name="StarCountForSign" type="Label" parent="UIOverlay/InventoryPanel"]
-layout_mode = 0
-offset_left = 625.0
-offset_top = 968.0
-offset_right = 688.0
-offset_bottom = 1026.0
-text = "??? / ???"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="WeaponNameLabel" type="Label" parent="UIOverlay/InventoryPanel"]
-layout_mode = 0
-offset_left = 352.0
-offset_top = 967.0
-offset_right = 593.0
-offset_bottom = 1025.0
-text = "???"
-vertical_alignment = 1
-
-[node name="ActivateButton" type="Button" parent="UIOverlay/InventoryPanel"]
-process_mode = 2
-layout_mode = 2
-offset_left = 114.0
-offset_top = 981.0
-offset_right = 311.0
-offset_bottom = 1019.0
-theme = ExtResource("19_r1qhh")
-text = "Activate Weapon"
-
-[node name="PageName" type="Label" parent="UIOverlay/InventoryPanel"]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 98.0
-offset_right = 684.0
-offset_bottom = 136.0
-theme_override_colors/font_color = Color(0.817169, 0.673305, 0.997324, 1)
-text = "???
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SignFrame" type="ColorRect" parent="UIOverlay/InventoryPanel"]
-layout_mode = 0
-offset_left = 110.0
-offset_top = 149.0
-offset_right = 690.0
-offset_bottom = 560.0
-pivot_offset = Vector2(0, 411)
-color = Color(1, 1, 1, 0)
-script = ExtResource("34_hikwt")
-
-[node name="DescriptionFrame" type="ColorRect" parent="UIOverlay/InventoryPanel"]
-layout_mode = 0
-offset_left = 110.0
-offset_top = 581.0
-offset_right = 691.0
-offset_bottom = 889.0
-pivot_offset = Vector2(0, 422)
-color = Color(0, 0, 0, 0.447059)
-
-[node name="Label" type="Label" parent="UIOverlay/InventoryPanel/DescriptionFrame"]
-layout_mode = 2
-offset_left = 13.0
-offset_top = 10.0
-offset_right = 570.0
-offset_bottom = 33.0
-text = "Description"
-
-[node name="DescriptionLabel" type="Label" parent="UIOverlay/InventoryPanel/DescriptionFrame"]
-layout_mode = 2
-offset_left = 13.0
-offset_top = 41.0
-offset_right = 570.0
-offset_bottom = 292.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.72549)
-theme_override_font_sizes/font_size = 15
-text = "Description UwU"
+offset_left = 1188.0
+offset_right = 1912.0
 
 [node name="PausePopUp" type="Panel" parent="UIOverlay"]
 process_mode = 2

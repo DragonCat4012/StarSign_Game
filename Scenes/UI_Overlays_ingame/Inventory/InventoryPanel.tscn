@@ -1,0 +1,257 @@
+[gd_scene load_steps=19 format=3 uid="uid://db7j88xj8xbdb"]
+
+[ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/InventoryPanel.gd" id="1_xn3kv"]
+[ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="2_rosuo"]
+[ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="3_0tpk7"]
+[ext_resource type="FontFile" uid="uid://vbcxsf2ea7l" path="res://Ressources/UI/Starsign.ttf" id="4_6bu7e"]
+[ext_resource type="Script" path="res://Ressources/Inventory/StarSignButtons.gd" id="5_86feo"]
+[ext_resource type="Resource" uid="uid://bitithh64yj66" path="res://Ressources/Stars/StarSigns/0.tres" id="6_2g0mv"]
+[ext_resource type="Resource" uid="uid://cym6sjb5iq5rj" path="res://Ressources/Stars/StarSigns/1.tres" id="7_w8vhy"]
+[ext_resource type="Resource" uid="uid://ccn6ripcb6aue" path="res://Ressources/Stars/StarSigns/2.tres" id="8_1ydab"]
+[ext_resource type="Resource" uid="uid://uj2qbc4dvq5" path="res://Ressources/Stars/StarSigns/3.tres" id="9_1dc77"]
+[ext_resource type="Resource" uid="uid://ne0rn8cvifvx" path="res://Ressources/Stars/StarSigns/4.tres" id="10_nh8ha"]
+[ext_resource type="Resource" uid="uid://bh6xt4kiesyeu" path="res://Ressources/Stars/StarSigns/5.tres" id="11_wb206"]
+[ext_resource type="Resource" uid="uid://c753o0urgjppa" path="res://Ressources/Stars/StarSigns/6.tres" id="12_q1k25"]
+[ext_resource type="Resource" uid="uid://diyjtgh0w6aq8" path="res://Ressources/Stars/StarSigns/7.tres" id="13_0so50"]
+[ext_resource type="Resource" uid="uid://bcwix2qnc4wad" path="res://Ressources/Stars/StarSigns/8.tres" id="14_wre32"]
+[ext_resource type="Resource" uid="uid://iehvnwofmcgm" path="res://Ressources/Stars/StarSigns/9.tres" id="15_i7iky"]
+[ext_resource type="Resource" uid="uid://by7fwsoesdecg" path="res://Ressources/Stars/StarSigns/10.tres" id="16_1poqc"]
+[ext_resource type="Resource" uid="uid://dak3jau0cbas4" path="res://Ressources/Stars/StarSigns/11.tres" id="17_fv12c"]
+[ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/SignFrame.gd" id="18_4o3t0"]
+
+[node name="InventoryPanel" type="Panel"]
+process_mode = 2
+self_modulate = Color(0, 0, 0, 0)
+offset_left = 1197.0
+offset_right = 1921.0
+offset_bottom = 1080.0
+script = ExtResource("1_xn3kv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.886262, 0.886261, 0.886262, 1)
+layout_mode = 0
+offset_left = -22.0
+offset_right = 1668.0
+offset_bottom = 1079.0
+texture = ExtResource("2_rosuo")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 44.0
+offset_right = 691.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 35
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 12.0
+offset_right = 92.0
+offset_bottom = 1063.0
+color = Color(0, 0, 0, 0.52549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+process_mode = 2
+layout_mode = 0
+offset_top = 77.0
+offset_right = 64.0
+offset_bottom = 973.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Button1" type="Button" parent="ColorRect/VBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "C"
+script = ExtResource("5_86feo")
+starSign = ExtResource("6_2g0mv")
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "D"
+script = ExtResource("5_86feo")
+starSign = ExtResource("7_w8vhy")
+
+[node name="Button3" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "E"
+script = ExtResource("5_86feo")
+starSign = ExtResource("8_1ydab")
+
+[node name="Button4" type="Button" parent="ColorRect/VBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "F"
+script = ExtResource("5_86feo")
+starSign = ExtResource("9_1dc77")
+
+[node name="Button5" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "G"
+script = ExtResource("5_86feo")
+starSign = ExtResource("10_nh8ha")
+
+[node name="Button6" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "H"
+script = ExtResource("5_86feo")
+starSign = ExtResource("11_wb206")
+
+[node name="Button7" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "I"
+script = ExtResource("5_86feo")
+starSign = ExtResource("12_q1k25")
+
+[node name="Button8" type="Button" parent="ColorRect/VBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "J"
+script = ExtResource("5_86feo")
+starSign = ExtResource("13_0so50")
+
+[node name="Button9" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "L"
+script = ExtResource("5_86feo")
+starSign = ExtResource("14_wre32")
+
+[node name="Button10" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "M"
+script = ExtResource("5_86feo")
+starSign = ExtResource("15_i7iky")
+
+[node name="Button11" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "A"
+script = ExtResource("5_86feo")
+starSign = ExtResource("16_1poqc")
+
+[node name="Button12" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("3_0tpk7")
+theme_override_fonts/font = ExtResource("4_6bu7e")
+text = "B"
+script = ExtResource("5_86feo")
+starSign = ExtResource("17_fv12c")
+
+[node name="StarCountForSign" type="Label" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 968.0
+offset_right = 688.0
+offset_bottom = 1026.0
+text = "??? / ???"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="WeaponNameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 967.0
+offset_right = 593.0
+offset_bottom = 1025.0
+text = "???"
+vertical_alignment = 1
+
+[node name="ActivateButton" type="Button" parent="."]
+process_mode = 2
+layout_mode = 2
+offset_left = 114.0
+offset_top = 981.0
+offset_right = 311.0
+offset_bottom = 1019.0
+theme = ExtResource("3_0tpk7")
+text = "Activate Weapon"
+
+[node name="PageName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 98.0
+offset_right = 684.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0.817169, 0.673305, 0.997324, 1)
+text = "???
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SignFrame" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 149.0
+offset_right = 690.0
+offset_bottom = 560.0
+pivot_offset = Vector2(0, 411)
+color = Color(1, 1, 1, 0)
+script = ExtResource("18_4o3t0")
+
+[node name="DescriptionFrame" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 581.0
+offset_right = 691.0
+offset_bottom = 889.0
+pivot_offset = Vector2(0, 422)
+color = Color(0, 0, 0, 0.447059)
+
+[node name="Label" type="Label" parent="DescriptionFrame"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 570.0
+offset_bottom = 33.0
+text = "Description"
+
+[node name="DescriptionLabel" type="Label" parent="DescriptionFrame"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 41.0
+offset_right = 570.0
+offset_bottom = 292.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.72549)
+theme_override_font_sizes/font_size = 15
+text = "Description UwU"
+
+[node name="InventoryPanel" type="Panel" parent="."]
