@@ -2,5 +2,6 @@
 .godot/
 *.exe
 *.pck
+export_presets.cfg
 
 addons
