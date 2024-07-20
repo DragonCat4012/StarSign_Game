@@ -16,11 +16,14 @@ func _ready():
 	KeybindingsButton.pressed.connect(self._keybindings_button_pressed.bind())
 	ExitButton.pressed.connect(self._exit_button_pressed.bind())
 	
-	var preset = ConfigFile.new()
-	preset.load("res://export_presets.cfg")
-	var version = preset.get_value("preset.0.options", "application/file_version")
-	var build =  preset.get_value("preset.0.options", "application/product_version")
-	verison_label.text = version + " (" + build + ")"
+	# Load version Info
+	var versionInfo = load("res://version.txt")
+	var file = FileAccess.open("res://version.txt", FileAccess.READ)
+	var version = file.get_as_text()
+	file.close()
+	verison_label.text = version
+	
+	# Play Idle animation
 	animation_player_2.speed_scale = 0.7
 	animation_player_2.play("idle")
 	
