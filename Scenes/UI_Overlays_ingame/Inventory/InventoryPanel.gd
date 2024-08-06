@@ -21,6 +21,8 @@ extends Panel
 @onready var starSignStarCountLabel := $StarCountForSign
 @onready var backgroundTexture := $SignFrame
 
+@onready var weapon_preview = $SubViewportContainer/SubViewport/WeaponPreview
+
 var star_dict = {}
 var selectedSign = 0
 var selectedWeaponId = 0
@@ -53,6 +55,7 @@ func _draw():
 		pageNameLabel.text = "???"
 		starSignStarCountLabel.text = "??? / ???"
 		backgroundTexture.queue_redraw()
+		weapon_preview.stop()
 		return
 		
 	pageNameLabel.text = data.starSignName
@@ -66,7 +69,10 @@ func _draw():
 		var weapon = data.weaponRessource
 		weaponNameLabel.text = weapon.weaponName
 		selectedWeaponId = weapon.weaponID
+		weapon_preview.start(weapon.weaponName)
 		possibleNextWeapon = weapon
+	else:
+		weapon_preview.stop()
 	starSignStarCountLabel.text = str(starSignCountData.x) + " / " + str(starSignCountData.y)
 		
 	backgroundTexture.inv = signRessource.get_star_types_in_inventory()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://db7j88xj8xbdb"]
+[gd_scene load_steps=20 format=3 uid="uid://db7j88xj8xbdb"]
 
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/InventoryPanel.gd" id="1_xn3kv"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="2_rosuo"]
@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://by7fwsoesdecg" path="res://Ressources/Stars/StarSigns/10.tres" id="16_1poqc"]
 [ext_resource type="Resource" uid="uid://dak3jau0cbas4" path="res://Ressources/Stars/StarSigns/11.tres" id="17_fv12c"]
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/SignFrame.gd" id="18_4o3t0"]
+[ext_resource type="PackedScene" uid="uid://cyf3xabaeaec4" path="res://Models/Weapons/WeaponPreview.tscn" id="19_j8yt1"]
 
 [node name="InventoryPanel" type="Panel"]
 process_mode = 2
@@ -248,10 +249,30 @@ text = "Description"
 layout_mode = 2
 offset_left = 13.0
 offset_top = 41.0
-offset_right = 570.0
+offset_right = 335.0
 offset_bottom = 292.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.72549)
 theme_override_font_sizes/font_size = 15
 text = "Description UwU"
 
 [node name="InventoryPanel" type="Panel" parent="."]
+layout_mode = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 591.0
+offset_right = 684.0
+offset_bottom = 878.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(205, 287)
+render_target_update_mode = 4
+
+[node name="WeaponPreview" parent="SubViewportContainer/SubViewport" instance=ExtResource("19_j8yt1")]
+
+[node name="Node2D" type="Node2D" parent="."]
