@@ -25,3 +25,8 @@ signal InventoryWillBeShown
 signal MovementEnterd
 func signal_tutorial_enetred_movement_test():
 	MovementEnterd.emit()
+	
+# Menu
+signal EnteredOption(opt)
+signal ExitedOption(opt)
+signal ClickedOption(opt)

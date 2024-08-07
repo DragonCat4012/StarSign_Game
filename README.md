@@ -14,8 +14,10 @@ Godot v4.2.0
 
 ## Credits
 * Gras Mesh: https://stayathomedev.itch.io/stylized-grass-shader
-
+* Blur Shader: https://godotshaders.com/shader/dynamic-depth-of-field/
 
 # Addons
 https://github.com/Zylann/godot_heightmap_plugin
 16.07.24
+
+

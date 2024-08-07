@@ -4,20 +4,41 @@ extends Node2D
 @onready var OptionsButton := $VBoxContainer/OptionsButton
 @onready var ExitButton := $VBoxContainer/ExitButton
 @onready var KeybindingsButton := $VBoxContainer/KeybindingsButton
-@onready var verison_label = $VBoxContainer/VerisonLabel
+@onready var verison_label = $VerisonLabel
 @onready var animation_player_2 = $"../../Porcelain/AnimationPlayer2"
 @onready var camera_3d = $"../../Camera3D"
-var rotationCamera = 0.01
+var rotationCamera = -0.0005#0.01
 @onready var color_rect = $ColorRect
 
+
+# Selection
+@onready var animation_player = $AnimationPlayer
+@onready var op_1 := $Op1
+@onready var op_2 := $Op2
+@onready var op_3 := $Op3
+@onready var op_4 := $Op4
+@onready var allopt = [op_1, op_2, op_3, op_4]
+var currentOpt = 0
+
+var buttonLabels = ["Play", "Options (WIP)", "Keybindings", "Tutorial"]
+@onready var button_label = $ButtonLabelContainer/ButtonLabel
+@onready var button_label_container = $ButtonLabelContainer
+@onready var animation_player_label = $ButtonLabelContainer/AnimationPlayer
+
+
 func _ready():
+	button_label_container.visible = false
+	button_label.text = buttonLabels[0]
+	EventSystem.EnteredOption.connect(enteredOption)
+	EventSystem.ExitedOption.connect(exitedOption)
+	EventSystem.ClickedOption.connect(optionSelected)
+	
 	PlayButton.pressed.connect(self._play_button_pressed.bind())
 	OptionsButton.pressed.connect(self._options_button_pressed.bind())
 	KeybindingsButton.pressed.connect(self._keybindings_button_pressed.bind())
 	ExitButton.pressed.connect(self._exit_button_pressed.bind())
 	
 	# Load version Info
-	var versionInfo = load("res://version.txt")
 	var file = FileAccess.open("res://version.txt", FileAccess.READ)
 	var version = file.get_as_text()
 	file.close()
@@ -28,9 +49,10 @@ func _ready():
 	animation_player_2.play("idle")
 	
 func _process(delta):
-	camera_3d.rotate_y(deg_to_rad(rotationCamera))
-	if camera_3d.rotation_degrees.y >= -10 or camera_3d.rotation_degrees.y <= -95:
-		rotationCamera = rotationCamera*(-1)
+	pass
+	#if camera_3d.rotation_degrees.y >= -50 or camera_3d.rotation_degrees.y <= -80:
+	#	rotationCamera = -rotationCamera
+#	camera_3d.rotate_y(rotationCamera)
 		
 func _play_button_pressed():
 	get_tree().change_scene_to_file(SceneManger.gameScene)
@@ -48,3 +70,38 @@ func _on_tutorial_button_pressed():
 	color_rect.visible = true # TODO: is necesary?
 	var scene = load(SceneManger.tutorialScene)
 	get_tree().change_scene_to_packed(scene)
+	
+# Button animations
+var textContainerPositions = [452, 542, 620 , 700]
+var lastOption = 0
+func move_option_lines():
+	if currentOpt == 0:
+		button_label_container.visible = false
+		return
+		
+	button_label.text = buttonLabels[currentOpt-1]
+	if not lastOption == currentOpt:
+		button_label_container.position.y = textContainerPositions[currentOpt-1]
+		button_label_container.visible = false
+		animation_player_label.play("fade-in")
+		button_label_container.visible = true	
+		
+func enteredOption(opt):
+	lastOption = currentOpt
+	currentOpt = opt
+	move_option_lines()
+	
+func exitedOption(opt):
+	currentOpt = 0
+	move_option_lines()
+
+func optionSelected(opt):
+	match opt:
+		1:
+			_play_button_pressed()
+		2: 
+			_options_button_pressed()
+		3:
+			_keybindings_button_pressed()
+		4:
+			_on_tutorial_button_pressed()
