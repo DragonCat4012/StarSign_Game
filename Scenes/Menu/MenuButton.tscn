@@ -16,7 +16,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 4.59479),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.728, 0.728)]
+"values": [Vector2(2.5, 2.5), Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_sbxfn"]
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.728, 0.728)]
+"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_3o2l4"]
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 4.43828),
 "update": 0,
-"values": [Vector2(0.728, 0.728), Vector2(1, 1)]
+"values": [Vector2(2, 2), Vector2(2.5, 2.5)]
 }
 
 [sub_resource type="Animation" id="Animation_qv1lk"]
@@ -65,7 +65,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6, 1.2),
 "transitions": PackedFloat32Array(4.43828, 4.28709, 4.43828),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.08, 1.08), Vector2(1, 1)]
+"values": [Vector2(2.5, 2.5), Vector2(2.3, 2.3), Vector2(2.5, 2.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_twg0f"]
@@ -89,12 +89,12 @@ activeColor = Color(0.582666, 0.429303, 1, 1)
 
 [node name="Option" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 1019.0
-offset_top = 467.0
-offset_right = 1135.0
-offset_bottom = 583.0
+offset_left = 3364.0
+offset_top = 735.0
+offset_right = 3480.0
+offset_bottom = 851.0
 rotation = 0.785397
-scale = Vector2(0.728, 0.728)
+scale = Vector2(2, 2)
 pivot_offset = Vector2(58.6459, 60.425)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Option"]

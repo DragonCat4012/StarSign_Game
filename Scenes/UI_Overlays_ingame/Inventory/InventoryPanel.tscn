@@ -23,9 +23,10 @@
 [node name="InventoryPanel" type="Panel"]
 process_mode = 2
 self_modulate = Color(0, 0, 0, 0)
-offset_left = 1197.0
-offset_right = 1921.0
+offset_left = 2389.0
+offset_right = 3113.0
 offset_bottom = 1080.0
+scale = Vector2(2.01096, 2.01096)
 script = ExtResource("1_xn3kv")
 
 [node name="TextureRect" type="TextureRect" parent="."]

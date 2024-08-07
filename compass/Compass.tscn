@@ -9,8 +9,8 @@ script = ExtResource("1_epltg")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_top = 3.0
-offset_right = 3694.0
-offset_bottom = 72.0
+offset_right = 7387.0
+offset_bottom = 112.0
 scale = Vector2(0.52, 0.570088)
 
 [node name="CompassBar" type="TextureRect" parent="CenterContainer"]
@@ -20,8 +20,8 @@ texture = ExtResource("3_y1r8o")
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 offset_top = 37.0
-offset_right = 1923.0
-offset_bottom = 52.0
+offset_right = 3841.0
+offset_bottom = 95.0
 
 [node name="ColorRect" type="ColorRect" parent="CenterContainer2"]
 custom_minimum_size = Vector2(3, 15)
@@ -29,7 +29,7 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 35
+theme_override_constants/separation = 70
 
 [node name="ColorRect2" type="ColorRect" parent="CenterContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(1, 8)

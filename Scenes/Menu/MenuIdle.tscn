@@ -1521,7 +1521,7 @@ render_priority = 0
 shader = ExtResource("10_bkho3")
 shader_parameter/ray_position = Vector3(0, 0, 0)
 shader_parameter/blur_strength = 1
-shader_parameter/blur_falloff = 1.0
+shader_parameter/blur_falloff = 10.0
 shader_parameter/blur_near = 0.0
 shader_parameter/blur_far = 250.0
 
@@ -1530,19 +1530,22 @@ shader_parameter/blur_far = 250.0
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="SpatialGrass" parent="Enviroment" instance=ExtResource("1_55xfo")]
-transform = Transform3D(0.370934, 0, 0, 0, 0.370934, 0, 0, 0, 0.370934, 2.62468, 0.00668904, -2.14907)
+transform = Transform3D(0.370934, 0, 0, 0, 0.370934, 0, 0, 0, 0.370934, 4.41092, 0.00668904, -2.22628)
 
 [node name="column" parent="Enviroment" instance=ExtResource("3_bpv3c")]
 transform = Transform3D(1.14477, 0, 0, 0, 1.14477, 0, 0, 0, 1.14477, 1.998, 0, 2.817)
 
 [node name="sword" parent="Enviroment" instance=ExtResource("3_eqkjo")]
-transform = Transform3D(0.723933, 0, 0, 0, 0.704192, -0.167905, 0, 0.167905, 0.704192, 1.822, 0.357, 2.212)
+transform = Transform3D(-0.424052, -0.119995, 0.574334, -0.197113, 0.696581, 0, -0.552635, -0.15638, -0.440702, -0.252, 0.357, -2.288)
 
 [node name="column2" parent="Enviroment" instance=ExtResource("3_bpv3c")]
 transform = Transform3D(1.14477, 0, 0, 0, 1.14477, 0, 0, 0, 1.14477, -0.235, 0, -2.976)
 
 [node name="column3" parent="Enviroment" instance=ExtResource("3_bpv3c")]
-transform = Transform3D(1.14477, 0, 0, 0, 1.14477, 0, 0, 0, 1.14477, 5.921, 0, -8.856)
+transform = Transform3D(1.14477, 0, 0, 0, 1.14477, 0, 0, 0, 1.14477, 10.6147, 0, 3.08099)
+
+[node name="column4" parent="Enviroment" instance=ExtResource("3_bpv3c")]
+transform = Transform3D(1.14477, 0, 0, 0, 1.14477, 0, 0, 0, 1.14477, 12.0722, 0, -8.09304)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment"]
 environment = SubResource("Environment_ueo6w")
@@ -1552,7 +1555,7 @@ transform = Transform3D(1, 0, 0, 0, 0.997284, 0.0736558, 0, -0.0736558, 0.997284
 shadow_enabled = true
 
 [node name="Porcelain" parent="." instance=ExtResource("4_nexci")]
-transform = Transform3D(0.790326, 0, 0.612686, 0, 1, 0, -0.612686, 0, 0.790326, 0, 0, 0)
+transform = Transform3D(0.927308, 0, 0.374299, 0, 1, 0, -0.374299, 0, 0.927308, 0.694751, 0.000403881, 0.872442)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Porcelain"]
 libraries = {
@@ -1562,10 +1565,10 @@ libraries = {
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.411514, 0, -0.911403, 0, 1, 0, 0.911403, 0, 0.411514, -1.641, 1.578, 1.313)
 near = 0.001
-far = 12.21
+far = 45.19
 
 [node name="Blur" type="MeshInstance3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0, -3)
 mesh = SubResource("QuadMesh_n8cmn")
 surface_material_override/0 = SubResource("ShaderMaterial_fso8p")
 script = ExtResource("10_7p4q4")

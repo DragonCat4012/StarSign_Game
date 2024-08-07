@@ -8,23 +8,16 @@ extends Node2D
 @onready var animation_player_2 = $"../../Porcelain/AnimationPlayer2"
 @onready var camera_3d = $"../../Camera3D"
 var rotationCamera = -0.0005#0.01
-@onready var color_rect = $ColorRect
 
 
 # Selection
 @onready var animation_player = $AnimationPlayer
-@onready var op_1 := $Op1
-@onready var op_2 := $Op2
-@onready var op_3 := $Op3
-@onready var op_4 := $Op4
-@onready var allopt = [op_1, op_2, op_3, op_4]
 var currentOpt = 0
 
 var buttonLabels = ["Play", "Options (WIP)", "Keybindings", "Tutorial"]
 @onready var button_label = $ButtonLabelContainer/ButtonLabel
 @onready var button_label_container = $ButtonLabelContainer
 @onready var animation_player_label = $ButtonLabelContainer/AnimationPlayer
-
 
 func _ready():
 	button_label_container.visible = false
@@ -47,12 +40,6 @@ func _ready():
 	# Play Idle animation
 	animation_player_2.speed_scale = 0.7
 	animation_player_2.play("idle")
-	
-func _process(delta):
-	pass
-	#if camera_3d.rotation_degrees.y >= -50 or camera_3d.rotation_degrees.y <= -80:
-	#	rotationCamera = -rotationCamera
-#	camera_3d.rotate_y(rotationCamera)
 		
 func _play_button_pressed():
 	get_tree().change_scene_to_file(SceneManger.gameScene)
@@ -67,12 +54,11 @@ func _exit_button_pressed():
 	get_tree().quit()
 
 func _on_tutorial_button_pressed():
-	color_rect.visible = true # TODO: is necesary?
 	var scene = load(SceneManger.tutorialScene)
 	get_tree().change_scene_to_packed(scene)
 	
 # Button animations
-var textContainerPositions = [452, 542, 620 , 700]
+var textContainerPositions = [655, 860, 1055, 1275]
 var lastOption = 0
 func move_option_lines():
 	if currentOpt == 0:
