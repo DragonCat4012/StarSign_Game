@@ -1,23 +1,55 @@
-[gd_scene load_steps=13 format=3 uid="uid://byyoklspddq7f"]
+[gd_scene load_steps=18 format=3 uid="uid://byyoklspddq7f"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/MainMenu.gd" id="1_8ymx2"]
 [ext_resource type="Theme" uid="uid://bwa0rxrtswmu7" path="res://Ressources/Themes/menu_title_theme.tres" id="2_7e3h4"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="2_pu347"]
+[ext_resource type="PackedScene" uid="uid://bmdni3myir7gt" path="res://Scenes/Menu/MenuButton.tscn" id="4_rbks8"]
+[ext_resource type="Shader" path="res://Scenes/Menu/MainMenuButton.gdshader" id="5_4obnj"]
+[ext_resource type="Texture2D" uid="uid://bqlohdngefc7y" path="res://Scenes/Menu/MenuButtons/keys.PNG" id="5_fyvxw"]
+[ext_resource type="Texture2D" uid="uid://cu71nueheovup" path="res://Scenes/Menu/MenuButtons/empty.PNG" id="5_gv7l6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_337sl"]
+shader = ExtResource("5_4obnj")
+shader_parameter/amount = 1.0
 
 [sub_resource type="Gradient" id="Gradient_3w37k"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.593846)
+offsets = PackedFloat32Array(0, 0.0307692)
 colors = PackedColorArray(0, 0, 0, 0, 0.137255, 0, 0.258824, 0.87451)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_7ptql"]
 gradient = SubResource("Gradient_3w37k")
 
-[sub_resource type="Animation" id="Animation_wg38h"]
-resource_name = "fade-in"
-length = 0.2
-
 [sub_resource type="Animation" id="Animation_2ow5s"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_wg38h"]
+resource_name = "fade-in"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.5]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8lm1v"]
 _data = {
@@ -25,162 +57,18 @@ _data = {
 "fade-in": SubResource("Animation_wg38h")
 }
 
+[sub_resource type="Animation" id="Animation_habce"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_n8e7s"]
 resource_name = "line1"
 length = 0.1
 step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Op4:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1731, 715), Vector2(1588, 715)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Op2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1731, 428), Vector2(1588, 428)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Op3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1588, 571), Vector2(1731, 571)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Op1:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1588, 284), Vector2(1731, 284)]
-}
-
-[sub_resource type="Animation" id="Animation_habce"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Op1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1588, 284)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Op3:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1588, 573)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Op2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1731, 428)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Op4:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1731, 715)]
-}
 
 [sub_resource type="Animation" id="Animation_sxps8"]
 resource_name = "line2"
 length = 0.1
 step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Op4:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1588, 715), Vector2(1731, 715)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Op2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1588, 428), Vector2(1731, 428)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Op3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1731, 571), Vector2(1588, 571)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Op1:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1731, 284), Vector2(1588, 284)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ov85g"]
 _data = {
@@ -256,25 +144,57 @@ offset_right = 2003.0
 offset_bottom = 1110.0
 color = Color(0.117647, 0.117647, 0.117647, 0.670588)
 
+[node name="Op1" parent="." instance=ExtResource("4_rbks8")]
+offset_left = 615.0
+offset_top = -41.0
+offset_right = 615.0
+offset_bottom = -41.0
+icon = ExtResource("5_gv7l6")
+
+[node name="Op2" parent="." instance=ExtResource("4_rbks8")]
+offset_left = 694.0
+offset_top = 41.0
+offset_right = 694.0
+offset_bottom = 41.0
+optionNum = 2
+
+[node name="Op3" parent="." instance=ExtResource("4_rbks8")]
+offset_left = 618.0
+offset_top = 118.0
+offset_right = 618.0
+offset_bottom = 118.0
+optionNum = 3
+icon = ExtResource("5_fyvxw")
+
+[node name="Op4" parent="." instance=ExtResource("4_rbks8")]
+offset_left = 697.0
+offset_top = 198.0
+offset_right = 697.0
+offset_bottom = 198.0
+optionNum = 4
+icon = ExtResource("5_gv7l6")
+
 [node name="ButtonLabelContainer" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_337sl")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 1087.0
-offset_top = 286.0
+offset_left = 1135.0
+offset_top = 451.0
 offset_right = 1588.0
-offset_bottom = 368.36
+offset_bottom = 513.0
 grow_horizontal = 0
 texture = SubResource("GradientTexture1D_7ptql")
 
 [node name="ButtonLabel" type="Label" parent="ButtonLabelContainer"]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_right = -84.0
-offset_bottom = 81.0
+anchor_bottom = 1.0
+offset_right = -32.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 45
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
 text = "aloha"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -284,81 +204,9 @@ libraries = {
 "": SubResource("AnimationLibrary_8lm1v")
 }
 
-[node name="Op1" type="ColorRect" parent="."]
-offset_left = 1588.0
-offset_top = 284.0
-offset_right = 1704.0
-offset_bottom = 400.0
-rotation = 0.785397
-scale = Vector2(1.50302, 1.50302)
-
-[node name="C1" type="Control" parent="Op1"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -193.04
-offset_top = 251.023
-offset_right = 165.96
-offset_bottom = 330.023
-rotation = -0.785397
-
-[node name="Op2" type="ColorRect" parent="."]
-offset_left = 1731.0
-offset_top = 428.0
-offset_right = 1847.0
-offset_bottom = 544.0
-rotation = 0.785397
-scale = Vector2(1.503, 1.503)
-
-[node name="C2" type="Control" parent="Op2"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -192.333
-offset_top = 253.144
-offset_right = 166.667
-offset_bottom = 332.144
-rotation = -0.785397
-
-[node name="Op3" type="ColorRect" parent="."]
-offset_left = 1588.0
-offset_top = 573.0
-offset_right = 1704.0
-offset_bottom = 689.0
-rotation = 0.785397
-scale = Vector2(1.503, 1.503)
-
-[node name="C3" type="Control" parent="Op3"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -194.455
-offset_top = 252.437
-offset_right = 164.545
-offset_bottom = 331.437
-rotation = -0.785397
-
-[node name="Op4" type="ColorRect" parent="."]
-offset_left = 1731.0
-offset_top = 715.0
-offset_right = 1847.0
-offset_bottom = 831.0
-rotation = 0.785397
-scale = Vector2(1.503, 1.503)
-
-[node name="C4" type="Control" parent="Op4"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -191.626
-offset_top = 253.851
-offset_right = 167.374
-offset_bottom = 332.851
-rotation = -0.785397
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ov85g")
 }
 
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="mouse_entered" from="Op1/C1" to="." method="_on_c_1_mouse_entered"]
-[connection signal="mouse_entered" from="Op2/C2" to="." method="_on_c_2_mouse_entered"]
-[connection signal="mouse_entered" from="Op3/C3" to="." method="_on_c_3_mouse_entered"]
-[connection signal="mouse_entered" from="Op4/C4" to="." method="_on_c_4_mouse_entered"]

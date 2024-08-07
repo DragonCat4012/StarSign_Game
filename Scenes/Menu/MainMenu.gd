@@ -20,20 +20,18 @@ var rotationCamera = -0.0005#0.01
 @onready var allopt = [op_1, op_2, op_3, op_4]
 var currentOpt = 0
 
-var buttonLabels = ["Play", "Tutorial", "Options", "Keybindings"]
+var buttonLabels = ["Play", "Options (WIP)", "Keybindings", "Tutorial"]
 @onready var button_label = $ButtonLabelContainer/ButtonLabel
 @onready var button_label_container = $ButtonLabelContainer
-var button_labelPositionsY = []
 @onready var animation_player_label = $ButtonLabelContainer/AnimationPlayer
 
 
 func _ready():
-	for e in allopt:
-		e.modulate = Color("2f2f2f")
-		button_labelPositionsY.append(e.position.y)
-	allopt[0].modulate = Color("4c00a4")
-	animation_player.animation_finished.connect(_on_animation_player_finished)
+	button_label_container.visible = false
 	button_label.text = buttonLabels[0]
+	EventSystem.EnteredOption.connect(enteredOption)
+	EventSystem.ExitedOption.connect(exitedOption)
+	EventSystem.ClickedOption.connect(optionSelected)
 	
 	PlayButton.pressed.connect(self._play_button_pressed.bind())
 	OptionsButton.pressed.connect(self._options_button_pressed.bind())
@@ -71,46 +69,38 @@ func _on_tutorial_button_pressed():
 	color_rect.visible = true # TODO: is necesary?
 	var scene = load(SceneManger.tutorialScene)
 	get_tree().change_scene_to_packed(scene)
-
-var lastAniamtionWasLine1 = false
+	
+# Button animations
+var textContainerPositions = [452, 542, 620 , 700]
+var lastOption = 0
 func move_option_lines():
-	button_label_container.visible = false
 	if currentOpt == 0:
+		button_label_container.visible = false
 		return
 		
-	if animation_player.get_queue().size() < 1:
-		if currentOpt%2 == 0:
-			if not lastAniamtionWasLine1:
-				animation_player.queue("line1")
-				lastAniamtionWasLine1 = true
-		else: 
-			if lastAniamtionWasLine1:
-				animation_player.queue("line2")
-				lastAniamtionWasLine1 = false
-	# Highlight selected
-	for e in allopt:
-		e.modulate = Color("2f2f2f")
-	allopt[currentOpt-1].modulate = Color("4c00a4")
-		
-
-func _on_animation_player_finished(name):
-	animation_player_label.play("fade-in")
-	button_label_container.position.y = button_labelPositionsY[currentOpt-1]
 	button_label.text = buttonLabels[currentOpt-1]
-	button_label_container.visible = true
-
-func _on_c_2_mouse_entered():
-	currentOpt = 2
+	if not lastOption == currentOpt:
+		button_label_container.position.y = textContainerPositions[currentOpt-1]
+		button_label_container.visible = false
+		animation_player_label.play("fade-in")
+		button_label_container.visible = true	
+		
+func enteredOption(opt):
+	lastOption = currentOpt
+	currentOpt = opt
+	move_option_lines()
+	
+func exitedOption(opt):
+	currentOpt = 0
 	move_option_lines()
 
-func _on_c_1_mouse_entered():
-	currentOpt = 1
-	move_option_lines()
-
-func _on_c_3_mouse_entered():
-	currentOpt = 3
-	move_option_lines()
-
-func _on_c_4_mouse_entered():
-	currentOpt = 4
-	move_option_lines()
+func optionSelected(opt):
+	match opt:
+		1:
+			_play_button_pressed()
+		2: 
+			_options_button_pressed()
+		3:
+			_keybindings_button_pressed()
+		4:
+			_on_tutorial_button_pressed()
