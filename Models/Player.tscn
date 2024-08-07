@@ -2027,7 +2027,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1632, 328)]
+"values": [Vector2(3550, 328)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2091,7 +2091,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 1), Vector2(0.7, 1)]
+"values": [Vector2(1e-05, 1), Vector2(1.685, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2103,7 +2103,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(960, 410), Vector2(302, 410)]
+"values": [Vector2(1940, 410), Vector2(302, 410)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2127,7 +2127,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0.5, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1116, 328), Vector2(1626, 328)]
+"values": [Vector2(3135, 328), Vector2(3550, 328)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2191,7 +2191,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.7, 1), Vector2(1e-05, 1)]
+"values": [Vector2(1.685, 1), Vector2(1e-05, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2203,7 +2203,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(302, 410), Vector2(960, 410)]
+"values": [Vector2(302, 410), Vector2(1940, 410)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2227,7 +2227,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1632, 328), Vector2(1020, 328)]
+"values": [Vector2(3550, 328), Vector2(3135, 328)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2354,14 +2354,14 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.999993, -0.00380228, -0.000175749, 0.00380227, 0.995726, 0.0922794, -0.000175874, -0.0922794, 0.995733, -5.32907e-15, 0.0890516, -7.45056e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(-5.32907e-15, 0.0890516, -7.45056e-09)
-bones/3/rotation = Quaternion(-0.0460322, 0.00363215, 0.0804483, 0.995689)
+bones/3/rotation = Quaternion(-0.046072, 0.00311661, 0.0692999, 0.996527)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "UpperArm.L"
 bones/4/parent = 1
 bones/4/rest = Transform3D(-0.998223, 0.0594893, -0.003459, -0.0560962, -0.957698, -0.282256, -0.0201039, -0.28156, 0.959334, 0.16148, 0.251413, -0.0171359)
 bones/4/enabled = true
 bones/4/position = Vector3(0.16148, 0.251413, -0.0171359)
-bones/4/rotation = Quaternion(-0.0105179, -0.142337, 0.988399, -0.0519437)
+bones/4/rotation = Quaternion(-0.0118113, -0.142285, 0.988032, -0.0583876)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "LowerArm.L"
 bones/5/parent = 4
@@ -2389,7 +2389,7 @@ bones/8/parent = 1
 bones/8/rest = Transform3D(-0.998223, -0.0594893, 0.003459, 0.0560962, -0.957698, -0.282256, 0.0201039, -0.28156, 0.959334, -0.16148, 0.251413, -0.0171359)
 bones/8/enabled = true
 bones/8/position = Vector3(-0.16148, 0.251413, -0.0171359)
-bones/8/rotation = Quaternion(0.0101634, -0.14235, 0.988491, 0.0501778)
+bones/8/rotation = Quaternion(0.011357, -0.142303, 0.988166, 0.056124)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "LowerArm.R"
 bones/9/parent = 8
@@ -2417,21 +2417,21 @@ bones/12/parent = 0
 bones/12/rest = Transform3D(-0.99999, 0.00459254, -0.000388995, -0.00430506, -0.900575, 0.434681, 0.00164597, 0.434678, 0.900585, 0.120751, 0.0169393, -0.00985621)
 bones/12/enabled = true
 bones/12/position = Vector3(0.120751, 0.0169393, -0.00985621)
-bones/12/rotation = Quaternion(-0.000113797, 0.316128, 0.948713, -0.00254221)
+bones/12/rotation = Quaternion(-0.000205412, 0.327906, 0.944707, -0.00259224)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "LowerLeg.L"
 bones/13/parent = 12
 bones/13/rest = Transform3D(1, 0.000163417, 3.11526e-05, -0.000166339, 0.98518, 0.171521, -2.66139e-06, -0.171521, 0.98518, 1.67483e-08, 0.463759, 6.74481e-09)
 bones/13/enabled = true
 bones/13/position = Vector3(1.67483e-08, 0.463759, 6.74481e-09)
-bones/13/rotation = Quaternion(-0.329364, 8.04136e-06, -0.000316608, 0.944203)
+bones/13/rotation = Quaternion(-0.367953, 7.91901e-06, -0.000353702, 0.929844)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "Foot.L"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.997736, 0.0304477, -0.0599733, -0.066991, 0.370249, -0.926514, -0.00600512, 0.928433, 0.37145, -1.10522e-08, 0.444356, -1.99361e-09)
 bones/14/enabled = true
 bones/14/position = Vector3(-1.10522e-08, 0.444356, -1.99361e-09)
-bones/14/rotation = Quaternion(0.551861, -0.00606971, -0.0335271, 0.83324)
+bones/14/rotation = Quaternion(0.536761, -0.00345773, -0.0340658, 0.843039)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "UpperLeg.R"
 bones/15/parent = 0
@@ -2465,8 +2465,8 @@ bones/19/name = "IKLegTarget.L"
 bones/19/parent = -1
 bones/19/rest = Transform3D(-0.99999, 0, 0.0044836, -0.0044836, 5.96046e-08, -0.99999, 0, -1, -1.19209e-07, 0.124848, 0.0737027, -0.0475756)
 bones/19/enabled = true
-bones/19/position = Vector3(0.124848, 0.120361, -0.0925074)
-bones/19/rotation = Quaternion(-0.00130718, 0.812403, -0.583092, 0.00182126)
+bones/19/position = Vector3(0.124848, 0.133633, -0.105288)
+bones/19/rotation = Quaternion(-0.00122057, 0.838784, -0.544459, 0.0018804)
 bones/19/scale = Vector3(1, 1, 1)
 bones/20/name = "IKLegPole.R"
 bones/20/parent = -1
@@ -2528,7 +2528,7 @@ mesh = SubResource("ArrayMesh_k85lq")
 skin = SubResource("Skin_i6hei")
 
 [node name="HandAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.94067, 0.339322, 5.16139e-06, -0.339322, -0.94067, 7.82311e-07, 5.10784e-06, -1.05798e-06, 1, 0.254833, 0.918283, -0.0673401)
+transform = Transform3D(-0.936121, 0.351677, 5.07757e-06, -0.351677, -0.936123, 8.71718e-07, 5.03892e-06, -9.98378e-07, 1, 0.261517, 0.919556, -0.0673401)
 bone_name = "Hand.L"
 bone_idx = 6
 
@@ -2567,6 +2567,7 @@ mouse_filter = 1
 
 [node name="StarCounter" type="Label" parent="UIOverlay"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 3604.0
 offset_top = 74.0
@@ -2579,6 +2580,7 @@ vertical_alignment = 1
 script = ExtResource("39_y0f6b")
 
 [node name="FPSLabel" type="Label" parent="UIOverlay"]
+visible = false
 layout_mode = 0
 offset_left = 3601.0
 offset_top = 25.0
@@ -2606,8 +2608,10 @@ scale = Vector2(2.17611, 2.17611)
 
 [node name="Compass" parent="UIOverlay" instance=ExtResource("37_0pd2a")]
 process_mode = 3
+visible = false
 
 [node name="StarProgressScene" parent="UIOverlay" instance=ExtResource("38_p6t7m")]
+visible = false
 layout_mode = 0
 offset_left = 3771.0
 offset_top = 1854.0
@@ -2617,6 +2621,7 @@ scale = Vector2(0.101707, 0.101707)
 mouse_filter = 2
 
 [node name="Clock" type="ColorRect" parent="UIOverlay"]
+visible = false
 layout_mode = 0
 offset_left = 3611.0
 offset_top = 2001.0
@@ -2634,6 +2639,7 @@ offset_bottom = 34.3877
 scale = Vector2(1, 1.561)
 
 [node name="QuestRect" type="ColorRect" parent="UIOverlay"]
+visible = false
 layout_mode = 0
 offset_left = 20.0
 offset_top = 1807.0
@@ -2673,7 +2679,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MapPopups" type="Control" parent="UIOverlay"]
-visible = false
 anchors_preset = 0
 offset_right = 3848.0
 offset_bottom = 2159.0
@@ -2682,10 +2687,10 @@ mouse_filter = 2
 [node name="QuestTitle" type="Label" parent="UIOverlay/MapPopups"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 345.0
-offset_right = 1924.0
-offset_bottom = 400.0
-theme_override_font_sizes/font_size = 40
+offset_top = 299.0
+offset_right = 3835.0
+offset_bottom = 402.0
+theme_override_font_sizes/font_size = 75
 text = "Aloha"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2693,10 +2698,10 @@ vertical_alignment = 1
 [node name="Subtitle" type="Label" parent="UIOverlay/MapPopups"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 412.0
-offset_right = 1924.0
-offset_bottom = 467.0
-theme_override_font_sizes/font_size = 20
+offset_top = 423.0
+offset_right = 3839.0
+offset_bottom = 508.0
+theme_override_font_sizes/font_size = 40
 text = "Aloha"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2705,7 +2710,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 960.0
 offset_top = 403.0
-offset_right = 2883.97
+offset_right = 2883.95
 offset_bottom = 405.0
 scale = Vector2(1e-05, 4.076)
 
@@ -2720,9 +2725,9 @@ texture = ExtResource("41_6vnk3")
 
 [node name="Right" type="TextureRect" parent="UIOverlay/MapPopups"]
 layout_mode = 0
-offset_left = 1632.0
+offset_left = 3550.0
 offset_top = 328.0
-offset_right = 2132.0
+offset_right = 4050.0
 offset_bottom = 828.0
 scale = Vector2(0.336904, 0.336904)
 texture = ExtResource("41_6vnk3")
