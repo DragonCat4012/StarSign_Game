@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyf3xabaeaec4"]
+[gd_scene load_steps=15 format=3 uid="uid://cyf3xabaeaec4"]
 
 [ext_resource type="PackedScene" uid="uid://bh88gie8s5oc" path="res://Models/Weapons/sword.tscn" id="1_iadng"]
 [ext_resource type="Script" path="res://Models/Weapons/WeaponPreview.gd" id="1_tbnkt"]
 [ext_resource type="PackedScene" uid="uid://c5tln1hxg3vny" path="res://Models/Weapons/axe.tscn" id="2_jrdrt"]
+[ext_resource type="Shader" path="res://Ressources/ShaderTextures/day-night-cycle-shader.gdshader" id="4_1oi2d"]
+[ext_resource type="Texture2D" uid="uid://cp05y7uvcttym" path="res://Ressources/ShaderTextures/CloudsDistort.bmp" id="5_86s01"]
+[ext_resource type="Texture2D" uid="uid://c4sagkiuhldgo" path="res://Ressources/ShaderTextures/CloudsNoise.bmp" id="6_7kdp6"]
+[ext_resource type="Texture2D" uid="uid://c4aieymtlgqp" path="res://Ressources/ShaderTextures/Clouds_2.bmp" id="7_62mx1"]
+[ext_resource type="Texture2D" uid="uid://cak2xtjmv87xs" path="res://Ressources/ShaderTextures/stars.bmp" id="8_mkx0n"]
 
 [sub_resource type="Animation" id="Animation_i0hx2"]
 length = 0.001
@@ -23,6 +28,7 @@ tracks/0/keys = {
 resource_name = "rotate"
 length = 10.0
 loop_mode = 1
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -42,6 +48,49 @@ _data = {
 "rotate": SubResource("Animation_aqnuk")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_am4dg"]
+shader = ExtResource("4_1oi2d")
+shader_parameter/SunSetDuration = 0.3
+shader_parameter/dayColor = Color(0.437123, 0.648819, 0.834795, 1)
+shader_parameter/dayTopColor = Color(0.786113, 1, 0.743535, 1)
+shader_parameter/nightColor = Color(0.0189742, 0.044752, 0.109693, 1)
+shader_parameter/nightTopColor = Color(0.165353, 0.182164, 0.261057, 1)
+shader_parameter/sunriseColor = Color(0.888018, 0.554976, 0.395547, 1)
+shader_parameter/sunsetColor = Color(0.944165, 0.412657, 0.51578, 1)
+shader_parameter/horizon_falloff = 0.5
+shader_parameter/horizon_color_day = Color(0.267247, 0.89758, 0.555776, 1)
+shader_parameter/horizon_color_sunset = Color(0.868754, 0.211866, 0.293465, 1)
+shader_parameter/horizon_color_night = Color(0.123465, 0.0059564, 0.358798, 1)
+shader_parameter/clouds_main_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_edge_color = Color(0.228758, 0.104365, 0.671744, 1)
+shader_parameter/cloudsSunsetEdgeColor = Color(0.386576, 0.0189799, 0.152415, 1)
+shader_parameter/clouds_speed = 0.05
+shader_parameter/clouds_scale = 0.18
+shader_parameter/clouds_cutoff = 0.02
+shader_parameter/clouds_fuzziness = 0.47
+shader_parameter/clouds_texture = ExtResource("7_62mx1")
+shader_parameter/clouds_distort_texture = ExtResource("5_86s01")
+shader_parameter/clouds_noise_texture = ExtResource("6_7kdp6")
+shader_parameter/stars_cutoff = 0.08
+shader_parameter/stars_speed = 0.046
+shader_parameter/stars_texture = ExtResource("8_mkx0n")
+shader_parameter/sunColor = Color(0.968627, 0.937255, 0.690196, 1)
+shader_parameter/sunColorSunrise = Color(0.940861, 0.335791, 0.275079, 1)
+shader_parameter/sunSize = 0.1
+shader_parameter/sun_blur = 0.4
+shader_parameter/moonColor = Color(0.720467, 0.720468, 0.720467, 1)
+shader_parameter/moonSize = 0.1
+shader_parameter/moonOffset = 0.05
+
+[sub_resource type="Sky" id="Sky_qehcw"]
+sky_material = SubResource("ShaderMaterial_am4dg")
+
+[sub_resource type="Environment" id="Environment_imhuk"]
+background_mode = 2
+sky = SubResource("Sky_qehcw")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="WeaponPreview" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00257218, -0.00277174, 0.00012809)
 script = ExtResource("1_tbnkt")
@@ -60,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.06476)
 keep_aspect = 0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.463286, 3.41379)
+transform = Transform3D(1, 0, 0, 0, 0.803348, -0.59551, 0, 0.59551, 0.803348, 0, 1.75199, -0.0652667)
 light_color = Color(0.819608, 1, 1, 1)
 light_energy = 0.747
 light_indirect_energy = 12.116
@@ -71,9 +120,12 @@ libraries = {
 }
 
 [node name="DirectionalLight3D3" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -1.74846e-07, 0, 1.74846e-07, 1, 0, -3.13157e-07, 2.97366)
+transform = Transform3D(1, 0, 0, 0, 0.841643, -0.540035, 0, 0.540035, 0.841643, 0, -3.13157e-07, 2.97366)
 light_color = Color(1, 0.440796, 0.712947, 1)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, -3.58259)
+transform = Transform3D(1, 0, 0, 0, -0.961574, -0.274547, 0, 0.274547, -0.961574, 0, 0, -3.58259)
 light_color = Color(0.471242, 0.665383, 1, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_imhuk")
