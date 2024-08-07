@@ -49,9 +49,10 @@ func _ready():
 	animation_player_2.play("idle")
 	
 func _process(delta):
-	if camera_3d.rotation_degrees.y >= -40 or camera_3d.rotation_degrees.y <= -80:
-		rotationCamera = -rotationCamera
-	camera_3d.rotate_y(rotationCamera)
+	pass
+	#if camera_3d.rotation_degrees.y >= -50 or camera_3d.rotation_degrees.y <= -80:
+	#	rotationCamera = -rotationCamera
+#	camera_3d.rotate_y(rotationCamera)
 		
 func _play_button_pressed():
 	get_tree().change_scene_to_file(SceneManger.gameScene)
