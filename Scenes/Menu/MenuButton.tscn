@@ -3,22 +3,6 @@
 [ext_resource type="Script" path="res://Scenes/Menu/MenuButton.gd" id="1_j2kmd"]
 [ext_resource type="Texture2D" uid="uid://d0gexdkmu6mv8" path="res://Scenes/Menu/MenuButtons/gear.PNG" id="2_nbsti"]
 
-[sub_resource type="Animation" id="Animation_ipmry"]
-resource_name = "scale_down"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Option:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 4.59479),
-"update": 0,
-"values": [Vector2(2.5, 2.5), Vector2(2, 2)]
-}
-
 [sub_resource type="Animation" id="Animation_sbxfn"]
 length = 0.001
 tracks/0/type = "value"
@@ -32,22 +16,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(2, 2)]
-}
-
-[sub_resource type="Animation" id="Animation_3o2l4"]
-resource_name = "scale_up"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Option:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 4.43828),
-"update": 0,
-"values": [Vector2(2, 2), Vector2(2.5, 2.5)]
 }
 
 [sub_resource type="Animation" id="Animation_qv1lk"]
@@ -66,6 +34,38 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(4.43828, 4.28709, 4.43828),
 "update": 0,
 "values": [Vector2(2.5, 2.5), Vector2(2.3, 2.3), Vector2(2.5, 2.5)]
+}
+
+[sub_resource type="Animation" id="Animation_ipmry"]
+resource_name = "scale_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Option:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 4.59479),
+"update": 0,
+"values": [Vector2(2.5, 2.5), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_3o2l4"]
+resource_name = "scale_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Option:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 4.43828),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.5, 2.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_twg0f"]
@@ -112,7 +112,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="Option"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
