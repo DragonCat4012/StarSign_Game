@@ -2867,7 +2867,7 @@ mesh = SubResource("ArrayMesh_35d2b")
 skin = SubResource("Skin_bsv6a")
 
 [node name="HandAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
-transform = Transform3D(-0.941667, 0.336546, 5.12972e-06, -0.336545, -0.941667, 1.49757e-06, 5.31273e-06, -4.47035e-07, 1, 0.253332, 0.91801, -0.0673395)
+transform = Transform3D(-0.955262, 0.295762, 5.18747e-06, -0.295762, -0.955261, 1.2517e-06, 5.31645e-06, -4.17233e-07, 1, 0.231388, 0.914532, -0.0673395)
 bone_name = "Hand.L"
 bone_idx = 6
 

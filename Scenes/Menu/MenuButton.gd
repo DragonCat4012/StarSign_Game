@@ -3,28 +3,32 @@ extends Control
 @onready var texture_rect := $Option/TextureRect
 @onready var color_rect := $Option/ColorRect
 @onready var option = $Option
+@onready var wuah = $Option/Wuah
 
 @export var optionNum: int = 1
 @export var icon: Texture
 
 @export var inactiveColor: Color = Color("2f2f2f")
-@export var activeColor: Color = Color("956dff")
+@export var activeColor: Color = Color("c7b3ff")
 
 var clicked = false
 
 func _ready():
+	wuah.visible = false
 	clicked = false
 	option.color = inactiveColor
 	color_rect.color = inactiveColor
 	texture_rect.texture = icon
 	
 func _on_c_1_mouse_entered():
+	wuah.visible = true
 	EventSystem.EnteredOption.emit(optionNum)
 	texture_rect.modulate = activeColor
 	animation_player.play("scale_up")
 	animation_player.play("pulse")
 
 func _on_c_1_mouse_exited():
+	wuah.visible = false
 	EventSystem.ExitedOption.emit(optionNum)
 	texture_rect.modulate = Color.WHITE
 	animation_player.play("scale_down")
@@ -32,5 +36,4 @@ func _on_c_1_mouse_exited():
 func _on_c_1_gui_input(event):
 	if event is InputEventMouseButton and not clicked:
 		clicked = true
-		print("ay")
 		EventSystem.ClickedOption.emit(optionNum)

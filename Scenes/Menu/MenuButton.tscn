@@ -17,12 +17,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(2, 2)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Option/Wuah:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.15765, 1.15765)]
+}
 
 [sub_resource type="Animation" id="Animation_qv1lk"]
 resource_name = "pulse"
-length = 1.2
 loop_mode = 1
-step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,15 +40,28 @@ tracks/0/path = NodePath("Option:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(4.43828, 4.28709, 4.43828),
 "update": 0,
-"values": [Vector2(2.5, 2.5), Vector2(2.3, 2.3), Vector2(2.5, 2.5)]
+"values": [Vector2(2.3, 2.3), Vector2(2.2, 2.2), Vector2(2.3, 2.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Option/Wuah:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.15765, 1.15765), Vector2(1.273, 1.273), Vector2(1.15765, 1.15765)]
 }
 
 [sub_resource type="Animation" id="Animation_ipmry"]
 resource_name = "scale_down"
-length = 0.1
+length = 0.114
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -49,7 +72,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 4.59479),
 "update": 0,
-"values": [Vector2(2.5, 2.5), Vector2(2, 2)]
+"values": [Vector2(2.3, 2.3), Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_3o2l4"]
@@ -65,7 +88,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 4.43828),
 "update": 0,
-"values": [Vector2(2, 2), Vector2(2.5, 2.5)]
+"values": [Vector2(2, 2), Vector2(2.3, 2.3)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_twg0f"]
@@ -96,6 +119,18 @@ offset_bottom = 851.0
 rotation = 0.785397
 scale = Vector2(2, 2)
 pivot_offset = Vector2(58.6459, 60.425)
+
+[node name="Wuah" type="ColorRect" parent="Option"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.15765, 1.15765)
+pivot_offset = Vector2(57.8252, 59.9583)
+mouse_filter = 2
+color = Color(0.501855, 0.467675, 0.8113, 0.501961)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Option"]
 root_node = NodePath("../..")
