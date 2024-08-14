@@ -99,13 +99,10 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, 0.0, LERP_VAL)
 		velocity.z = lerp(velocity.z, 0.0, LERP_VAL)
 	
-	if not isJumping:
-		$AnimationPlayer.speed_scale = 1
-		animation_tree.set("parameters/BlendSpace1D/blend_position", velocity.length()/SPEED)
-	else:
-		$AnimationPlayer.speed_scale = 1.5
-		$AnimationPlayer.play("jump")
-		animation_tree.set("parameters/BlendSpace1D/blend_position", -1)
+	animation_tree.set("parameters/conditions/idle", input_dir == Vector2.ZERO && is_on_floor())
+	animation_tree.set("parameters/conditions/walking", input_dir != Vector2.ZERO && is_on_floor())
+	animation_tree.set("parameters/conditions/jumping", !is_on_floor())
+	animation_tree.set("parameters/conditions/landing", is_on_floor())
 	move_and_slide()
 
 # Jump animations

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponModel" load_steps=2 format=3 uid="uid://dpa8dqqb2anvh"]
+
+[ext_resource type="Script" path="res://Ressources/Weapons/WeaponModel.gd" id="1_cqyrp"]
+
+[resource]
+script = ExtResource("1_cqyrp")
+weaponID = 3
+weaponName = "Scyte :smirk:"
+animation1Name = "attack_base"
+animation2Name = "attack_forward"
