@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://di7s3j1ljdkha"]
+
+[ext_resource type="PackedScene" uid="uid://i6uohjk88ybm" path="res://Models/Weapons/scythe.glb" id="1_daccv"]
+
+[node name="scythe" instance=ExtResource("1_daccv")]
