@@ -119,8 +119,9 @@ void sky() {
 	} 
 	
 	// Star Stuff from https://godotshaders.com/shader/stylized-sky-shader-with-clouds/
+	float star_movement = TIME * clouds_speed * 0.1;
 	vec2 sky_uv = EYEDIR.xz / EYEDIR.y;
-	vec3 stars = texture(stars_texture, sky_uv + (stars_speed * TIME)).rgb;
+	vec3 stars = texture(stars_texture, sky_uv + (stars_speed * star_movement)).rgb;
 	stars *= clamp(-LIGHT0_DIRECTION.y, 0.0, 1.0);
 	stars = step(stars_cutoff, stars);
 
@@ -137,6 +138,6 @@ void sky() {
 
 	skyColor = mix(skyColor, sun.rgb, sun.a);
 	skyColor = mix(skyColor, moon.rgb, moon.a);
-	vec3 sky = skyColor +  stars +clouds; //+ horizon_glow
+	vec3 sky = skyColor + clouds + stars; //+ horizon_glow
 	COLOR = sky;
 }

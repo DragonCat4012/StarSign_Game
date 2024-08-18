@@ -82,12 +82,12 @@ shader_parameter/moonColor = Color(0.720467, 0.720468, 0.720467, 1)
 shader_parameter/moonSize = 0.1
 shader_parameter/moonOffset = 0.05
 
-[sub_resource type="Sky" id="Sky_qehcw"]
+[sub_resource type="Sky" id="Sky_c0dt1"]
 sky_material = SubResource("ShaderMaterial_am4dg")
 
 [sub_resource type="Environment" id="Environment_imhuk"]
 background_mode = 2
-sky = SubResource("Sky_qehcw")
+sky = SubResource("Sky_c0dt1")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -100,13 +100,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.06476)
 
 [node name="sword" parent="Weapons" instance=ExtResource("1_iadng")]
 transform = Transform3D(1.45249, 0, 0, 0, 1.45249, 0, 0, 0, 1.45249, 0, 0, -3.06476)
+visible = false
 
 [node name="axe" parent="Weapons" instance=ExtResource("2_jrdrt")]
-transform = Transform3D(0.785874, 0, 0, 0, 0.785874, 0, 0, 0, 0.785874, 0, 0, -3.06476)
+transform = Transform3D(1.55229, 0, 0, 0, 1.55229, 0, 0, 0, 1.55229, 0, -0.804142, -3.06476)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.06476)
-keep_aspect = 0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.803348, -0.59551, 0, 0.59551, 0.803348, 0, 1.75199, -0.0652667)
