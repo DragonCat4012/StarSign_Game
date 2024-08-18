@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://b0dhmtf2schhf"]
+[gd_scene load_steps=31 format=3 uid="uid://b0dhmtf2schhf"]
 
 [ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Scenes/Enviroment/SpatialGrass.tscn" id="1_55xfo"]
 [ext_resource type="PackedScene" uid="uid://c5tln1hxg3vny" path="res://Models/Weapons/axe.tscn" id="3_7w243"]
 [ext_resource type="PackedScene" uid="uid://c45cpn8ua01d2" path="res://Models/Enviroment/Buildings/column.tscn" id="3_bpv3c"]
 [ext_resource type="PackedScene" uid="uid://bh88gie8s5oc" path="res://Models/Weapons/sword.tscn" id="3_eqkjo"]
 [ext_resource type="Shader" path="res://Ressources/ShaderTextures/day-night-cycle-shader.gdshader" id="3_qdfw0"]
+[ext_resource type="PackedScene" uid="uid://di7s3j1ljdkha" path="res://Models/Weapons/scythe.tscn" id="4_cohtw"]
 [ext_resource type="PackedScene" uid="uid://caya86npg61i7" path="res://Models/Porcelain/porcelain.tscn" id="4_nexci"]
 [ext_resource type="Texture2D" uid="uid://cp05y7uvcttym" path="res://Ressources/ShaderTextures/CloudsDistort.bmp" id="4_v2trk"]
 [ext_resource type="Texture2D" uid="uid://c4sagkiuhldgo" path="res://Ressources/ShaderTextures/CloudsNoise.bmp" id="5_2y7f2"]
@@ -1538,6 +1539,9 @@ transform = Transform3D(1.14477, 0, 0, 0, 1.14477, 0, 0, 0, 1.14477, 1.998, 0, 2
 
 [node name="axe" parent="Enviroment" instance=ExtResource("3_7w243")]
 transform = Transform3D(-0.64105, 0.199756, 0.309022, 0.194522, 0.710892, -0.0560051, -0.312344, 0.0327531, -0.669112, 1.41372, 0, 2.43413)
+
+[node name="scythe" parent="Enviroment" instance=ExtResource("4_cohtw")]
+transform = Transform3D(0.321118, -0.454046, 0.478119, 0.24519, -0.41144, -0.555402, 0.612076, 0.403028, -0.0283523, 0.0952544, 1.18929, -2.17737)
 
 [node name="sword" parent="Enviroment" instance=ExtResource("3_eqkjo")]
 transform = Transform3D(-0.424052, -0.119995, 0.574334, -0.197113, 0.696581, 0, -0.552635, -0.15638, -0.440702, -0.252, 0.357, -2.288)

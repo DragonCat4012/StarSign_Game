@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cyf3xabaeaec4"]
+[gd_scene load_steps=16 format=3 uid="uid://cyf3xabaeaec4"]
 
 [ext_resource type="PackedScene" uid="uid://bh88gie8s5oc" path="res://Models/Weapons/sword.tscn" id="1_iadng"]
 [ext_resource type="Script" path="res://Models/Weapons/WeaponPreview.gd" id="1_tbnkt"]
+[ext_resource type="PackedScene" uid="uid://di7s3j1ljdkha" path="res://Models/Weapons/scythe.tscn" id="2_a47l6"]
 [ext_resource type="PackedScene" uid="uid://c5tln1hxg3vny" path="res://Models/Weapons/axe.tscn" id="2_jrdrt"]
 [ext_resource type="Shader" path="res://Ressources/ShaderTextures/day-night-cycle-shader.gdshader" id="4_1oi2d"]
 [ext_resource type="Texture2D" uid="uid://cp05y7uvcttym" path="res://Ressources/ShaderTextures/CloudsDistort.bmp" id="5_86s01"]
@@ -98,12 +99,16 @@ script = ExtResource("1_tbnkt")
 [node name="Weapons" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.06476)
 
+[node name="scythe" parent="Weapons" instance=ExtResource("2_a47l6")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -3.29828)
+
 [node name="sword" parent="Weapons" instance=ExtResource("1_iadng")]
 transform = Transform3D(1.45249, 0, 0, 0, 1.45249, 0, 0, 0, 1.45249, 0, 0, -3.06476)
 visible = false
 
 [node name="axe" parent="Weapons" instance=ExtResource("2_jrdrt")]
 transform = Transform3D(1.55229, 0, 0, 0, 1.55229, 0, 0, 0, 1.55229, 0, -0.804142, -3.06476)
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.06476)

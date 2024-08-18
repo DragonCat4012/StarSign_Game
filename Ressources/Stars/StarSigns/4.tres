@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="StarSignModel" load_steps=3 format=3 uid="uid://ne0rn8cvifvx"]
 
 [ext_resource type="Script" path="res://Ressources/Stars/StarSigns/StarSignModel.gd" id="1_xwi3p"]
-[ext_resource type="Resource" uid="uid://dpa8dqqb2anvh" path="res://Ressources/Weapons/scyte.tres" id="2_0mlwr"]
+[ext_resource type="Resource" uid="uid://dpa8dqqb2anvh" path="res://Ressources/Weapons/scythe.tres" id="2_0mlwr"]
 
 [resource]
 script = ExtResource("1_xwi3p")
