@@ -15,23 +15,30 @@ grow_vertical = 2
 theme_override_constants/separation = 60
 script = ExtResource("1_3i508")
 
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
 [node name="Title" type="Label" parent="."]
-custom_minimum_size = Vector2(700, 0)
+custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 theme = ExtResource("1_qboid")
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
 text = "Moving"
 
 [node name="Key" type="Label" parent="."]
-custom_minimum_size = Vector2(700, 0)
+custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 theme = ExtResource("2_f6j2n")
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
 text = "W, A, S, D"
 
 [node name="Edit" type="Button" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Edit"
 
 [connection signal="pressed" from="Edit" to="." method="_on_edit_pressed"]
