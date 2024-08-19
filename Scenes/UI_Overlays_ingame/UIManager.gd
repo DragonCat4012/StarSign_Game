@@ -41,14 +41,17 @@ func _process(delta: float):
 	
 func _input(event):
 	if event.is_action_pressed("UI_Pause") and not isInvShown:
+		toggleDetails(true)
 		togglePause()
 	elif event.is_action_pressed("UI_Pause"): # hide inventory
+		toggleDetails(true)
 		toggleInventory()
 		
 	if event.is_action_pressed("UI_Inv") and not pauseMenuShown:
+		toggleDetails(true)
 		toggleInventory()
 	
-	if not pauseMenuShown:
+	if not pauseMenuShown and not isInvShown:
 		if event.is_action_pressed("UI_Detail") or event.is_action_released("UI_Detail"):
 			toggleDetails()	
 		
@@ -73,17 +76,21 @@ func toggleInventory():
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		inventory_panel.show()
 		star_progress_scene.visible = false
-		compass.visible = false
 		#emit_signal("pauseGame")
 	else:
 		isInvShown = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		inventory_panel.hide()
 		star_progress_scene.visible = true
-		compass.visible = true
 		#emit_signal("unpauseGame")	
 
-func toggleDetails():
+func toggleDetails(force = false):
+	if force:
+		compass.visible = false
+		clock.visible = false
+		quest_rect.visible = false
+		return
+		
 	compass.visible = !compass.visible
 	clock.visible = !clock.visible
 	quest_rect.visible = !quest_rect.visible

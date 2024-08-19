@@ -16,10 +16,11 @@ script = ExtResource("1_en1f0")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 20.0
-offset_right = 741.0
-offset_bottom = 75.0
+offset_top = 4.0
+offset_right = 740.0
+offset_bottom = 100.0
 theme = ExtResource("2_4ce5i")
+theme_override_font_sizes/font_size = 40
 text = "Game paused"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -58,12 +59,14 @@ text = "Resume"
 layout_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 176.0
 offset_bottom = 215.0
 scale = Vector2(0.352701, 0.352701)
 texture = ExtResource("4_f6lxr")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 679.0
 offset_right = 855.0
 offset_bottom = 215.0
@@ -72,6 +75,7 @@ texture = ExtResource("4_f6lxr")
 flip_h = true
 
 [node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_top = 289.0
 offset_right = 176.0
 offset_bottom = 504.0
@@ -80,6 +84,7 @@ texture = ExtResource("4_f6lxr")
 flip_v = true
 
 [node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 679.0
 offset_top = 289.0
 offset_right = 855.0

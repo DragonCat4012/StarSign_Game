@@ -35,6 +35,7 @@ var isEmoteAnimationPlaying = false
 var compassDirection = 0
 
 func _ready():
+	get_weapon_children(true) # TODO: load from save file
 	add_child(timer)
 	timer.wait_time = 0.4
 	timer.connect("timeout", _on_timer_timeout)
@@ -128,6 +129,7 @@ func _on_game_scene_hide_weapon():
 
 func get_weapon_children(newVisible: bool):
 	for c in weaponNode.get_children():
+		c.visible = false
 		if c.name == str(GameManager.selectedWeaponId):
 			c.visible = newVisible	
 

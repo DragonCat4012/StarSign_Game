@@ -20,12 +20,13 @@ func _ready():
 				opt.update_key(x.replace("(Physical)", ""))
 				takenKeys.append(x.replace("(Physical)", ""))
 	
-func _on_back_button_pressed():# TODO: add escape
+func _on_back_button_pressed():
 	get_tree().change_scene_to_file(SceneManger.MenuSceneKey)
 	
-func _input(event: InputEvent) -> void: #TODO: check if key already mapped! 
-	if !selectedBinding: # return if none selected
-		return
+func _input(event: InputEvent) -> void:
+	if !selectedBinding:
+		if event.is_action_pressed("ui_cancel"):
+			get_tree().change_scene_to_file(SceneManger.MenuSceneKey)
 		
 	if event is InputEventKey || event is InputEventMouseButton:
 		var all_ies = _get_mapping()

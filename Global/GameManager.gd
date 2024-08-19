@@ -17,6 +17,7 @@ signal showWeaponById()
 func _toggle_weapon():
 	Log.info("Toggle Weapon")
 	if selectedWeaponId == 0:
+		emit_signal("hideWeapon")
 		return
 	if weaponactive:
 		weaponactive = false
