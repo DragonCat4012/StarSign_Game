@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=37 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -18,6 +18,9 @@
 [ext_resource type="Resource" uid="uid://c7c45v0j111ap" path="res://Ressources/Stars/Stars/Taurus/star6.tres" id="8_qfx1p"]
 [ext_resource type="Resource" uid="uid://f52rw7qj75qn" path="res://Ressources/Stars/Stars/Taurus/star8.tres" id="12_5x6bm"]
 [ext_resource type="Resource" uid="uid://bb8cxcm5cpjmf" path="res://Ressources/Stars/Stars/Taurus/star9.tres" id="12_fnesn"]
+[ext_resource type="PackedScene" uid="uid://bn1yn58t2nfnc" path="res://Models/Enviroment/Buildings/brick_wall.tscn" id="18_4aywo"]
+[ext_resource type="PackedScene" uid="uid://bsmxs8trdh8e1" path="res://Models/Enviroment/Buildings/crystals.tscn" id="19_qhes1"]
+[ext_resource type="PackedScene" uid="uid://daenuv4l0uin5" path="res://Models/Enviroment/Buildings/brick_wall_with_holes.tscn" id="19_vvjte"]
 [ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Scenes/Enviroment/SpatialGrass.tscn" id="43_j7omm"]
 [ext_resource type="PackedScene" uid="uid://dqny5y5aeqft6" path="res://Models/Enviroment/tree.tscn" id="44_bvo41"]
 [ext_resource type="PackedScene" uid="uid://c45cpn8ua01d2" path="res://Models/Enviroment/Buildings/column.tscn" id="45_hjfmc"]
@@ -75,10 +78,10 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_sfwq1"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fk3pu"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ffsm"]
 albedo_texture = ExtResource("3_3mjig")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fk3pu"]
 
 [sub_resource type="Animation" id="Animation_nvehw"]
 length = 0.001
@@ -145,9 +148,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.4
 
 [node name="Stars" type="Node3D" parent="."]
 
-[node name="Star" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, 13.6347, 5.27514, -0.0473013)
-
 [node name="Star2" parent="Stars" instance=ExtResource("3_p4imb")]
 transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -11.3291, 3.63194, 0)
 star = ExtResource("6_oxw7v")
@@ -157,37 +157,46 @@ transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, 
 star = ExtResource("7_cl0cx")
 
 [node name="Star4" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, 0)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -6.91056, 1.69286, 0)
 star = ExtResource("8_06aqp")
 
 [node name="Star5" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, -1.44754)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -6.91056, 1.69286, -1.44754)
 star = ExtResource("7_pmc24")
 
 [node name="Star6" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, -2.69138)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -6.91056, 1.69286, -2.69138)
 star = ExtResource("8_qfx1p")
 
 [node name="Star7" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, -4.06808)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -6.91056, 1.69286, -4.06808)
 star = ExtResource("8_j746x")
 
 [node name="Star8" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.275, 0.833714, -5.12577)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -6.91056, 1.69286, -5.12577)
 star = ExtResource("12_5x6bm")
 
 [node name="Star9" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -13.2849, 0.833714, -6.10104)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -6.92046, 1.69286, -6.10104)
 star = ExtResource("12_fnesn")
 
-[node name="Wall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 5.56495, 0, 0, 0, 23.0289, 13.6914, 1.78904, 0.0785313)
-mesh = SubResource("BoxMesh_sfwq1")
+[node name="brickWall" parent="." instance=ExtResource("18_4aywo")]
+transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, 4.1724, 0, -12.508)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
+[node name="crystals" parent="." instance=ExtResource("19_qhes1")]
+transform = Transform3D(0.497983, 0, -0.414565, 0, 0.64796, 0, 0.414565, 0, 0.497983, 6.75707, 0, 8.17298)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
-shape = SubResource("BoxShape3D_fk3pu")
+[node name="brickWall2" parent="." instance=ExtResource("18_4aywo")]
+transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, -14.9262, 0, -12.508)
+
+[node name="brickWallWithHoles" parent="." instance=ExtResource("19_vvjte")]
+transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, -5.35404, 0, -12.6459)
+
+[node name="brickWall3" parent="." instance=ExtResource("18_4aywo")]
+transform = Transform3D(0.260473, 0, -8.88178e-16, 0, 0.260473, 0, 8.88178e-16, 0, 0.260473, 13.2676, 0, -3.8772)
+
+[node name="brickWallWithHoles2" parent="." instance=ExtResource("19_vvjte")]
+transform = Transform3D(0.260473, 0, -8.88178e-16, 0, 0.260473, 0, 8.88178e-16, 0, 0.260473, 13.1298, 0, 5.64924)
 
 [node name="Box1" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.67243, 0, 0, 0, 2.99633, 0, 0, 0, 8.33861, -10.7161, 1.27817, 0)
@@ -234,12 +243,11 @@ libraries = {
 transform = Transform3D(0.518589, 0, 0, 0, 0.518589, 0, 0, 0, 0.518589, 0, 0.00668904, -0.0387895)
 
 [node name="tree" parent="Enviroment" instance=ExtResource("44_bvo41")]
-transform = Transform3D(1.43775, 0, 0, 0, 1.43775, 0, 0, 0, 1.43775, 5.76937, 0, 0)
+transform = Transform3D(1.89677, 0, 0, 0, 1.89677, 0, 0, 0, 1.89677, 5.76937, 0, 0)
 
 [node name="column" parent="Enviroment" instance=ExtResource("45_hjfmc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.197, 0, 6.339)
 
-[connection signal="body_entered" from="Stars/Star" to="Stars/Star" method="_on_body_entered"]
 [connection signal="body_entered" from="Stars/Star2" to="Stars/Star2" method="_on_body_entered"]
 [connection signal="body_entered" from="Stars/Star3" to="Stars/Star3" method="_on_body_entered"]
 [connection signal="body_entered" from="Stars/Star4" to="Stars/Star4" method="_on_body_entered"]

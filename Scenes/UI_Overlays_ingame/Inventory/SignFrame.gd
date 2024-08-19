@@ -40,11 +40,11 @@ func _draw(): # frameSize = (574, 422)
 		
 		var color = ACTIVE_STAR_COLOR if isStarActive else INACTIVE_STAR_COLOR
 		if abs(inv[star]) == 1: # big
-			_create_big_star(_translateCoordinates(starData[star]), color)
+			_create_big_star(_translateCoordinates(starData[star]), color, str(star))
 		elif abs(inv[star]) == 2: # special
-			_create_small_star(_translateCoordinates(starData[star]), color)
+			_create_small_star(_translateCoordinates(starData[star]), color, str(star))
 		else: # normal
-			_create_small_star(_translateCoordinates(starData[star]), color)
+			_create_small_star(_translateCoordinates(starData[star]), color, str(star))
 	
 	descritionLabel.text = starSign.starSignDescription
 			
@@ -53,12 +53,12 @@ func _translateCoordinates(coordinates: Vector2):
 	var new_y = coordinates.y if coordinates.y < size.y else (coordinates.y * 100)/size.y
 	return Vector2(new_x, new_y)
 
-func _create_small_star(base: Vector2, color: Color):
+func _create_small_star(base: Vector2, color: Color, name: String = "???"):
 	#_draw_polygon_star(base, color, 10, 3)
-	_draw_nodes(base, color==Color.WHITE, 1)
+	_draw_nodes(base, color==Color.WHITE, 1, name)
 		
-func _create_big_star(base: Vector2, color: Color):
-	_draw_nodes(base, color==Color.WHITE, 2)
+func _create_big_star(base: Vector2, color: Color, name: String = "???"):
+	_draw_nodes(base, color==Color.WHITE, 2, name)
 	#_draw_polygon_star(base, color, 20, 4)
 	
 func _draw_polygon_star(base: Vector2, color: Color, val, foo): # TODO: currently not used
@@ -84,12 +84,12 @@ func _reset_drawn_stars():
 			continue
 		remove_child(n)	
 		
-func _draw_nodes(positionVec: Vector2, isActice: bool, type: int):
+func _draw_nodes(positionVec: Vector2, isActice: bool, type: int, name: String = "???"):
 	var node = TextureRect.new()
 	node.texture = load(_textureMapping[type][isActice])
 	node.scale = Vector2(0.1, 0.1)
 	node.position = positionVec - Vector2(25, 25)
-	node.tooltip_text = "EEE"
+	node.tooltip_text = name
 	add_child(node)
 
 var _textureMapping= {

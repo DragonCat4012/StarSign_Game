@@ -24,21 +24,31 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.89263468"
-     inkscape:cx="175.88382"
-     inkscape:cy="349.52709"
+     inkscape:zoom="1.2623761"
+     inkscape:cx="97.435307"
+     inkscape:cy="317.65494"
      inkscape:window-width="2560"
      inkscape:window-height="1377"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g417" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 66.145835 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="132.29166 : 66.145835 : 1"
+       inkscape:persp3d-origin="66.14583 : 44.097223 : 1"
+       id="perspective665" />
+  </defs>
   <g
-     inkscape:label="Ebene 1"
+     inkscape:label="base"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     sodipodi:insensitive="true"
+     style="display:inline">
     <path
        id="path401"
        style="fill:#000000;stroke:none;stroke-width:0.408127"
@@ -46,4 +56,25 @@
        transform="matrix(1.0547613,0,0,1.0547613,31.840504,31.856735)"
        sodipodi:nodetypes="cscscscsc" />
   </g>
+  <g
+     inkscape:label="Ebene 1 Kopie 1"
+     inkscape:groupmode="layer"
+     id="g417"
+     style="display:inline">
+    <path
+       id="path442"
+       style="fill:#000000;stroke:none;stroke-width:0.430477"
+       d="m 76.834,43.245756 c 1.569724,3.435685 3.357873,7.149486 5.394056,9.185669 1.507054,1.507054 3.462447,2.849605 5.7335,4.048848 7.09209,-16.357037 25.006744,-36.658227 25.006744,-36.658227 0,0 -19.830822,16.194351 -36.1343,23.42371 z m 13.071,38.920805 c -3.104553,1.705641 -5.757125,3.521709 -7.676944,5.441528 -1.51807,1.51807 -2.893646,3.423141 -4.148584,5.584672 16.197889,6.57576 34.888828,19.479429 34.888828,19.479429 0,0 -15.10335,-15.758918 -23.0633,-30.505629 m -36.752,9.440767 c -1.058296,-1.652215 -2.193954,-3.116722 -3.412367,-4.335136 -2.28858,-2.28858 -5.592358,-4.420066 -9.459888,-6.383589 -6.170407,15.02714 -20.162593,31.783587 -20.162593,31.783587 0,0 17.7316,-15.290519 33.034848,-21.064862 z M 40.856421,57.983541 c 3.618078,-1.549521 6.71021,-3.378114 8.884212,-5.552116 1.89426,-1.89426 3.583798,-4.547544 5.097363,-7.6724 C 39.085281,37.998739 20.118152,19.822046 20.118152,19.822046 c 0,0 14.919855,21.402477 20.738269,38.161495 z"
+       sodipodi:nodetypes="csccccsccccsccccsccc" />
+  </g>
+  <g
+     inkscape:label="Ebene 1 Kopie"
+     inkscape:groupmode="layer"
+     id="g359"
+     style="display:inline" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Ebene 2"
+     style="display:none" />
 </svg>

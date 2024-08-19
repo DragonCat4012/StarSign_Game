@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://db7j88xj8xbdb"]
+[gd_scene load_steps=21 format=3 uid="uid://db7j88xj8xbdb"]
 
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/InventoryPanel.gd" id="1_xn3kv"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="2_rosuo"]
@@ -19,12 +19,13 @@
 [ext_resource type="Resource" uid="uid://dak3jau0cbas4" path="res://Ressources/Stars/StarSigns/11.tres" id="17_fv12c"]
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/SignFrame.gd" id="18_4o3t0"]
 [ext_resource type="PackedScene" uid="uid://cyf3xabaeaec4" path="res://Models/Weapons/WeaponPreview.tscn" id="19_j8yt1"]
+[ext_resource type="Texture2D" uid="uid://bp630n0ow8qmu" path="res://Ressources/Inventory/corner.png" id="19_v1adt"]
 
 [node name="InventoryPanel" type="Panel"]
 process_mode = 2
 self_modulate = Color(0, 0, 0, 0)
 offset_left = 2389.0
-offset_right = 3113.0
+offset_right = 3112.0
 offset_bottom = 1080.0
 scale = Vector2(2.01096, 2.01096)
 script = ExtResource("1_xn3kv")
@@ -32,9 +33,10 @@ script = ExtResource("1_xn3kv")
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.886262, 0.886261, 0.886262, 1)
 layout_mode = 0
-offset_left = -22.0
-offset_right = 1668.0
-offset_bottom = 1079.0
+offset_left = 9.94554
+offset_top = 1.49182
+offset_right = 1699.95
+offset_bottom = 1080.49
 texture = ExtResource("2_rosuo")
 expand_mode = 3
 stretch_mode = 4
@@ -43,7 +45,7 @@ stretch_mode = 4
 layout_mode = 0
 offset_left = 107.0
 offset_top = 44.0
-offset_right = 691.0
+offset_right = 637.0
 offset_bottom = 102.0
 theme_override_font_sizes/font_size = 35
 text = "Inventory"
@@ -56,13 +58,14 @@ offset_left = 27.0
 offset_top = 12.0
 offset_right = 92.0
 offset_bottom = 1063.0
-color = Color(0, 0, 0, 0.52549)
+color = Color(0, 0, 0, 0)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 process_mode = 2
 layout_mode = 0
+offset_left = 15.2684
 offset_top = 77.0
-offset_right = 64.0
+offset_right = 79.2684
 offset_bottom = 973.0
 theme_override_constants/separation = 30
 alignment = 1
@@ -180,30 +183,30 @@ starSign = ExtResource("17_fv12c")
 
 [node name="StarCountForSign" type="Label" parent="."]
 layout_mode = 0
-offset_left = 625.0
-offset_top = 968.0
-offset_right = 688.0
-offset_bottom = 1026.0
+offset_left = 567.391
+offset_top = 965.708
+offset_right = 630.391
+offset_bottom = 1023.71
 text = "??? / ???"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="WeaponNameLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 352.0
-offset_top = 967.0
-offset_right = 593.0
-offset_bottom = 1025.0
+offset_left = 314.651
+offset_top = 962.227
+offset_right = 555.651
+offset_bottom = 1020.23
 text = "???"
 vertical_alignment = 1
 
 [node name="ActivateButton" type="Button" parent="."]
 process_mode = 2
 layout_mode = 2
-offset_left = 114.0
-offset_top = 981.0
-offset_right = 311.0
-offset_bottom = 1019.0
+offset_left = 98.9577
+offset_top = 976.151
+offset_right = 295.958
+offset_bottom = 1014.15
 theme = ExtResource("3_0tpk7")
 text = "Activate Weapon"
 
@@ -211,7 +214,7 @@ text = "Activate Weapon"
 layout_mode = 0
 offset_left = 106.0
 offset_top = 98.0
-offset_right = 684.0
+offset_right = 647.0
 offset_bottom = 136.0
 theme_override_colors/font_color = Color(0.817169, 0.673305, 0.997324, 1)
 text = "???
@@ -221,40 +224,76 @@ vertical_alignment = 1
 
 [node name="SignFrame" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 110.0
-offset_top = 149.0
-offset_right = 690.0
-offset_bottom = 560.0
+offset_left = 125.0
+offset_top = 152.0
+offset_right = 678.0
+offset_bottom = 563.0
 pivot_offset = Vector2(0, 411)
 color = Color(1, 1, 1, 0)
 script = ExtResource("18_4o3t0")
 
 [node name="DescriptionFrame" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 110.0
+offset_left = 127.0
 offset_top = 581.0
 offset_right = 691.0
 offset_bottom = 889.0
 pivot_offset = Vector2(0, 422)
-color = Color(0, 0, 0, 0.447059)
+color = Color(0, 0, 0, 0)
 
 [node name="Label" type="Label" parent="DescriptionFrame"]
 layout_mode = 2
-offset_left = 13.0
-offset_top = 10.0
-offset_right = 570.0
-offset_bottom = 33.0
+offset_left = 28.0
+offset_top = 19.0
+offset_right = 534.0
+offset_bottom = 42.0
 text = "Description"
 
 [node name="DescriptionLabel" type="Label" parent="DescriptionFrame"]
 layout_mode = 2
-offset_left = 13.0
+offset_left = 29.0
 offset_top = 41.0
 offset_right = 335.0
-offset_bottom = 292.0
+offset_bottom = 281.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.72549)
 theme_override_font_sizes/font_size = 15
 text = "Description UwU"
+
+[node name="TextureRect" type="TextureRect" parent="DescriptionFrame"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 215.0
+scale = Vector2(0.352701, 0.352701)
+texture = ExtResource("19_v1adt")
+
+[node name="TextureRect2" type="TextureRect" parent="DescriptionFrame"]
+layout_mode = 0
+offset_left = 502.053
+offset_right = 678.053
+offset_bottom = 215.0
+scale = Vector2(0.352701, 0.352701)
+texture = ExtResource("19_v1adt")
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="DescriptionFrame"]
+layout_mode = 0
+offset_top = 230.553
+offset_right = 176.0
+offset_bottom = 445.553
+scale = Vector2(0.352701, 0.352701)
+texture = ExtResource("19_v1adt")
+flip_v = true
+
+[node name="TextureRect4" type="TextureRect" parent="DescriptionFrame"]
+layout_mode = 0
+offset_left = 502.053
+offset_top = 230.553
+offset_right = 678.053
+offset_bottom = 445.553
+scale = Vector2(0.352701, 0.352701)
+texture = ExtResource("19_v1adt")
+flip_h = true
+flip_v = true
 
 [node name="InventoryPanel" type="Panel" parent="."]
 layout_mode = 0
@@ -262,16 +301,16 @@ layout_mode = 0
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 0
 offset_left = 453.0
-offset_top = 581.0
-offset_right = 720.0
-offset_bottom = 890.0
+offset_top = 583.0
+offset_right = 684.0
+offset_bottom = 884.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(267, 309)
+size = Vector2i(231, 301)
 render_target_update_mode = 4
 
 [node name="WeaponPreview" parent="SubViewportContainer/SubViewport" instance=ExtResource("19_j8yt1")]
