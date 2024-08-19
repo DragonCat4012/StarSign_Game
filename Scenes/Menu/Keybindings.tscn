@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwdqpfbgfskd8"]
+[gd_scene load_steps=5 format=3 uid="uid://cwdqpfbgfskd8"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/Keybindings.gd" id="1_yek8m"]
 [ext_resource type="Theme" uid="uid://bwa0rxrtswmu7" path="res://Ressources/Themes/menu_title_theme.tres" id="2_komtm"]
 [ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="2_l3pft"]
-[ext_resource type="Theme" uid="uid://ciyws7sva1umf" path="res://Ressources/Themes/keybindings_key_theme.tres" id="3_40kuo"]
-[ext_resource type="Theme" uid="uid://bw75eego24yr1" path="res://Ressources/Themes/keybindings_binding_theme.tres" id="4_xfmug"]
+[ext_resource type="PackedScene" uid="uid://dk11koqbatlnn" path="res://Scenes/Menu/Keybindings/KeybindingOption.tscn" id="4_8rjcl"]
 
 [node name="Keybindings" type="Node2D"]
 script = ExtResource("1_yek8m")
@@ -26,136 +25,62 @@ offset_right = 3766.0
 offset_bottom = 2122.0
 theme = ExtResource("2_l3pft")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="Bindings" type="VBoxContainer" parent="ScrollContainer"]
 custom_minimum_size = Vector2(1600, 1080)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+[node name="Moving" parent="ScrollContainer/Bindings" instance=ExtResource("4_8rjcl")]
 layout_mode = 2
-size_flags_vertical = 2
+titleValue = "Jump"
+keyValue = "Spacebar"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(1400, 0)
+[node name="Pause" parent="ScrollContainer/Bindings" instance=ExtResource("4_8rjcl")]
 layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("4_xfmug")
+inputMapName = "UI_Pause"
+titleValue = "Pause"
+keyValue = "-"
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Inv" parent="ScrollContainer/Bindings" instance=ExtResource("4_8rjcl")]
 layout_mode = 2
-theme = ExtResource("4_xfmug")
-theme_override_font_sizes/font_size = 40
-text = "Moving"
+inputMapName = "UI_Inv"
+titleValue = "Inventory"
+keyValue = "-"
 
-[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="ZoomReset" parent="ScrollContainer/Bindings" instance=ExtResource("4_8rjcl")]
 layout_mode = 2
-theme = ExtResource("4_xfmug")
-theme_override_font_sizes/font_size = 40
-text = "Jumping"
+inputMapName = "UI_Zoom_Reset"
+titleValue = "Zoom Reset"
+keyValue = "-"
 
-[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Emote" parent="ScrollContainer/Bindings" instance=ExtResource("4_8rjcl")]
 layout_mode = 2
-theme = ExtResource("4_xfmug")
-theme_override_font_sizes/font_size = 40
-text = "Pause/Menu"
+inputMapName = "Player_Reaction"
+titleValue = "Emote"
+keyValue = "-"
 
-[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Detail" parent="ScrollContainer/Bindings" instance=ExtResource("4_8rjcl")]
 layout_mode = 2
-theme = ExtResource("4_xfmug")
-theme_override_font_sizes/font_size = 40
-text = "Inventory"
+inputMapName = "UI_Detail"
+titleValue = "Game Details"
+keyValue = "-"
 
-[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="ToggleWeapon" parent="ScrollContainer/Bindings" instance=ExtResource("4_8rjcl")]
 layout_mode = 2
-theme = ExtResource("4_xfmug")
-theme_override_font_sizes/font_size = 40
-text = "Attack 1"
+inputMapName = "drawWeapon"
+titleValue = "ToggleWeapon"
+keyValue = "-"
 
-[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Action1" parent="ScrollContainer/Bindings" instance=ExtResource("4_8rjcl")]
 layout_mode = 2
-theme = ExtResource("4_xfmug")
-theme_override_font_sizes/font_size = 40
-text = "Attack 2"
+inputMapName = "Attack1"
+titleValue = "Action1"
+keyValue = "-"
 
-[node name="Label8" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Action2" parent="ScrollContainer/Bindings" instance=ExtResource("4_8rjcl")]
 layout_mode = 2
-theme = ExtResource("4_xfmug")
-theme_override_font_sizes/font_size = 40
-text = "Hide/Show Weapon"
-
-[node name="Label9" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("4_xfmug")
-theme_override_font_sizes/font_size = 40
-text = "Display Emotes"
-
-[node name="Label10" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("4_xfmug")
-theme_override_font_sizes/font_size = 40
-text = "Display Game Deatils"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("4_xfmug")
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-theme_override_font_sizes/font_size = 40
-text = "W, A, S, D"
-
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-theme_override_font_sizes/font_size = 40
-text = "Space"
-
-[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-theme_override_font_sizes/font_size = 40
-text = "ESC"
-
-[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-theme_override_font_sizes/font_size = 40
-text = "I"
-
-[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-theme_override_font_sizes/font_size = 40
-text = "Left Click
-"
-
-[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-theme_override_font_sizes/font_size = 40
-text = "Right Click"
-
-[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-theme_override_font_sizes/font_size = 40
-text = "H
-"
-
-[node name="Label8" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-theme_override_font_sizes/font_size = 40
-text = "R
-"
-
-[node name="Label9" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_40kuo")
-theme_override_font_sizes/font_size = 40
-text = "TAB
-"
+inputMapName = "Attack2"
+titleValue = "Action2"
+keyValue = "-"
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 33.0
