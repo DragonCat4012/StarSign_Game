@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=38 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bn1yn58t2nfnc" path="res://Models/Enviroment/Buildings/brick_wall.tscn" id="18_4aywo"]
 [ext_resource type="PackedScene" uid="uid://bsmxs8trdh8e1" path="res://Models/Enviroment/Buildings/crystals.tscn" id="19_qhes1"]
 [ext_resource type="PackedScene" uid="uid://daenuv4l0uin5" path="res://Models/Enviroment/Buildings/brick_wall_with_holes.tscn" id="19_vvjte"]
+[ext_resource type="PackedScene" uid="uid://de3s4dvv5vx0l" path="res://Models/Enviroment/Interactive/flower.tscn" id="21_dgro5"]
 [ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Scenes/Enviroment/SpatialGrass.tscn" id="43_j7omm"]
 [ext_resource type="PackedScene" uid="uid://dqny5y5aeqft6" path="res://Models/Enviroment/tree.tscn" id="44_bvo41"]
 [ext_resource type="PackedScene" uid="uid://c45cpn8ua01d2" path="res://Models/Enviroment/Buildings/column.tscn" id="45_hjfmc"]
@@ -184,7 +185,7 @@ star = ExtResource("12_fnesn")
 transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, 4.1724, 0, -12.508)
 
 [node name="crystals" parent="." instance=ExtResource("19_qhes1")]
-transform = Transform3D(0.497983, 0, -0.414565, 0, 0.64796, 0, 0.414565, 0, 0.497983, 6.75707, 0, 8.17298)
+transform = Transform3D(0.497983, 0, -0.414565, 0, 0.64796, 0, 0.414565, 0, 0.497983, 6.75707, 0.673115, 8.17298)
 
 [node name="brickWall2" parent="." instance=ExtResource("18_4aywo")]
 transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, -14.9262, 0, -12.508)
@@ -199,7 +200,7 @@ transform = Transform3D(0.260473, 0, -8.88178e-16, 0, 0.260473, 0, 8.88178e-16, 
 transform = Transform3D(0.260473, 0, -8.88178e-16, 0, 0.260473, 0, 8.88178e-16, 0, 0.260473, 13.1298, 0, 5.64924)
 
 [node name="Box1" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.67243, 0, 0, 0, 2.99633, 0, 0, 0, 8.33861, -10.7161, 1.27817, 0)
+transform = Transform3D(4.67243, 0, 0, 0, 2.99633, 0, 0, 0, 8.33861, -10.7161, 1.43016, 0)
 mesh = SubResource("BoxMesh_sfwq1")
 surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 
@@ -237,6 +238,9 @@ libraries = {
 "": SubResource("AnimationLibrary_kp2qe")
 }
 
+[node name="flower" parent="." instance=ExtResource("21_dgro5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.6455)
+
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="SpatialGrass" parent="Enviroment" instance=ExtResource("43_j7omm")]
@@ -246,7 +250,7 @@ transform = Transform3D(0.518589, 0, 0, 0, 0.518589, 0, 0, 0, 0.518589, 0, 0.006
 transform = Transform3D(1.89677, 0, 0, 0, 1.89677, 0, 0, 0, 1.89677, 5.76937, 0, 0)
 
 [node name="column" parent="Enviroment" instance=ExtResource("45_hjfmc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.197, 0, 6.339)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.197, 0.492592, 6.339)
 
 [connection signal="body_entered" from="Stars/Star2" to="Stars/Star2" method="_on_body_entered"]
 [connection signal="body_entered" from="Stars/Star3" to="Stars/Star3" method="_on_body_entered"]

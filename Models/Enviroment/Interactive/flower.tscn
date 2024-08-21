@@ -1,0 +1,140 @@
+[gd_scene load_steps=17 format=3 uid="uid://de3s4dvv5vx0l"]
+
+[ext_resource type="PackedScene" uid="uid://cuvvlqhetbovt" path="res://Models/Enviroment/Interactive/flower.glb" id="1_gdvqd"]
+[ext_resource type="Script" path="res://Models/Enviroment/Interactive/flower.gd" id="2_kjv24"]
+[ext_resource type="Shader" uid="uid://buip8y2l6tdnv" path="res://Models/Enviroment/Interactive/flower_waves.tres" id="3_4eawj"]
+[ext_resource type="ArrayMesh" uid="uid://cmp72q0vkpivu" path="res://Models/Enviroment/Interactive/flower_waves.obj" id="5_c45fy"]
+[ext_resource type="Shader" uid="uid://kob5uqdellpr" path="res://Models/Enviroment/Interactive/FlowerEffects.tres" id="5_wh1to"]
+
+[sub_resource type="Animation" id="Animation_swxic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle_005:blend_shapes/Shrinkwrap")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_1amgc"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle_005:blend_shapes/Shrinkwrap")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xng4a"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle_005:blend_shapes/Shrinkwrap")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3v3j"]
+_data = {
+"RESET": SubResource("Animation_swxic"),
+"fade_in": SubResource("Animation_1amgc"),
+"fade_out": SubResource("Animation_xng4a")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_883eg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hrwk"]
+render_priority = 0
+shader = ExtResource("5_wh1to")
+
+[sub_resource type="Curve" id="Curve_02i6h"]
+_data = [Vector2(0.0661157, 0), 0.0, 0.0, 0, 0, Vector2(0.269972, 0.652407), 0.0, 0.0, 0, 0, Vector2(0.68595, 0.993048), 0.0, 0.0, 0, 0, Vector2(1, 0.026738), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_cg0l0"]
+texture_mode = 1
+curve = SubResource("Curve_02i6h")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e5cby"]
+lifetime_randomness = 0.5
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 4.0
+emission_ring_inner_radius = 0.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+color = Color(0.658972, 0.600969, 1, 1)
+alpha_curve = SubResource("CurveTexture_cg0l0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_nihax"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdbje"]
+render_priority = 1
+shader = ExtResource("3_4eawj")
+shader_parameter/WaveColor = Color(0.599676, 0.512068, 0.991749, 1)
+shader_parameter/speed = Vector2(0, 0)
+
+[node name="flower" instance=ExtResource("1_gdvqd")]
+script = ExtResource("2_kjv24")
+
+[node name="Circle_005" parent="." index="0"]
+transform = Transform3D(0.430654, 0, 0, 0, 0.430654, 0, 0, 0, 0.430654, 0, 0.367134, 0)
+blend_shapes/Shrinkwrap = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_p3v3j")
+}
+
+[node name="Trigger" type="Area3D" parent="." index="2"]
+transform = Transform3D(0.430654, 0, 0, 0, 0.430654, 0, 0, 0, 0.430654, 0, 0.367134, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" index="0"]
+transform = Transform3D(27.9145, 0, 0, 0, 27.9145, 0, 0, 0, 27.9145, 0, 0, 0)
+shape = SubResource("SphereShape3D_883eg")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="3"]
+transform = Transform3D(0.430654, 0, 0, 0, 0.430654, 0, 0, 0, 0.430654, 0, 1.75563, 0)
+top_level = true
+material_override = SubResource("ShaderMaterial_4hrwk")
+emitting = false
+amount = 20
+lifetime = 3.0
+randomness = 1.0
+collision_base_size = 0.0
+visibility_aabb = AABB(-20, -4, -20, 40, 32, 40)
+process_material = SubResource("ParticleProcessMaterial_e5cby")
+draw_pass_1 = SubResource("QuadMesh_nihax")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+transform = Transform3D(0.430654, 0, 0, 0, 0.430654, 0, 0, 0, 0.430654, 0, 0.367134, 0)
+
+[node name="FlowerWaves" type="MeshInstance3D" parent="." index="5"]
+transform = Transform3D(0.820224, 0, 0, 0, 0.820224, 0, 0, 0, 0.820224, 0, 0.449391, 0)
+material_override = SubResource("ShaderMaterial_hdbje")
+mesh = ExtResource("5_c45fy")
+skeleton = NodePath("")
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_exited" from="Trigger" to="." method="_on_trigger_body_exited"]
