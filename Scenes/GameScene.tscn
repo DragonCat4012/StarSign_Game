@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=39 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bn1yn58t2nfnc" path="res://Models/Enviroment/Buildings/brick_wall.tscn" id="18_4aywo"]
 [ext_resource type="PackedScene" uid="uid://bsmxs8trdh8e1" path="res://Models/Enviroment/Buildings/crystals.tscn" id="19_qhes1"]
 [ext_resource type="PackedScene" uid="uid://daenuv4l0uin5" path="res://Models/Enviroment/Buildings/brick_wall_with_holes.tscn" id="19_vvjte"]
+[ext_resource type="PackedScene" uid="uid://ch06bi7wnk83q" path="res://Models/Enviroment/Foliage/leaf_edge.tscn" id="21_5dvaq"]
 [ext_resource type="PackedScene" uid="uid://de3s4dvv5vx0l" path="res://Models/Enviroment/Interactive/flower.tscn" id="21_dgro5"]
 [ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Scenes/Enviroment/SpatialGrass.tscn" id="43_j7omm"]
 [ext_resource type="PackedScene" uid="uid://dqny5y5aeqft6" path="res://Models/Enviroment/tree.tscn" id="44_bvo41"]
@@ -134,6 +135,7 @@ shadow_enabled = true
 
 [node name="FloorPlane" type="MeshInstance3D" parent="."]
 transform = Transform3D(13.8629, 0, 0, 0, 13.8629, 0, 0, 0, 13.8629, 0, 0, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_jfl0u")
 mesh = SubResource("PlaneMesh_in0bf")
 
@@ -181,32 +183,15 @@ star = ExtResource("12_5x6bm")
 transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -6.92046, 1.69286, -6.10104)
 star = ExtResource("12_fnesn")
 
-[node name="brickWall" parent="." instance=ExtResource("18_4aywo")]
-transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, 4.1724, 0, -12.508)
-
-[node name="crystals" parent="." instance=ExtResource("19_qhes1")]
-transform = Transform3D(0.497983, 0, -0.414565, 0, 0.64796, 0, 0.414565, 0, 0.497983, 6.75707, 0.673115, 8.17298)
-
-[node name="brickWall2" parent="." instance=ExtResource("18_4aywo")]
-transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, -14.9262, 0, -12.508)
-
-[node name="brickWallWithHoles" parent="." instance=ExtResource("19_vvjte")]
-transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, -5.35404, 0, -12.6459)
-
-[node name="brickWall3" parent="." instance=ExtResource("18_4aywo")]
-transform = Transform3D(0.260473, 0, -8.88178e-16, 0, 0.260473, 0, 8.88178e-16, 0, 0.260473, 13.2676, 0, -3.8772)
-
-[node name="brickWallWithHoles2" parent="." instance=ExtResource("19_vvjte")]
-transform = Transform3D(0.260473, 0, -8.88178e-16, 0, 0.260473, 0, 8.88178e-16, 0, 0.260473, 13.1298, 0, 5.64924)
-
 [node name="Box1" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.67243, 0, 0, 0, 2.99633, 0, 0, 0, 8.33861, -10.7161, 1.43016, 0)
+transform = Transform3D(2.66378, 0, 0, 0, 2.99633, 0, 0, 0, 3.11572, -10.7161, 1.43016, 0)
 mesh = SubResource("BoxMesh_sfwq1")
 surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Box1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="Box2" type="MeshInstance3D" parent="."]
@@ -239,7 +224,7 @@ libraries = {
 }
 
 [node name="flower" parent="." instance=ExtResource("21_dgro5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.6455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.4099)
 
 [node name="Enviroment" type="Node3D" parent="."]
 
@@ -251,6 +236,37 @@ transform = Transform3D(1.89677, 0, 0, 0, 1.89677, 0, 0, 0, 1.89677, 5.76937, 0,
 
 [node name="column" parent="Enviroment" instance=ExtResource("45_hjfmc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.197, 0.492592, 6.339)
+
+[node name="crystals" parent="Enviroment" instance=ExtResource("19_qhes1")]
+transform = Transform3D(0.437079, 0, -0.478344, 0, 0.64796, 0, 0.478344, 0, 0.437079, 6.75707, 0.673115, 9.43457)
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="brickWall" parent="Walls" instance=ExtResource("18_4aywo")]
+transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, 4.1724, 0, -12.508)
+
+[node name="brickWall2" parent="Walls" instance=ExtResource("18_4aywo")]
+transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, -14.9262, 0, -12.508)
+
+[node name="brickWallWithHoles" parent="Walls" instance=ExtResource("19_vvjte")]
+transform = Transform3D(-1.13857e-08, 0, -0.260473, 0, 0.260473, 0, 0.260473, 0, -1.13857e-08, -5.35404, 0, -12.6459)
+
+[node name="brickWall3" parent="Walls" instance=ExtResource("18_4aywo")]
+transform = Transform3D(0.260473, 0, -8.88178e-16, 0, 0.260473, 0, 8.88178e-16, 0, 0.260473, 13.2676, 0, -3.8772)
+
+[node name="brickWallWithHoles2" parent="Walls" instance=ExtResource("19_vvjte")]
+transform = Transform3D(0.260473, 0, -8.88178e-16, 0, 0.260473, 0, 8.88178e-16, 0, 0.260473, 13.1298, 0, 5.64924)
+
+[node name="brickWallWithHoles3" parent="Walls" instance=ExtResource("19_vvjte")]
+transform = Transform3D(0.260473, 0, -8.88178e-16, 0, 0.260473, 0, 8.88178e-16, 0, 0.260473, 13.1298, 0, 15.2388)
+
+[node name="Foliage" type="Node3D" parent="."]
+
+[node name="leaf_edge" parent="Foliage" instance=ExtResource("21_5dvaq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.8204, 2.92738, 3.16214)
+
+[node name="leaf_edge2" parent="Foliage" instance=ExtResource("21_5dvaq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.8204, 2.92738, 5.30011)
 
 [connection signal="body_entered" from="Stars/Star2" to="Stars/Star2" method="_on_body_entered"]
 [connection signal="body_entered" from="Stars/Star3" to="Stars/Star3" method="_on_body_entered"]
