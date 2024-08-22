@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=41 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://daenuv4l0uin5" path="res://Models/Enviroment/Buildings/brick_wall_with_holes.tscn" id="19_vvjte"]
 [ext_resource type="PackedScene" uid="uid://ch06bi7wnk83q" path="res://Models/Enviroment/Foliage/leaf_edge.tscn" id="21_5dvaq"]
 [ext_resource type="PackedScene" uid="uid://de3s4dvv5vx0l" path="res://Models/Enviroment/Interactive/flower.tscn" id="21_dgro5"]
+[ext_resource type="PackedScene" uid="uid://ba2cx564ysl4o" path="res://Models/Enviroment/Foliage/bush_1.tscn" id="27_p6t6m"]
+[ext_resource type="PackedScene" uid="uid://dtpko51cbte7i" path="res://Models/Enviroment/Foliage/bush_2.tscn" id="28_lgfdf"]
 [ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Scenes/Enviroment/SpatialGrass.tscn" id="43_j7omm"]
 [ext_resource type="PackedScene" uid="uid://dqny5y5aeqft6" path="res://Models/Enviroment/tree.tscn" id="44_bvo41"]
 [ext_resource type="PackedScene" uid="uid://c45cpn8ua01d2" path="res://Models/Enviroment/Buildings/column.tscn" id="45_hjfmc"]
@@ -191,7 +193,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 [node name="StaticBody3D" type="StaticBody3D" parent="Box1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="Box2" type="MeshInstance3D" parent="."]
@@ -267,6 +268,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.820
 
 [node name="leaf_edge2" parent="Foliage" instance=ExtResource("21_5dvaq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.8204, 2.92738, 5.30011)
+
+[node name="bush1" parent="Foliage" instance=ExtResource("27_p6t6m")]
+transform = Transform3D(0.303383, 0, 0, 0, 0.303383, 0, 0, 0, 0.303383, 4.22768, 0, 2.07417)
+
+[node name="bush2" parent="Foliage" instance=ExtResource("28_lgfdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9823, 0, 3.30439)
 
 [connection signal="body_entered" from="Stars/Star2" to="Stars/Star2" method="_on_body_entered"]
 [connection signal="body_entered" from="Stars/Star3" to="Stars/Star3" method="_on_body_entered"]

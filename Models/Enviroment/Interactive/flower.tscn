@@ -20,6 +20,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle_005:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.196, 0.196, 0.196)]
+}
 
 [sub_resource type="Animation" id="Animation_1amgc"]
 resource_name = "fade_in"
@@ -35,6 +47,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [1.0, 0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle_005:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.196, 0.196, 0.196), Vector3(0.430654, 0.430654, 0.430654)]
+}
 
 [sub_resource type="Animation" id="Animation_xng4a"]
 resource_name = "fade_out"
@@ -49,6 +73,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle_005:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.430654, 0.430654, 0.430654), Vector3(0.196, 0.196, 0.196)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p3v3j"]
@@ -99,7 +135,7 @@ shader_parameter/speed = Vector2(0, 0)
 script = ExtResource("2_kjv24")
 
 [node name="Circle_005" parent="." index="0"]
-transform = Transform3D(0.430654, 0, 0, 0, 0.430654, 0, 0, 0, 0.430654, 0, 0.367134, 0)
+transform = Transform3D(0.196, 0, 0, 0, 0.196, 0, 0, 0, 0.196, 0, 0.367134, 0)
 blend_shapes/Shrinkwrap = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
