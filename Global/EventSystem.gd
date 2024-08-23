@@ -19,7 +19,9 @@ func signal_decreased_star_count():
 # Inventory
 signal InventoryWillBeShown
 
-
+# Pause
+signal PauseStared
+signal PauseEnded
 
 # Tutorial
 signal MovementEnterd

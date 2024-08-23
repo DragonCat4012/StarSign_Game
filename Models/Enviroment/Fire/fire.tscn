@@ -1,0 +1,57 @@
+[gd_scene load_steps=12 format=3 uid="uid://crc7gakabbgmv"]
+
+[ext_resource type="Shader" uid="uid://mn78g36fvwam" path="res://Models/Enviroment/Fire/fire_shader.tres" id="1_86oit"]
+[ext_resource type="Script" path="res://Models/Enviroment/Fire/fire.gd" id="1_rc41x"]
+[ext_resource type="Shader" uid="uid://680lrs0g04g7" path="res://Models/Enviroment/Fire/amber.tres" id="2_ogvuq"]
+[ext_resource type="Shader" uid="uid://c6tx1pfe5fkil" path="res://Models/Enviroment/Fire/fire_smoke.tres" id="2_xj5jk"]
+[ext_resource type="Material" uid="uid://j4gkqrdxkaww" path="res://Models/Enviroment/Fire/smokeMaterial.tres" id="3_upask"]
+[ext_resource type="Material" uid="uid://djtc8tgtx0pmj" path="res://Models/Enviroment/Fire/amberMaterial.tres" id="3_xuogr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3mexf"]
+render_priority = 1
+shader = ExtResource("1_86oit")
+shader_parameter/FireActivity = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_14dly"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aipgr"]
+render_priority = 1
+shader = ExtResource("2_xj5jk")
+
+[sub_resource type="QuadMesh" id="QuadMesh_g1cnh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ox004"]
+render_priority = 1
+shader = ExtResource("2_ogvuq")
+
+[node name="Fire" type="Node3D"]
+script = ExtResource("1_rc41x")
+
+[node name="Fire" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00785732, -1.49012e-07, -0.00639331)
+sorting_offset = 2.0
+material_override = SubResource("ShaderMaterial_3mexf")
+amount = 1
+mesh = SubResource("QuadMesh_14dly")
+gravity = Vector3(0, 0, 0)
+color = Color(4, 0.392157, 0.172549, 1)
+
+[node name="Smoke" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00726748, 1.49012e-08, -0.00559664)
+material_override = SubResource("ShaderMaterial_aipgr")
+amount = 15
+lifetime = 1.5
+randomness = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_upask")
+draw_pass_1 = SubResource("QuadMesh_g1cnh")
+
+[node name="Amber" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00726748, 1.49012e-08, -0.00559664)
+material_override = SubResource("ShaderMaterial_ox004")
+amount = 25
+lifetime = 1.5
+randomness = 0.1
+fixed_fps = 60
+process_material = ExtResource("3_xuogr")
+draw_pass_1 = SubResource("QuadMesh_g1cnh")

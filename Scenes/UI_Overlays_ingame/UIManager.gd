@@ -62,11 +62,12 @@ func togglePause():
 		pauseMenuShown = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		pause_pop_up.show()
+		EventSystem.PauseStared.emit()
 	else:
 		pauseMenuShown = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		pause_pop_up.hide()
-		#emit_signal("unpauseGame")
+		EventSystem.PauseEnded.emit()
 		
 func toggleInventory():
 	get_tree().paused = not get_tree().paused

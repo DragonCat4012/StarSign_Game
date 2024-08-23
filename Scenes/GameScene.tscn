@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=43 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bn1yn58t2nfnc" path="res://Models/Enviroment/Buildings/brick_wall.tscn" id="18_4aywo"]
 [ext_resource type="PackedScene" uid="uid://bsmxs8trdh8e1" path="res://Models/Enviroment/Buildings/crystals.tscn" id="19_qhes1"]
 [ext_resource type="PackedScene" uid="uid://daenuv4l0uin5" path="res://Models/Enviroment/Buildings/brick_wall_with_holes.tscn" id="19_vvjte"]
+[ext_resource type="PackedScene" uid="uid://crc7gakabbgmv" path="res://Models/Enviroment/Fire/fire.tscn" id="20_4f2jp"]
 [ext_resource type="PackedScene" uid="uid://ch06bi7wnk83q" path="res://Models/Enviroment/Foliage/leaf_edge.tscn" id="21_5dvaq"]
 [ext_resource type="PackedScene" uid="uid://de3s4dvv5vx0l" path="res://Models/Enviroment/Interactive/flower.tscn" id="21_dgro5"]
 [ext_resource type="PackedScene" uid="uid://bklde0ytrugdg" path="res://Models/Enviroment/Foliage/bush_3.tscn" id="26_veln5"]
@@ -72,6 +73,7 @@ background_mode = 2
 sky = SubResource("Sky_qehcw")
 tonemap_mode = 2
 glow_enabled = true
+glow_intensity = 0.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfl0u"]
 albedo_texture = ExtResource("3_3mjig")
@@ -229,6 +231,9 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.4099)
 
 [node name="Enviroment" type="Node3D" parent="."]
+
+[node name="Fire" parent="Enviroment" instance=ExtResource("20_4f2jp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748229, 2.04542)
 
 [node name="SpatialGrass" parent="Enviroment" instance=ExtResource("43_j7omm")]
 transform = Transform3D(0.518589, 0, 0, 0, 0.518589, 0, 0, 0, 0.518589, 0, 0.00668904, -0.0387895)
