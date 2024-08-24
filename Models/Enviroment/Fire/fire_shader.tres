@@ -50,7 +50,6 @@ texture = ExtResource("1_hh765")
 parameter_name = "FireActivity"
 hint = 1
 default_value_enabled = true
-default_value = 1.0
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_021fv"]
 operator = 2
@@ -84,7 +83,7 @@ billboard_type = 2
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
-uniform float FireActivity : hint_range(0, 1) = 1;
+uniform float FireActivity : hint_range(0, 1) = 0;
 uniform sampler2D tex_frg_9;
 uniform sampler2D tex_frg_15;
 uniform sampler2D tex_frg_2;
@@ -195,7 +194,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-2000.65, 176.57)
+graph_offset = Vector2(-1732.97, 0)
 nodes/vertex/2/node = SubResource("VisualShaderNodeBillboard_jtsg2")
 nodes/vertex/2/position = Vector2(60, 140)
 nodes/vertex/connections = PackedInt32Array(2, 0, 0, 10)
