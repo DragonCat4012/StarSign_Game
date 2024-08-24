@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponModel" load_steps=2 format=3 uid="uid://cshaio8ar360d"]
+
+[ext_resource type="Script" path="res://Ressources/Weapons/WeaponModel.gd" id="1_cs8or"]
+
+[resource]
+script = ExtResource("1_cs8or")
+weaponID = 4
+weaponName = "stopSign"
+animation1Name = "attack_base"
+animation2Name = "attack_forward"

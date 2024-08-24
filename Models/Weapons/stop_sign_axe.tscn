@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjm0217wpyrxn"]
+
+[ext_resource type="PackedScene" uid="uid://dxcitloib52bj" path="res://Models/Weapons/stopSignAxe.glb" id="1_tqy4c"]
+
+[node name="stopSignAxe" instance=ExtResource("1_tqy4c")]
+
+[node name="Text" parent="." index="0"]
+transform = Transform3D(-0.401616, 3.51104e-08, 0, 0, 0, -0.516269, -3.51104e-08, -0.401616, 0, 0, 0, 0)

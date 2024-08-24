@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cyf3xabaeaec4"]
+[gd_scene load_steps=17 format=3 uid="uid://cyf3xabaeaec4"]
 
 [ext_resource type="PackedScene" uid="uid://bh88gie8s5oc" path="res://Models/Weapons/sword.tscn" id="1_iadng"]
 [ext_resource type="Script" path="res://Models/Weapons/WeaponPreview.gd" id="1_tbnkt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5tln1hxg3vny" path="res://Models/Weapons/axe.tscn" id="2_jrdrt"]
 [ext_resource type="Shader" path="res://Ressources/ShaderTextures/day-night-cycle-shader.gdshader" id="4_1oi2d"]
 [ext_resource type="Texture2D" uid="uid://cp05y7uvcttym" path="res://Ressources/ShaderTextures/CloudsDistort.bmp" id="5_86s01"]
+[ext_resource type="PackedScene" uid="uid://cjm0217wpyrxn" path="res://Models/Weapons/stop_sign_axe.tscn" id="5_eavu5"]
 [ext_resource type="Texture2D" uid="uid://c4sagkiuhldgo" path="res://Ressources/ShaderTextures/CloudsNoise.bmp" id="6_7kdp6"]
 [ext_resource type="Texture2D" uid="uid://c4aieymtlgqp" path="res://Ressources/ShaderTextures/Clouds_2.bmp" id="7_62mx1"]
 [ext_resource type="Texture2D" uid="uid://cak2xtjmv87xs" path="res://Ressources/ShaderTextures/stars.bmp" id="8_mkx0n"]
@@ -109,6 +110,9 @@ visible = false
 [node name="axe" parent="Weapons" instance=ExtResource("2_jrdrt")]
 transform = Transform3D(1.55229, 0, 0, 0, 1.55229, 0, 0, 0, 1.55229, 0, -0.804142, -3.06476)
 visible = false
+
+[node name="stopSign" parent="Weapons" instance=ExtResource("5_eavu5")]
+transform = Transform3D(-3.04624e-08, 0, -0.696899, 0, 0.696899, 0, 0.696899, 0, -3.04624e-08, 0, -1.27471, -3.13693)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.06476)

@@ -13,8 +13,7 @@ func _process(_delta):
 	
 func start(childname):
 	for ch in weapons.get_children():
-		if ch.name == childname.to_lower():
-			print("e")
+		if ch.name.to_lower() == childname.to_lower():
 			ch.visible = true
 			currentChild = ch
 			currentChild.rotation = Vector3(0, 0, 0)
