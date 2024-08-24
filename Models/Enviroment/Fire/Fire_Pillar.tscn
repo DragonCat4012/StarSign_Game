@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2lrej6pchwdu"]
+
+[ext_resource type="PackedScene" uid="uid://crc7gakabbgmv" path="res://Models/Enviroment/Fire/fire.tscn" id="1_rnydk"]
+[ext_resource type="PackedScene" uid="uid://berflnlqokblj" path="res://Models/Enviroment/Fire/fire_pillar_base.tscn" id="2_hqig5"]
+
+[node name="FirePillar" type="Node3D"]
+
+[node name="Fire" parent="." instance=ExtResource("1_rnydk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.20883, 0)
+
+[node name="fire_pillar" parent="." instance=ExtResource("2_hqig5")]

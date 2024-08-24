@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://berflnlqokblj"]
+
+[ext_resource type="PackedScene" uid="uid://ba5ekggso0v80" path="res://Models/Enviroment/Fire/fire_pillar.glb" id="1_cc5uf"]
+[ext_resource type="Shader" path="res://Models/Enviroment/MetalShader.gdshader" id="2_lfbk6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i3dam"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vp7k"]
+render_priority = 0
+shader = ExtResource("2_lfbk6")
+shader_parameter/baseColor = Color(1, 1, 1, 1)
+shader_parameter/gradientBasis = Vector3(3, 3, 3)
+shader_parameter/gradientBasisDistort = Vector3(0, 0, 0)
+shader_parameter/gradientBasisSpeed = 0.0
+shader_parameter/refractionSplit = 2.0
+shader_parameter/refractionSplitPower = 1.0
+shader_parameter/refractionAffect = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_28bud"]
+render_priority = 0
+shader = ExtResource("2_lfbk6")
+shader_parameter/baseColor = Color(1, 1, 1, 1)
+shader_parameter/gradientBasis = Vector3(3, 3, 3)
+shader_parameter/gradientBasisDistort = Vector3(0, 0, 0)
+shader_parameter/gradientBasisSpeed = 0.0
+shader_parameter/refractionSplit = 2.0
+shader_parameter/refractionSplitPower = 1.0
+shader_parameter/refractionAffect = 0.8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wvqs3"]
+height = 3.0554
+radius = 0.428828
+
+[node name="fire_pillar" instance=ExtResource("1_cc5uf")]
+
+[node name="zaun" parent="." index="1"]
+material_override = SubResource("ShaderMaterial_i3dam")
+material_overlay = SubResource("ShaderMaterial_2vp7k")
+
+[node name="Empty" parent="." index="2"]
+visible = false
+
+[node name="BezierCircle" parent="." index="3"]
+visible = false
+
+[node name="Cone" parent="." index="4"]
+material_override = SubResource("ShaderMaterial_28bud")
+
+[node name="spikeCircxle" parent="." index="5"]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52234, 0)
+shape = SubResource("CylinderShape3D_wvqs3")
