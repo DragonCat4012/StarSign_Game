@@ -7,7 +7,7 @@ uniform sampler2D noise;
 uniform float noiseScale = 20.0;
 varying vec3 worldPos;
 uniform bool enableSway = true;
-uniform sampler2D tex;
+
 void vertex() {
 	worldPos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	float swayNoise = texture(noise, worldPos.xz / noiseScale).r * 6.0;
@@ -24,9 +24,9 @@ void vertex() {
 	);
 }
 void fragment() {
-	vec4 t = texture(tex, UV);
-  ALBEDO = t.rgb;
-  if(t.a < 0.1){
-    discard;
-  }
+	vec3 noiseLevel = texture(noise, worldPos.xz ).rgb;
+	ALBEDO = mix(color, color2, UV.y) * mix(color, color2, noiseLevel.r*2.0);
+	if(!FRONT_FACING) {
+		NORMAL = -NORMAL;
+	}
 }

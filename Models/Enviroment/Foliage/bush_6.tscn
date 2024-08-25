@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://n3a0lva6n5pm"]
+[gd_scene load_steps=3 format=3 uid="uid://n3a0lva6n5pm"]
 
 [ext_resource type="PackedScene" uid="uid://30hei1pcnoa4" path="res://Models/Enviroment/Foliage/bush6.glb" id="1_i3e5k"]
+[ext_resource type="Material" uid="uid://db0iivokndjiu" path="res://Models/Enviroment/Foliage/BushSwaying.tres" id="2_eb24m"]
 
 [node name="bush6" instance=ExtResource("1_i3e5k")]
 transform = Transform3D(1.20556, 0, 0, 0, 1.20556, 0, 0, 0, 1.20556, 0, 0, 0)
+
+[node name="bush6" parent="." index="0"]
+material_override = ExtResource("2_eb24m")
