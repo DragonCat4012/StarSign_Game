@@ -3294,3 +3294,13 @@ transform = Transform3D(0.222613, 0.0738708, 0.381061, 0.317139, 0.218666, -0.22
 libraries = {
 "": SubResource("AnimationLibrary_eqjgq")
 }
+
+[node name="StairsAheadRayCast" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.284886, 0.748071, 2.49129e-08)
+target_position = Vector3(0, -1.1, 0)
+
+[node name="StairsBelowRayCast" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00536358, -1.19209e-07, -0.00151229)
+target_position = Vector3(0, -1.6, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dtgdy77r2dce7"]
+[gd_scene load_steps=47 format=3 uid="uid://dtgdy77r2dce7"]
 
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="1_hxdoa"]
 [ext_resource type="Script" path="res://Scenes/GameScene.gd" id="1_mm86k"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://h57rgfekfqc5" path="res://Models/Enviroment/Foliage/bush_4.tscn" id="31_hhai7"]
 [ext_resource type="PackedScene" uid="uid://cgwgl4tn8tode" path="res://Models/Enviroment/Foliage/bush_5.tscn" id="32_m0kv8"]
 [ext_resource type="PackedScene" uid="uid://n3a0lva6n5pm" path="res://Models/Enviroment/Foliage/bush_6.tscn" id="33_ipuxa"]
+[ext_resource type="PackedScene" uid="uid://cu57b7gt1sxn5" path="res://Models/Enviroment/Buildings/stairs.tscn" id="34_yhyby"]
 [ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Models/Enviroment/SpatialGrass.tscn" id="43_j7omm"]
 [ext_resource type="PackedScene" uid="uid://dqny5y5aeqft6" path="res://Models/Enviroment/tree.tscn" id="44_bvo41"]
 [ext_resource type="PackedScene" uid="uid://c45cpn8ua01d2" path="res://Models/Enviroment/Buildings/column.tscn" id="45_hjfmc"]
@@ -164,7 +165,7 @@ transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, 
 star = ExtResource("6_oxw7v")
 
 [node name="Star3" parent="Stars" instance=ExtResource("3_p4imb")]
-transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -1.40556, 1.05938, 9.67503)
+transform = Transform3D(0.193805, 0, 0, 0, -8.4715e-09, -0.193805, 0, 0.193805, -8.4715e-09, -0.160964, 1.05938, 10.3944)
 star = ExtResource("7_cl0cx")
 
 [node name="Star4" parent="Stars" instance=ExtResource("3_p4imb")]
@@ -212,7 +213,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0ffsm")
 shape = SubResource("BoxShape3D_fk3pu")
 
 [node name="DefaultCube" parent="." instance=ExtResource("1_hxdoa")]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 2.55173e-07, 0.5, 0.866026, -0.5, 0.75, -0.433012, 0.0210368, 1.40758, -2.77204)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 2.55173e-07, 0.5, 0.866026, -0.5, 0.75, -0.433012, 5.12913, 1.40758, -5.51809)
 mass = 0.5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -226,10 +227,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.4099)
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="FirePillar" parent="Enviroment" instance=ExtResource("20_276nc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.67723, 0, 9.72291)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.1431, 0, 7.99592)
 
 [node name="FirePillar2" parent="Enviroment" instance=ExtResource("20_276nc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1312, 0, 9.72291)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.1431, 0, 11.4499)
 
 [node name="SpatialGrass" parent="Enviroment" instance=ExtResource("43_j7omm")]
 transform = Transform3D(0.518589, 0, 0, 0, 0.518589, 0, 0, 0, 0.518589, 0, 0.00668904, -0.0387895)
@@ -240,8 +241,20 @@ transform = Transform3D(1.89677, 0, 0, 0, 1.89677, 0, 0, 0, 1.89677, 5.76937, 0,
 [node name="column" parent="Enviroment" instance=ExtResource("45_hjfmc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.197, 0.492592, 6.339)
 
+[node name="column4" parent="Enviroment" instance=ExtResource("45_hjfmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14539, 0.492592, 9.45547)
+
+[node name="column2" parent="Enviroment" instance=ExtResource("45_hjfmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5846, 0.492592, 7.01203)
+
+[node name="column3" parent="Enviroment" instance=ExtResource("45_hjfmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37932, 0.492592, 10.4512)
+
 [node name="crystals" parent="Enviroment" instance=ExtResource("19_qhes1")]
-transform = Transform3D(0.437079, 0, -0.478344, 0, 0.64796, 0, 0.478344, 0, 0.437079, 6.75707, 0.673115, 9.43457)
+transform = Transform3D(0.356376, 0, -0.390022, 0, 0.52832, 0, 0.390022, 0, 0.356376, 8.788, 0.673115, 10.6027)
+
+[node name="stairs3" parent="Enviroment" instance=ExtResource("34_yhyby")]
+transform = Transform3D(2.79806, 0, 0, 0, 0.682369, 0, 0, 0, 0.854915, -6.85693, -0.0584589, -3.38778)
 
 [node name="Walls" type="Node3D" parent="."]
 
