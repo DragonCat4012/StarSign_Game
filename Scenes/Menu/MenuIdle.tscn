@@ -1,6 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://b0dhmtf2schhf"]
+[gd_scene load_steps=35 format=3 uid="uid://b0dhmtf2schhf"]
 
-[ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Scenes/Enviroment/SpatialGrass.tscn" id="1_55xfo"]
+[ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Models/Enviroment/SpatialGrass.tscn" id="1_55xfo"]
 [ext_resource type="PackedScene" uid="uid://c5tln1hxg3vny" path="res://Models/Weapons/axe.tscn" id="3_7w243"]
 [ext_resource type="PackedScene" uid="uid://c45cpn8ua01d2" path="res://Models/Enviroment/Buildings/column.tscn" id="3_bpv3c"]
 [ext_resource type="PackedScene" uid="uid://bh88gie8s5oc" path="res://Models/Weapons/sword.tscn" id="3_eqkjo"]
@@ -14,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://cak2xtjmv87xs" path="res://Ressources/ShaderTextures/stars.bmp" id="7_u6d6r"]
 [ext_resource type="Script" path="res://Scenes/Menu/Blur.gd" id="10_7p4q4"]
 [ext_resource type="Shader" path="res://Scenes/Menu/BlurShader.gdshader" id="10_bkho3"]
+[ext_resource type="PackedScene" uid="uid://d3o1ogc8pg7xt" path="res://Models/Enviroment/Foliage/bush3.glb" id="15_x6pnt"]
+[ext_resource type="PackedScene" uid="uid://ba2cx564ysl4o" path="res://Models/Enviroment/Foliage/bush_1.tscn" id="16_yujgn"]
+[ext_resource type="PackedScene" uid="uid://dtpko51cbte7i" path="res://Models/Enviroment/Foliage/bush_2.tscn" id="17_ikg14"]
+[ext_resource type="PackedScene" uid="uid://bklde0ytrugdg" path="res://Models/Enviroment/Foliage/bush_3.tscn" id="18_tdee3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n6tpw"]
 shader = ExtResource("3_qdfw0")
@@ -1585,3 +1589,21 @@ script = ExtResource("10_7p4q4")
 [node name="UI" type="Node2D" parent="."]
 
 [node name="MainMenu" parent="UI" instance=ExtResource("5_ia1bi")]
+
+[node name="bush3" parent="." instance=ExtResource("15_x6pnt")]
+transform = Transform3D(0.349625, 0, 0, 0, 0.349625, 0, 0, 0, 0.349625, 2.91106, 0, -4.93585)
+
+[node name="bush1" parent="." instance=ExtResource("16_yujgn")]
+transform = Transform3D(-0.134563, 0, 0.271908, 0, 0.303383, 0, -0.271908, 0, -0.134563, 4.86874, 0, 0.7531)
+
+[node name="bush6" parent="." instance=ExtResource("16_yujgn")]
+transform = Transform3D(0.0419029, 0, -0.300475, 0, 0.303383, 0, 0.300475, 0, 0.0419029, 8.01456, 0, 3.82092)
+
+[node name="bush5" parent="." instance=ExtResource("16_yujgn")]
+transform = Transform3D(0.563777, 0, 0, 0, 0.563777, 0, 0, 0, 0.563777, -1.00742, 0, -2.11823)
+
+[node name="bush2" parent="." instance=ExtResource("17_ikg14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01068, 0, -3.66955)
+
+[node name="bush4" parent="." instance=ExtResource("18_tdee3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62944, 0, -1.97567)

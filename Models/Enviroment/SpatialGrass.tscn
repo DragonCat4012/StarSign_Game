@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ovfqhpup1l7"]
 
-[ext_resource type="Shader" path="res://Scenes/Enviroment/SpatialGrass.gdshader" id="1_6i323"]
+[ext_resource type="Shader" path="res://Models/Enviroment/SpatialGrass.gdshader" id="1_6i323"]
 [ext_resource type="ArrayMesh" uid="uid://ddnd6lhe3t65q" path="res://Models/Enviroment/GrassMesh.res" id="2_nlhgs"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_olw6p"]

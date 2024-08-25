@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://f52rw7qj75qn" path="res://Ressources/Stars/Stars/Taurus/star8.tres" id="16_4ubf4"]
 [ext_resource type="Resource" uid="uid://bb8cxcm5cpjmf" path="res://Ressources/Stars/Stars/Taurus/star9.tres" id="17_n0xha"]
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="42_iv1be"]
-[ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Scenes/Enviroment/SpatialGrass.tscn" id="43_4ojq0"]
+[ext_resource type="PackedScene" uid="uid://ovfqhpup1l7" path="res://Models/Enviroment/SpatialGrass.tscn" id="43_4ojq0"]
 [ext_resource type="PackedScene" uid="uid://dqny5y5aeqft6" path="res://Models/Enviroment/tree.tscn" id="44_vokpm"]
 [ext_resource type="PackedScene" uid="uid://c45cpn8ua01d2" path="res://Models/Enviroment/Buildings/column.tscn" id="45_lx214"]
 [ext_resource type="PackedScene" uid="uid://daenuv4l0uin5" path="res://Models/Enviroment/Buildings/brick_wall_with_holes.tscn" id="46_cibdb"]

@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba2cx564ysl4o"]
+[gd_scene load_steps=7 format=3 uid="uid://ba2cx564ysl4o"]
 
 [ext_resource type="PackedScene" uid="uid://btqe6pbqpd3t8" path="res://Models/Enviroment/Foliage/bush1.glb" id="1_3a03p"]
+[ext_resource type="Shader" path="res://Models/Enviroment/FoliageMovement.gdshader" id="2_s8ve4"]
+[ext_resource type="Texture2D" uid="uid://dlxymri7ig82n" path="res://Models/Enviroment/Foliage/bush1_bush1.png" id="3_mt00o"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4t7xr"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yfbwv"]
+noise = SubResource("FastNoiseLite_4t7xr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4uv70"]
+render_priority = 0
+shader = ExtResource("2_s8ve4")
+shader_parameter/color = Color(0.180857, 0.26659, 0.127217, 1)
+shader_parameter/color2 = Color(0.328088, 0.499361, 0.356152, 1)
+shader_parameter/noiseScale = 20.0
+shader_parameter/enableSway = true
+shader_parameter/noise = SubResource("NoiseTexture2D_yfbwv")
+shader_parameter/tex = ExtResource("3_mt00o")
 
 [node name="bush1" instance=ExtResource("1_3a03p")]
 transform = Transform3D(0.303383, 0, 0, 0, 0.303383, 0, 0, 0, 0.303383, 0, 0, 0)
+
+[node name="bush1" parent="." index="0"]
+transform = Transform3D(0.422936, -0.171852, -0.237127, 0.296549, 0.245094, 0.338188, 3.84854e-08, -0.438828, 0.281747, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_4uv70")
