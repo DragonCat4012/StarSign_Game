@@ -20,6 +20,7 @@ var buttonLabels = ["Play", "Options (WIP)", "Keybindings", "Tutorial"]
 @onready var animation_player_label = $ButtonLabelContainer/AnimationPlayer
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	button_label_container.visible = false
 	button_label.text = buttonLabels[0]
 	EventSystem.EnteredOption.connect(enteredOption)
