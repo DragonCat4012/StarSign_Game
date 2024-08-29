@@ -1,3 +1,11 @@
+
+[![Size](https://img.shields.io/github/repo-size/DragonCat4012/StarSign_Game?color=AE98E0&label=SIZE&style=for-the-badge)]()
+[![Version](https://img.shields.io/github/v/release/DragonCat4012/StarSign_Game?color=AE98E0&label=Version&style=for-the-badge)]()
+[![Issues](https://img.shields.io/github/issues/DragonCat4012/StarSign_Game?color=AE98E0&label=Issues&style=for-the-badge)]()
+[![Last Commit](https://img.shields.io/github/last-commit/DragonCat4012/StarSign_Game/master?color=AE98E0&label=lastcommit&style=for-the-badge)]()
+
+
+
 # StarSign
 
 Game about collecting stars and recreating starsigns
