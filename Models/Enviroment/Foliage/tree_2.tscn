@@ -11,4 +11,5 @@ transform = Transform3D(0.935, 0, 0, 0, 1, 0, 0, 0, 0.935, 0, 1.29328, 0)
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_0l5kr")

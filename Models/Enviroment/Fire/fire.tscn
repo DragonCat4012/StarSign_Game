@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://crc7gakabbgmv"]
 
 [ext_resource type="Shader" uid="uid://mn78g36fvwam" path="res://Models/Enviroment/Fire/fire_shader.tres" id="1_86oit"]
-[ext_resource type="Script" path="res://Models/Enviroment/Fire/fire.gd" id="1_rc41x"]
+[ext_resource type="Script" path="res://Models/Enviroment/Fire/Fire.gd" id="1_blbqg"]
 [ext_resource type="Shader" uid="uid://680lrs0g04g7" path="res://Models/Enviroment/Fire/amber.tres" id="2_ogvuq"]
 [ext_resource type="Shader" uid="uid://c6tx1pfe5fkil" path="res://Models/Enviroment/Fire/fire_smoke.tres" id="2_xj5jk"]
 [ext_resource type="Material" uid="uid://j4gkqrdxkaww" path="res://Models/Enviroment/Fire/smokeMaterial.tres" id="3_upask"]
@@ -25,7 +25,7 @@ render_priority = 1
 shader = ExtResource("2_ogvuq")
 
 [node name="Fire" type="Node3D"]
-script = ExtResource("1_rc41x")
+script = ExtResource("1_blbqg")
 
 [node name="Fire" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00785732, -1.49012e-07, -0.00639331)

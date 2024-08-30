@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" load_steps=24 format=3 uid="uid://mn78g36fvwam"]
 
 [ext_resource type="Texture2D" uid="uid://y1bbk70d001g" path="res://Models/Enviroment/Fire/fire_texture.png" id="1_hh765"]
-[ext_resource type="Texture2D" uid="uid://rgo53bym7dqq" path="res://Models/Enviroment/Fire/fire_distortion2.png" id="2_gguom"]
+[ext_resource type="Texture2D" uid="uid://bj54w07s4lxg1" path="res://Models/Enviroment/Fire/fire_distortion.png" id="2_6qkod"]
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_lfmxh"]
 default_input_values = [0, Quaternion(0, 0, 0, 0)]
@@ -74,7 +74,7 @@ default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 0)]
 op_type = 0
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_7tkdr"]
-texture = ExtResource("2_gguom")
+texture = ExtResource("2_6qkod")
 
 [sub_resource type="VisualShaderNodeBillboard" id="VisualShaderNodeBillboard_jtsg2"]
 billboard_type = 2

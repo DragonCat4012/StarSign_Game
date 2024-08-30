@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj54w07s4lxg1"
-path.s3tc="res://.godot/imported/fire_distortion.png-e606318b680374a4e26bd0b50adeb447.s3tc.ctex"
+uid="uid://dlg8nren24q1s"
+path.s3tc="res://.godot/imported/tree3_leaves.png-1b16fdec3999aee9968962dc2b0977f2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "68d3aae393053fce6ecf31502cd650aa"
+}
 
 [deps]
 
-source_file="res://Models/Enviroment/Fire/fire_distortion.png"
-dest_files=["res://.godot/imported/fire_distortion.png-e606318b680374a4e26bd0b50adeb447.s3tc.ctex"]
+source_file="res://Models/Enviroment/Foliage/tree3_leaves.png"
+dest_files=["res://.godot/imported/tree3_leaves.png-1b16fdec3999aee9968962dc2b0977f2.s3tc.ctex"]
 
 [params]
 

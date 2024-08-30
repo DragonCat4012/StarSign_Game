@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7c2likgehads"]
+
+[ext_resource type="PackedScene" uid="uid://ry6xmqnq78o1" path="res://Models/Enviroment/Islands/islands1.tscn" id="1_v5wli"]
+[ext_resource type="PackedScene" uid="uid://b2lrej6pchwdu" path="res://Models/Enviroment/Fire/Fire_Pillar.tscn" id="2_w1tuj"]
+[ext_resource type="PackedScene" uid="uid://bsmxs8trdh8e1" path="res://Models/Enviroment/Buildings/crystals.tscn" id="3_3c65c"]
+[ext_resource type="PackedScene" uid="uid://7vwqd3t5l7m3" path="res://Models/Enviroment/Foliage/tree_3.tscn" id="4_hunmv"]
+
+[node name="IslandsCrytsals" type="Node3D"]
+
+[node name="islands" parent="." instance=ExtResource("1_v5wli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.444783, 0, -0.448624)
+
+[node name="FirePillar" parent="islands" instance=ExtResource("2_w1tuj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.995614, -0.133986, -3.86495)
+
+[node name="FirePillar2" parent="islands" instance=ExtResource("2_w1tuj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.995614, -0.133986, 1.24227)
+
+[node name="crystals" parent="islands" instance=ExtResource("3_3c65c")]
+transform = Transform3D(0.20804, 0, -0.227681, 0, 0.308415, 0, 0.227681, 0, 0.20804, 0.665372, 0.495203, 5.14048)
+
+[node name="crystals2" parent="islands" instance=ExtResource("3_3c65c")]
+transform = Transform3D(0.0149151, 0, -0.223729, 0, 0.224227, 0, 0.223729, 0, 0.0149151, 0.25594, 0.495203, -5.63967)
+
+[node name="crystals3" parent="islands" instance=ExtResource("3_3c65c")]
+transform = Transform3D(-0.0850891, 0, -0.110762, 0, 0.139673, 0, 0.110762, 0, -0.0850891, 3.85627, 0.495203, -4.28117)
+
+[node name="tree3" parent="." instance=ExtResource("4_hunmv")]
+transform = Transform3D(0.850912, 0, -0.525308, 0, 1, 0, 0.525308, 0, 0.850912, 4.96467, -0.157867, 0.628382)
+
+[node name="tree4" parent="." instance=ExtResource("4_hunmv")]
+transform = Transform3D(0.242802, 0, 0.970076, 0, 1, 0, -0.970076, 0, 0.242802, -4.50986, -0.157867, 1.53894)
