@@ -47,7 +47,8 @@ func _input(event):
 		get_tree().quit()
 		
 func _play_button_pressed():
-	get_tree().change_scene_to_file(SceneManger.gameScene)
+	SceneManger.NEXTSCENE_AFTERLOADING = SceneManger.gameScene
+	get_tree().change_scene_to_file(SceneManger.LoadingScene)
 	
 func _options_button_pressed():
 	print("TODO: Button Options pressed")

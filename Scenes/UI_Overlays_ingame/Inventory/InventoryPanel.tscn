@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/Inventory/InventoryPanel.gd" id="1_xn3kv"]
 [ext_resource type="Texture2D" uid="uid://blhl6iqpoxakj" path="res://Ressources/Inventory/background.png" id="2_rosuo"]
-[ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="3_0tpk7"]
+[ext_resource type="Theme" uid="uid://d0h67bxbwhyd6" path="res://Ressources/Themes/Secondary_UI.tres" id="3_skxbg"]
 [ext_resource type="FontFile" uid="uid://vbcxsf2ea7l" path="res://Ressources/UI/Starsign.ttf" id="4_6bu7e"]
 [ext_resource type="Script" path="res://Ressources/Inventory/StarSignButtons.gd" id="5_86feo"]
 [ext_resource type="Resource" uid="uid://bitithh64yj66" path="res://Ressources/Stars/StarSigns/0.tres" id="6_2g0mv"]
@@ -74,7 +74,7 @@ alignment = 1
 process_mode = 2
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "C"
 script = ExtResource("5_86feo")
@@ -83,7 +83,7 @@ starSign = ExtResource("6_2g0mv")
 [node name="Button2" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "D"
 script = ExtResource("5_86feo")
@@ -92,7 +92,7 @@ starSign = ExtResource("7_w8vhy")
 [node name="Button3" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "E"
 script = ExtResource("5_86feo")
@@ -102,7 +102,7 @@ starSign = ExtResource("8_1ydab")
 process_mode = 2
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "F"
 script = ExtResource("5_86feo")
@@ -111,7 +111,7 @@ starSign = ExtResource("9_1dc77")
 [node name="Button5" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "G"
 script = ExtResource("5_86feo")
@@ -120,7 +120,7 @@ starSign = ExtResource("10_nh8ha")
 [node name="Button6" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "H"
 script = ExtResource("5_86feo")
@@ -129,7 +129,7 @@ starSign = ExtResource("11_wb206")
 [node name="Button7" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "I"
 script = ExtResource("5_86feo")
@@ -139,7 +139,7 @@ starSign = ExtResource("12_q1k25")
 process_mode = 2
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "J"
 script = ExtResource("5_86feo")
@@ -148,7 +148,7 @@ starSign = ExtResource("13_0so50")
 [node name="Button9" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "L"
 script = ExtResource("5_86feo")
@@ -157,7 +157,7 @@ starSign = ExtResource("14_wre32")
 [node name="Button10" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "M"
 script = ExtResource("5_86feo")
@@ -166,7 +166,7 @@ starSign = ExtResource("15_i7iky")
 [node name="Button11" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "A"
 script = ExtResource("5_86feo")
@@ -175,7 +175,7 @@ starSign = ExtResource("16_1poqc")
 [node name="Button12" type="Button" parent="ColorRect/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 theme_override_fonts/font = ExtResource("4_6bu7e")
 text = "B"
 script = ExtResource("5_86feo")
@@ -207,7 +207,7 @@ offset_left = 98.9577
 offset_top = 976.151
 offset_right = 295.958
 offset_bottom = 1014.15
-theme = ExtResource("3_0tpk7")
+theme = ExtResource("3_skxbg")
 text = "Activate Weapon"
 
 [node name="PageName" type="Label" parent="."]

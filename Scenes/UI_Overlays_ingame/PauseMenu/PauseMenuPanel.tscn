@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://m6lxn2gh1k2m"]
+[gd_scene load_steps=6 format=3 uid="uid://m6lxn2gh1k2m"]
 
 [ext_resource type="Script" path="res://Scenes/UI_Overlays_ingame/PauseMenu/PausePopUp.gd" id="1_en1f0"]
 [ext_resource type="Theme" uid="uid://bwa0rxrtswmu7" path="res://Ressources/Themes/menu_title_theme.tres" id="2_4ce5i"]
-[ext_resource type="Theme" uid="uid://b1liyjis8dsej" path="res://Ressources/Themes/inv_starsign_button_theme.tres" id="3_wguiq"]
+[ext_resource type="Theme" uid="uid://d0h67bxbwhyd6" path="res://Ressources/Themes/Secondary_UI.tres" id="3_c6sjv"]
+[ext_resource type="Theme" uid="uid://chkl1ionebplq" path="res://Ressources/Themes/Primary_UI.tres" id="3_egya1"]
 [ext_resource type="Texture2D" uid="uid://bp630n0ow8qmu" path="res://Ressources/Inventory/corner.png" id="4_f6lxr"]
 
 [node name="PausePopUp" type="Panel"]
@@ -33,11 +34,18 @@ offset_right = 572.0
 offset_bottom = 320.0
 theme_override_constants/separation = 30
 
+[node name="Unpause" type="Button" parent="VBoxContainer"]
+process_mode = 2
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("3_egya1")
+text = "Resume"
+
 [node name="MenuButton" type="Button" parent="VBoxContainer"]
 process_mode = 2
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme = ExtResource("3_wguiq")
+theme = ExtResource("3_c6sjv")
 text = "Menü
 "
 
@@ -45,15 +53,8 @@ text = "Menü
 process_mode = 2
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-theme = ExtResource("3_wguiq")
+theme = ExtResource("3_c6sjv")
 text = "Exit Game"
-
-[node name="Unpause" type="Button" parent="VBoxContainer"]
-process_mode = 2
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme = ExtResource("3_wguiq")
-text = "Resume"
 
 [node name="PauseMenuPanel" type="Panel" parent="."]
 layout_mode = 0
@@ -94,6 +95,6 @@ texture = ExtResource("4_f6lxr")
 flip_h = true
 flip_v = true
 
+[connection signal="pressed" from="VBoxContainer/Unpause" to="." method="_on_unpause_pressed"]
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Unpause" to="." method="_on_unpause_pressed"]

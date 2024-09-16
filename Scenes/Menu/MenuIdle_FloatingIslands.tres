@@ -1,0 +1,52 @@
+[gd_resource type="VisualShader" load_steps=6 format=3 uid="uid://b6v0qyekires1"]
+
+[ext_resource type="Texture2D" uid="uid://hbpwvk68rg5u" path="res://Ressources/Textures/floating_islands.PNG" id="1_7yja8"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_5hyi0"]
+output_port_for_preview = 4
+expanded_output_ports = [0]
+texture = ExtResource("1_7yja8")
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_5uc1s"]
+output_port_for_preview = 0
+default_input_values = [0, 0.0, 1, 1.0, 2, 2.0]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_liji6"]
+output_port_for_preview = 0
+default_input_values = [0, 0.0, 1, -1.0]
+operator = 2
+
+[sub_resource type="VisualShaderNodeStep" id="VisualShaderNodeStep_0k5m2"]
+output_port_for_preview = 0
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_2;
+
+
+
+void fragment() {
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+	float n_out2p4 = n_out2p0.a;
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+	ALPHA = n_out2p4;
+
+
+}
+"
+nodes/fragment/0/position = Vector2(800, 100)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_5hyi0")
+nodes/fragment/2/position = Vector2(0, 100)
+nodes/fragment/3/node = SubResource("VisualShaderNodeMix_5uc1s")
+nodes/fragment/3/position = Vector2(640, 460)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatOp_liji6")
+nodes/fragment/4/position = Vector2(260, 440)
+nodes/fragment/5/node = SubResource("VisualShaderNodeStep_0k5m2")
+nodes/fragment/5/position = Vector2(460, 280)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 2, 4, 4, 0, 2, 4, 5, 0, 2, 4, 0, 1)
