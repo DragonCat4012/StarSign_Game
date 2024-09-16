@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=6 format=3 uid="uid://b6v0qyekires1"]
 
-[ext_resource type="Texture2D" uid="uid://hbpwvk68rg5u" path="res://Ressources/Textures/floating_islands.PNG" id="1_7yja8"]
+[ext_resource type="Texture2D" uid="uid://rbhg67f3mmkp" path="res://Ressources/Textures/floating_islands.PNG" id="1_7yja8"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_5hyi0"]
 output_port_for_preview = 4
@@ -40,6 +40,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-36.0918, -16.1682)
 nodes/fragment/0/position = Vector2(800, 100)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_5hyi0")
 nodes/fragment/2/position = Vector2(0, 100)
