@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var PlayButton := $VBoxContainer/PlayButton
 @onready var OptionsButton := $VBoxContainer/OptionsButton
