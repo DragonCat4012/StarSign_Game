@@ -85,6 +85,7 @@ anchors_preset = 0
 script = ExtResource("1_8ymx2")
 
 [node name="VerisonLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = -1.0
 offset_top = 2074.0
 offset_right = 3835.0
@@ -97,6 +98,7 @@ vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -1168.0
 offset_top = 46.0
 offset_right = 2682.0
@@ -109,6 +111,7 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 58.0
 offset_top = 510.0
 offset_right = 405.0
@@ -222,11 +225,11 @@ libraries = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -11.0
-offset_top = -183.0
-offset_right = 2037.0
-offset_bottom = 1865.0
-scale = Vector2(0.382047, 0.382047)
+offset_left = 10.0
+offset_top = -258.0
+offset_right = 2058.0
+offset_bottom = 1790.0
+scale = Vector2(0.490741, 0.490741)
 texture = ExtResource("9_cqhr2")
 
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
