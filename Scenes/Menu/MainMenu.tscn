@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://byyoklspddq7f"]
+[gd_scene load_steps=21 format=3 uid="uid://byyoklspddq7f"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/MainMenu.gd" id="1_8ymx2"]
 [ext_resource type="Theme" uid="uid://bwa0rxrtswmu7" path="res://Ressources/Themes/menu_title_theme.tres" id="2_7e3h4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bqlohdngefc7y" path="res://Scenes/Menu/MenuButtons/keys.PNG" id="5_fyvxw"]
 [ext_resource type="Texture2D" uid="uid://byvu33wisdx4p" path="res://Scenes/Menu/MenuButtons/info.PNG" id="7_mty6d"]
 [ext_resource type="Texture2D" uid="uid://l1xv0ga6wt6k" path="res://Ressources/Textures/logo.PNG" id="9_cqhr2"]
+[ext_resource type="Theme" uid="uid://dtygn5hbbtsbq" path="res://Ressources/Themes/PatchNotesTheme.tres" id="10_uy5ir"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_337sl"]
 shader = ExtResource("5_4obnj")
@@ -224,6 +225,7 @@ libraries = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = -258.0
@@ -232,4 +234,30 @@ offset_bottom = 1790.0
 scale = Vector2(0.490741, 0.490741)
 texture = ExtResource("9_cqhr2")
 
+[node name="PatchNotes" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 517.0
+offset_right = 1686.0
+offset_bottom = 2154.0
+
+[node name="OptionButton" type="OptionButton" parent="PatchNotes"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 1525.0
+offset_right = 580.0
+offset_bottom = 1593.0
+theme = ExtResource("10_uy5ir")
+selected = 0
+
+[node name="patch_info" type="Label" parent="PatchNotes"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 628.0
+offset_right = 575.0
+offset_bottom = 1500.0
+theme = ExtResource("10_uy5ir")
+text = "Lorem Ipsum"
+vertical_alignment = 2
+
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="item_selected" from="PatchNotes/OptionButton" to="." method="_on_option_button_item_selected"]

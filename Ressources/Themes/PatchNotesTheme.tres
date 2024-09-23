@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dtygn5hbbtsbq"]
+
+[ext_resource type="Texture2D" uid="uid://snf4bf4op6ui" path="res://Ressources/Textures/chevron_down.svg" id="1_j22yq"]
+
+[resource]
+default_font_size = 50
+Label/font_sizes/font_size = 30
+OptionButton/font_sizes/font_size = 30
+OptionButton/icons/arrow = ExtResource("1_j22yq")

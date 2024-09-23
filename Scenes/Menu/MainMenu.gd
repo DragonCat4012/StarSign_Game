@@ -9,6 +9,7 @@ extends Control
 @onready var camera_3d = $"../../Camera3D"
 var rotationCamera = -0.0005#0.01
 
+var patchs = {}
 
 # Selection
 @onready var animation_player = $AnimationPlayer
@@ -18,6 +19,10 @@ var buttonLabels = ["Play", "Options (WIP)", "Keybindings", "Tutorial"]
 @onready var button_label = $ButtonLabelContainer/ButtonLabel
 @onready var button_label_container = $ButtonLabelContainer
 @onready var animation_player_label = $ButtonLabelContainer/AnimationPlayer
+
+#Patch Notes
+@onready var option_button = $PatchNotes/OptionButton
+@onready var patch_info = $PatchNotes/patch_info
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -41,7 +46,15 @@ func _ready():
 	# Play Idle animation
 	animation_player_2.speed_scale = 0.7
 	animation_player_2.play("idle")
-		
+	
+	# Patch info
+	patch_info.text = ""
+	var patch_file = FileAccess.open("res://patch.json", FileAccess.READ)
+	patchs = JSON.parse_string(patch_file.get_as_text())
+	for key in patchs.keys():
+		option_button.add_item(key)
+
+	
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
@@ -97,3 +110,7 @@ func optionSelected(opt):
 			_keybindings_button_pressed()
 		4:
 			_on_tutorial_button_pressed()
+
+func _on_option_button_item_selected(index):
+	patch_info.text = patchs[patchs.keys()[index]]
+			
