@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cjgdunlni6cu2"]
+[gd_scene load_steps=29 format=3 uid="uid://cjgdunlni6cu2"]
 
 [ext_resource type="PackedScene" uid="uid://c21tj8lh4xda8" path="res://Models/Enviroment/Islands/islands_2.tscn" id="1_ynl11"]
 [ext_resource type="Texture2D" uid="uid://drdqhewnmiq1o" path="res://Ressources/Textures/blueprint.jpg" id="2_1io1v"]
@@ -24,6 +24,7 @@
 [ext_resource type="Resource" uid="uid://f52rw7qj75qn" path="res://Ressources/Stars/Stars/Taurus/star8.tres" id="22_7y8pi"]
 [ext_resource type="Resource" uid="uid://bb8cxcm5cpjmf" path="res://Ressources/Stars/Stars/Taurus/star9.tres" id="23_6lx2s"]
 [ext_resource type="PackedScene" uid="uid://13gkl48m34xd" path="res://Scenes/Sprites/DefaultCube.tscn" id="24_12reb"]
+[ext_resource type="PackedScene" uid="uid://ckxjhuqg5hmox" path="res://Models/Enviroment/Foliage/mushroom_brown_1.tscn" id="25_3a8u4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_nsfol"]
 
@@ -167,6 +168,9 @@ star = ExtResource("23_6lx2s")
 [node name="DefaultCube" parent="." instance=ExtResource("24_12reb")]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 2.55173e-07, 0.5, 0.866026, -0.5, 0.75, -0.433012, -1.09447, 1.40758, -4.27822)
 mass = 0.5
+
+[node name="mushroom1" parent="." instance=ExtResource("25_3a8u4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.58916, 0.175255, -1.01048)
 
 [connection signal="body_entered" from="Stars/Star2" to="Stars/Star2" method="_on_body_entered"]
 [connection signal="body_entered" from="Stars/Star3" to="Stars/Star3" method="_on_body_entered"]
