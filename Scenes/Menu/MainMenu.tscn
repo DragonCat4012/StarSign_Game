@@ -247,7 +247,6 @@ offset_top = 1525.0
 offset_right = 580.0
 offset_bottom = 1593.0
 theme = ExtResource("10_uy5ir")
-selected = 0
 
 [node name="patch_info" type="Label" parent="PatchNotes"]
 layout_mode = 0
